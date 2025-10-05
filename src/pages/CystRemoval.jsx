@@ -1,7 +1,8 @@
 import React from 'react';
 import { motion } from 'framer-motion';
 import { Link } from 'react-router-dom';
-import { HeartPulse, ShieldCheck, Stethoscope, ArrowRight } from 'lucide-react';
+import { ShieldHalf, ShieldCheck, HeartPulse, Stethoscope, ArrowRight } from 'lucide-react';
+import ProcedureTimeline from '../components/Timeline';
 
 const ServicePageLayout = ({ service }) => {
   return (
@@ -94,7 +95,7 @@ const ServicePageLayout = ({ service }) => {
               className="bg-white p-8 rounded-2xl shadow-xl border border-sky-100/80"
             >
               <h3 className="text-2xl font-bold text-sky-900 mb-6 text-center">Schedule a Consultation</h3>
-              <p className="text-center text-gray-600 mb-6">Discuss your options for cyst removal with our specialists.</p>
+              <p className="text-center text-gray-600 mb-6">Get a clear diagnosis and a simple, effective solution for your cyst.</p>
               <Link 
                 to="/contact"
                 className="w-full flex items-center justify-center gap-2 bg-gradient-to-r from-sky-700 to-teal-600 text-white px-6 py-3 rounded-full text-lg font-semibold hover:from-sky-800 hover:to-teal-700 transform transition-all duration-300 hover:scale-105 shadow-lg hover:shadow-xl"
@@ -120,6 +121,9 @@ const ServicePageLayout = ({ service }) => {
           </aside>
         </div>
       </div>
+
+      {/* Timeline Section */}
+      {service.timeline && <ProcedureTimeline steps={service.timeline} />}
     </div>
   );
 };
@@ -127,34 +131,60 @@ const ServicePageLayout = ({ service }) => {
 const CystRemovalPage = () => {
   const serviceData = {
     title: "Cyst Removal",
-    subtitle: "Safe and effective removal of skin cysts with minimal scarring.",
+    subtitle: "Simple and effective removal of common skin cysts with minimal scarring.",
     image: "/cyst.jpg",
-    Icon: HeartPulse,
+    Icon: ShieldHalf,
     overview: [
-      "Skin cysts are noncancerous, closed pockets of tissue that can be filled with fluid, pus, or other material. While usually harmless, they can become inflamed, infected, or cosmetically bothersome.",
-      "We offer expert surgical removal of cysts for both medical and cosmetic reasons. Our goal is to remove the entire cyst sac to prevent recurrence, while using techniques that minimize scarring and ensure a smooth recovery."
+      "Skin cysts, such as sebaceous or epidermoid cysts, are common, non-cancerous lumps that develop under the skin. While usually harmless, they can become inflamed, infected, or cosmetically bothersome.",
+      "Surgical excision is the most effective way to remove a cyst completely and prevent it from recurring. We perform this minor procedure with a focus on achieving the best possible cosmetic result, leaving a fine-line scar that often becomes nearly invisible over time."
     ],
     benefits: [
       {
-        title: "Improved Comfort",
-        description: "Removal of a cyst can alleviate discomfort, irritation from clothing, and prevent painful inflammation."
+        title: "Complete Removal",
+        description: "Surgically removing the entire cyst wall is the best way to ensure it does not grow back."
       },
       {
-        title: "Prevents Recurrence",
-        description: "By completely removing the cyst wall, we significantly reduce the likelihood of the cyst returning."
+        title: "Excellent Cosmetic Results",
+        description: "Careful surgical technique and fine sutures are used to minimize scarring."
       },
       {
-        title: "Better Cosmetic Outcome",
-        description: "We use precise surgical techniques to keep the incision as small as possible, leading to minimal scarring."
+        title: "Prevention of Infection",
+        description: "Removing the cyst eliminates the risk of future inflammation, infection, and painful rupture."
       },
       {
-        title: "Quick & Simple Procedure",
-        description: "Cyst removal is a quick outpatient procedure performed under local anesthesia with very little downtime."
+        title: "Quick and Painless",
+        description: "The procedure is performed quickly under local anesthesia with minimal discomfort."
       }
     ],
     technology: {
-      description: "We often use a Minimal Excision Technique, which involves making a tiny incision to extract the cyst's contents and then removing the collapsed cyst sac through the same small opening. This method is highly effective and is superior to simple drainage as it removes the source of the cyst, preventing it from refilling. The procedure is done with meticulous care to align the incision with natural skin lines, further enhancing the cosmetic result."
-    }
+      description: "The key to a successful cyst removal is meticulous surgical technique. After numbing the area, a small incision is carefully planned, often along natural skin creases to hide the scar. The cyst is then dissected out intact, ensuring the entire sac is removed. The wound is closed with fine sutures, which are typically removed in about a week. This approach ensures complete removal and provides the best possible long-term cosmetic outcome."
+    },
+    timeline: [
+      {
+        title: "Clinical Evaluation",
+        description: "We examine the lump to confirm it is a benign cyst and rule out other conditions."
+      },
+      {
+        title: "Procedure Planning",
+        description: "We discuss the simple excision procedure, which is scheduled at your convenience as an outpatient."
+      },
+      {
+        title: "Cyst Excision",
+        description: "Under local anesthesia, the cyst is completely removed through a small, carefully placed incision."
+      },
+      {
+        title: "Wound Closure",
+        description: "The skin is closed with fine sutures to ensure a neat, clean scar and optimal cosmetic result."
+      },
+      {
+        title: "Dressing and Home Care",
+        description: "A simple dressing is applied, and you are given instructions on how to care for the wound at home."
+      },
+      {
+        title: "Suture Removal & Follow-Up",
+        description: "You'll return in about a week for suture removal and a final check-up to ensure proper healing."
+      }
+    ]
   };
 
   return <ServicePageLayout service={serviceData} />;

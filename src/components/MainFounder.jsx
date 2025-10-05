@@ -79,7 +79,7 @@ const MainFounder = () => {
           </motion.div>
 
           <motion.div variants={itemVariants} className="mt-10">
-            <a href="/about-founder" className="group inline-flex items-center gap-2 px-6 py-3 bg-sky-900 text-white font-semibold rounded-full shadow-lg hover:bg-sky-800 transition-colors duration-300">
+            <a href="/about-founder" className="group inline-flex items-center gap-2 px-6 py-3 bg-teal-600 text-white font-semibold rounded-full shadow-lg hover:bg-sky-800 transition-colors duration-300">
               Learn More About Dr. Kadam
               <ArrowRight className="h-4 w-4 transform group-hover:translate-x-1 transition-transform" />
             </a>

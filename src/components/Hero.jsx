@@ -20,6 +20,7 @@ export default function Hero() {
         <div className="w-full max-w-4xl mx-auto text-center -mt-16">
           <h1 className="font-normal text-white text-5xl sm:text-6xl lg:text-7xl leading-tight tracking-tight">
             Precision, 
+            <br />
             <span className="text-transparent bg-clip-text bg-gradient-to-r from-teal-200 to-sky-200">Human Touch</span>
           </h1>
           <p className="mt-6 text-sky-100/90 text-sm sm:text-base md:text-lg mx-auto max-w-2xl">
