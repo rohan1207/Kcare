@@ -7,9 +7,9 @@
     "summary": "Explore the world of robotic-assisted surgery with the da Vinci system. Discover how this technology enhances precision, minimizes recovery time, and is setting a new standard for patient care in procedures like hernia repair and rectal prolapse surgery.",
     "tags": ["Robotic Surgery", "da Vinci System", "Minimally Invasive", "Patient Outcomes"],
     "images": [
-      "https://images.unsplash.com/photo-1581093452823-3ab541469970?q=80&w=2070&auto=format&fit=crop",
-      "https://images.unsplash.com/photo-1551076805-e1869033e561?q=80&w=1932&auto=format&fit=crop",
-      "https://images.unsplash.com/photo-1631217868264-e5b90bb7e133?q=80&w=2070&auto=format&fit=crop"
+      "/blog1_1.jpg",
+      "/blog1_2.jpg",
+      "/blog1_3.jpg"
     ],
     "content": [
       {
@@ -56,8 +56,8 @@
     "summary": "Often called 'keyhole surgery,' laparoscopy has revolutionized modern surgical practice. This guide explains what it is, how it compares to open surgery, and why it has become the gold standard for procedures like gallbladder and appendix removal.",
     "tags": ["Laparoscopy", "Keyhole Surgery", "Minimally Invasive", "Gallbladder", "Appendix"],
     "images": [
-      "https://images.unsplash.com/photo-1629425992891-9b363551483c?q=80&w=1974&auto=format&fit=crop",
-      "https://images.unsplash.com/photo-1579154286829-38c033653736?q=80&w=2070&auto=format&fit=crop"
+      "/blog2_1.jpg",
+      "/blog2_2.jpg"
     ],
     "content": [
       {
@@ -104,9 +104,9 @@
     "summary": "Thinking about surgery? The way procedures are performed has changed dramatically. Discover the top five patient-focused benefits of minimally invasive techniques like laparoscopy and robotic surgery, from faster recovery to better cosmetic outcomes.",
     "tags": ["Benefits", "Minimally Invasive", "Recovery", "Patient Care"],
     "images": [
-      "https://images.unsplash.com/photo-1576091160550-2173dba999ef?q=80&w=2070&auto=format&fit=crop",
-      "https://images.unsplash.com/photo-1530497610242-d843ab3b8c28?q=80&w=2070&auto=format&fit=crop",
-      "https://images.unsplash.com/photo-1527613426441-4da17471b66d?q=80&w=2070&auto=format&fit=crop"
+      "/blog3_1.jpg",
+      "/blog3_2.jpg",
+      "/blog3_3.jpg"
     ],
     "content": [
       {

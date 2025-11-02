@@ -1,81 +1,90 @@
-import React from 'react';
-import { motion } from 'framer-motion';
+import React from "react";
+import { motion } from "framer-motion";
+
+const Blur = () => (
+  <>
+    <div className="absolute top-0 right-0 -z-10 h-[700px] w-[600px] rounded-full bg-gradient-to-br from-turquoise-50 to-sky-50/70 blur-3xl opacity-80" />
+    <div className="absolute bottom-0 left-0 -z-10 h-[600px] w-[600px] rounded-full bg-gradient-to-tr from-blue-50 to-turquoise-50/70 blur-3xl opacity-60" />
+  </>
+);
 
 const galleryImages = [
-  {
-    id: 1,
-    src: 'https://images.unsplash.com/photo-1588776814546-daab701a2932?q=80&w=2070&auto=format&fit=crop',
-    alt: 'Surgeons performing a robotic-assisted surgery in a modern operating room.',
-    colSpan: 'md:col-span-2',
-    rowSpan: 'md:row-span-2',
-  },
-  {
-    id: 2,
-    src: 'https://images.unsplash.com/photo-1579684385127-6c1d73a7f832?q=80&w=1974&auto=format&fit=crop',
-    alt: 'Close-up of a surgeon\'s hands in sterile gloves during an operation.',
-  },
-  {
-    id: 3,
-    src: 'https://images.unsplash.com/photo-1629424962522-190d5f29904a?q=80&w=2070&auto=format&fit=crop',
-    alt: 'Advanced medical imaging display showing a human organ.',
-  },
-  {
-    id: 4,
-    src: 'https://images.unsplash.com/photo-1551590192-34b9a7c5a499?q=80&w=2070&auto=format&fit=crop',
-    alt: 'A modern, well-lit hospital corridor.',
-    colSpan: 'md:col-span-2',
-  },
+  { id: 1, src: "/gallery9.jpeg", alt: "Clinic facility photo" },
+  { id: 2, src: "/gallery10.jpeg", alt: "Clinic facility photo" },
+  { id: 3, src: "/gallery11.jpeg", alt: "Clinic facility photo" },
+  { id: 4, src: "/gallery12.jpeg", alt: "Clinic facility photo" },
   {
     id: 5,
-    src: 'https://images.unsplash.com/photo-1516574187841-cb9cc2ca948b?q=80&w=2070&auto=format&fit=crop',
-    alt: 'A team of medical professionals in discussion.',
-    colSpan: 'md:col-span-2',
+    src: "/gallery1.webp",
+    alt: "Surgeons performing a robotic-assisted surgery in a modern operating room.",
+    colSpan: "md:col-span-2",
+    rowSpan: "md:row-span-2",
   },
   {
     id: 6,
-    src: 'https://images.unsplash.com/photo-1618932260683-8c2f874a4b88?q=80&w=2070&auto=format&fit=crop',
-    alt: 'Detailed view of a surgical robot arm.',
-    colSpan: 'md:col-span-2',
-    rowSpan: 'md:row-span-2',
+    src: "/gallery2.webp",
+    alt: "Close-up of a surgeon's hands in sterile gloves during an operation.",
   },
   {
     id: 7,
-    src: 'https://images.unsplash.com/photo-1631217872135-c52155620002?q=80&w=1974&auto=format&fit=crop',
-    alt: 'Patient resting comfortably in a hospital bed post-surgery.',
+    src: "/gallery3.png",
+    alt: "Advanced medical imaging display showing a human organ.",
   },
   {
     id: 8,
-    src: 'https://images.unsplash.com/photo-1530497610242-d495ce35b7e0?q=80&w=2070&auto=format&fit=crop',
-    alt: 'Sterile surgical instruments laid out on a tray.',
+    src: "/gallery4.png",
+    alt: "A modern, well-lit hospital corridor.",
+    colSpan: "md:col-span-2",
   },
+  {
+    id: 9,
+    src: "/gallery5.png",
+    alt: "A team of medical professionals in discussion.",
+    colSpan: "md:col-span-2",
+  },
+  {
+    id: 10,
+    src: "/gallery6.png",
+    alt: "Detailed view of a surgical robot arm.",
+    colSpan: "md:col-span-2",
+    rowSpan: "md:row-span-2",
+  },
+  { id: 11, src: "/gallery7.png", alt: "Patient resting comfortably in a hospital bed post-surgery." },
+  { id: 12, src: "/gallery8.png", alt: "Sterile surgical instruments laid out on a tray." },
 ];
 
 const GalleryPage = () => {
   return (
-    <div className="bg-gray-50/70 min-h-screen">
+    <div className="bg-gradient-to-b from-white to-slate-50/30 relative overflow-hidden -mt-20">
+      <Blur />
       <motion.div
         initial={{ opacity: 0 }}
         animate={{ opacity: 1 }}
         transition={{ duration: 0.8 }}
-        className="relative bg-gradient-to-br from-sky-800 to-teal-700 py-24 sm:py-32 text-white"
+        className="relative bg-gradient-to-br from-turquoise-600 via-turquoise-700 to-turquoise-900  text-white overflow-hidden pt-32 pb-24 sm:pt-40 sm:pb-32"
       >
-        <div className="absolute inset-0 bg-[url('/logo.png')] opacity-5 bg-center bg-no-repeat bg-contain"></div>
-        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 text-center relative">
-          <motion.h1 
-            initial={{ y: 20, opacity: 0 }} 
-            animate={{ y: 0, opacity: 1 }} 
-            transition={{ delay: 0.2 }}
-            className="text-4xl md:text-6xl font-bold font-display tracking-tight"
+  {/* Decorative elements */}
+  <div className="absolute top-0 right-0 w-40 h-40 bg-turquoise-400/20 rounded-full blur-3xl" />
+  <div className="absolute bottom-0 left-0 w-40 h-40 bg-turquoise-500/10 rounded-full blur-3xl" />
+  <div className="absolute inset-0 bg-gradient-to-br from-turquoise-600/10 to-transparent mix-blend-overlay" />
+
+        <div className="relative max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
+          <motion.h1
+            initial={{ y: 20, opacity: 0 }}
+            animate={{ y: 0, opacity: 1 }}
+            transition={{ delay: 0.2, type: "spring" }}
+            className="text-4xl md:text-6xl font-light tracking-tight"
           >
-            Our Advanced Surgical Gallery
+            Our Advanced <span className="font-medium">Surgical Gallery</span>
           </motion.h1>
-          <motion.p 
-            initial={{ y: 20, opacity: 0 }} 
-            animate={{ y: 0, opacity: 1 }} 
-            transition={{ delay: 0.4 }}
-            className="mt-4 text-lg md:text-xl max-w-3xl mx-auto text-sky-100/90"
+          <motion.p
+            initial={{ y: 20, opacity: 0 }}
+            animate={{ y: 0, opacity: 1 }}
+            transition={{ delay: 0.4, type: "spring" }}
+            className="mt-4 text-lg md:text-xl max-w-3xl mx-auto text-white/90 font-light leading-relaxed"
           >
-            A glimpse into the precision, technology, and care that define our practice.
+            A glimpse into the precision, technology, and care that define our
+            practice.
           </motion.p>
         </div>
       </motion.div>
@@ -85,7 +94,9 @@ const GalleryPage = () => {
           {galleryImages.map((image, index) => (
             <motion.div
               key={image.id}
-              className={`rounded-2xl overflow-hidden shadow-lg group ${image.colSpan || ''} ${image.rowSpan || ''}`}
+              className={`rounded-[2rem] overflow-hidden shadow-lg group relative ${
+                image.colSpan || ""
+              } ${image.rowSpan || ""}`}
               initial={{ opacity: 0, y: 50, scale: 0.95 }}
               whileInView={{ opacity: 1, y: 0, scale: 1 }}
               viewport={{ once: true, amount: 0.2 }}
@@ -96,6 +107,10 @@ const GalleryPage = () => {
                 alt={image.alt}
                 className="w-full h-full object-cover group-hover:scale-105 transition-transform duration-300 ease-in-out"
               />
+              <div className="absolute inset-0 bg-black/20 opacity-0 group-hover:opacity-100 transition-opacity duration-300" />
+              <div className="absolute bottom-0 left-0 p-4 text-white opacity-0 group-hover:opacity-100 transition-opacity duration-300">
+                <p className="text-sm font-light">{image.alt}</p>
+              </div>
             </motion.div>
           ))}
         </div>

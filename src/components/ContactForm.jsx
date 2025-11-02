@@ -1,5 +1,6 @@
 import { useState } from "react";
 import { motion } from "framer-motion";
+import { Send, MessageSquare } from "lucide-react";
 
 export default function ContactForm() {
   const [isWhatsApp, setIsWhatsApp] = useState(false);
@@ -19,13 +20,10 @@ export default function ContactForm() {
       setErrors({ ...errors, [e.target.name]: "" });
     }
   };
+
   const validateForm = () => {
     const newErrors = {};
-
-    if (!formData.name.trim()) {
-      newErrors.name = "Name is required";
-    }
-
+    if (!formData.name.trim()) newErrors.name = "Name is required";
     if (!formData.email.trim()) {
       newErrors.email = "Email is required";
     } else if (!/^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(formData.email)) {
@@ -36,91 +34,26 @@ export default function ContactForm() {
     } else if (!/^[0-9+\-\s()]{10,}$/.test(formData.phone)) {
       newErrors.phone = "Please enter a valid phone number";
     }
-
-    if (!formData.message.trim()) {
-      newErrors.message = "Message is required";
-    }
-
+    if (!formData.message.trim()) newErrors.message = "Message is required";
     setErrors(newErrors);
     return Object.keys(newErrors).length === 0;
   };
+
   const handleSubmit = (e) => {
     e.preventDefault();
-
-    if (!validateForm()) {
-      return;
-    }
-    const emailBody = `
-Name: ${formData.name}
-Email: ${formData.email}
-Phone: ${formData.phone}
-
-Message:
-${formData.message}
-    `.trim();
-
-    // Check if user is on mobile
-    const isMobile = /iPhone|iPad|iPod|Android/i.test(navigator.userAgent);
-
-    if (isMobile) {
-      // On mobile, directly use mailto: protocol to open native email app
-      const mailtoLink = `mailto:contact@kcare.com?subject=${encodeURIComponent(
-        `New Contact Form Submission from ${formData.name}`
-      )}&body=${encodeURIComponent(emailBody)}&cc=${encodeURIComponent(
-        formData.email
-      )}`;
-      window.location.href = mailtoLink;
-      setStatus("Opening email app...");
-    } else {
-      // On desktop, try Gmail compose in browser first
-      const gmailComposeUrl = new URL("https://mail.google.com/mail/");
-      gmailComposeUrl.searchParams.set("view", "cm");
-      gmailComposeUrl.searchParams.set("fs", "1");
-      gmailComposeUrl.searchParams.set("to", "contact@kcare.com");
-      gmailComposeUrl.searchParams.set(
-        "su",
-        `New Contact Form Submission from ${formData.name}`
-      );
-      gmailComposeUrl.searchParams.set("body", emailBody);
-      gmailComposeUrl.searchParams.set("cc", formData.email);
-
-      // Open Gmail compose window
-      const gmailWindow = window.open(gmailComposeUrl.toString(), "_blank");
-
-      if (gmailWindow) {
-        setStatus("Opening email in web browser...");
-      } else {
-        // If popup was blocked, try mailto as fallback
-        const mailtoLink = `mailto:contact@kcare.com?subject=${encodeURIComponent(
-          `New Contact Form Submission from ${formData.name}`
-        )}&body=${encodeURIComponent(emailBody)}&cc=${encodeURIComponent(
-          formData.email
-        )}`;
-        window.location.href = mailtoLink;
-        setStatus("Opening email client...");
-      }
-    }
+    if (!validateForm()) return;
+    
+    const emailBody = `Name: ${formData.name}\nEmail: ${formData.email}\nPhone: ${formData.phone}\n\nMessage:\n${formData.message}`.trim();
+    const mailtoLink = `mailto:contact@kcare.com?subject=${encodeURIComponent(`New Contact Form Submission from ${formData.name}`)}&body=${encodeURIComponent(emailBody)}&cc=${encodeURIComponent(formData.email)}`;
+    
+    window.location.href = mailtoLink;
+    setStatus("Opening your email client...");
   };
+
   const sendToWhatsapp = () => {
-    if (!validateForm()) {
-      return;
-    }
+    if (!validateForm()) return;
 
-    const formattedMessage =
-      "*New Contact Form Submission*" +
-      "\n\n" +
-      "*Name:* " +
-      formData.name +
-      "\n" +
-      "*Email:* " +
-      formData.email +
-      "\n" +
-      "*Phone:* " +
-      formData.phone +
-      "\n\n" +
-      "*Message:*\n" +
-      formData.message;
-
+    const formattedMessage = `*New Appointment Request*\n\n*Name:* ${formData.name}\n*Email:* ${formData.email}\n*Phone:* ${formData.phone}\n\n*Message:*\n${formData.message}`;
     const encodedMessage = encodeURIComponent(formattedMessage);
     const whatsappUrl = `https://api.whatsapp.com/send?phone=919876543210&text=${encodedMessage}`;
 
@@ -128,130 +61,81 @@ ${formData.message}
     setStatus("Redirecting to WhatsApp...");
   };
 
+  const inputClass = (field) =>
+    `w-full p-3.5 bg-slate-50/70 border border-stone-200/80 rounded-lg text-sm font-light text-stone-800 placeholder-stone-500/90 focus:ring-1 focus:ring-emerald-400 focus:border-emerald-400 transition-colors duration-300 ${
+      errors[field] ? "border-red-400" : ""
+    }`;
+
   return (
-    <div className="mt-[180px] lg:mt-[86px] px-4 sm:px-8 z-0">
-      <h2 className="text-lg font-semibold mb-4 text-teal-700">
-        Book Your Appointment
-      </h2>
-
-      {/* Toggle Between Email & WhatsApp */}
-      <div className="flex gap-4 mb-4">
+    <div className="w-full">
+      {/* Toggle */}
+      <div className="flex items-center justify-center gap-2 mb-6 bg-slate-100/80 p-1.5 rounded-full">
         <button
-          className={`w-[158px] h-[42px] border-2 rounded-lg flex justify-center items-center text-sm md:text-base ${
-            !isWhatsApp
-              ? "bg-teal-600 text-white border-teal-600"
-              : "bg-stone-100 text-stone-700 border-stone-200"
-          }`}
           onClick={() => setIsWhatsApp(false)}
-        >
-          Send Email
-        </button>
-
-        <button
-          className={`w-[158px] h-[42px] border-2 rounded-lg flex justify-center items-center text-sm md:text-base ${
-            isWhatsApp
-              ? "bg-teal-600 text-white border-teal-600"
-              : "bg-stone-100 text-stone-700 border-stone-200"
+          className={`w-1/2 py-2.5 text-sm font-medium rounded-full transition-all duration-300 ${
+            !isWhatsApp ? "bg-white text-emerald-700 shadow-sm" : "text-stone-600"
           }`}
-          onClick={() => setIsWhatsApp(true)}
         >
-          WhatsApp
+          Via Email
+        </button>
+        <button
+          onClick={() => setIsWhatsApp(true)}
+          className={`w-1/2 py-2.5 text-sm font-medium rounded-full transition-all duration-300 ${
+            isWhatsApp ? "bg-white text-emerald-700 shadow-sm" : "text-stone-600"
+          }`}
+        >
+          Via WhatsApp
         </button>
       </div>
-      {isWhatsApp && (
-        <div className="w-full bg-teal-50 border border-teal-200 rounded-lg p-4 sm:p-5 mb-6">
-          <h3 className="text-lg sm:text-xl font-semibold text-teal-800">
-            Instant Consultation
-          </h3>
-          <p className="text-stone-700 text-sm sm:text-base">
-            Start a conversation with us instantly on WhatsApp. Our team is
-            ready to assist you.
-          </p>
-        </div>
-      )}
+
       <form
         onSubmit={isWhatsApp ? (e) => e.preventDefault() : handleSubmit}
-        className="space-y-4 max-w-full"
+        className="space-y-4"
       >
-        <div>
-          <input
-            type="text"
-            name="name"
-            placeholder="Your Name *"
-            value={formData.name}
-            onChange={handleChange}
-            className={`w-full p-3 border ${
-              errors.name ? "border-red-500" : "border-stone-300"
-            } rounded-lg text-sm md:text-base focus:ring-teal-500 focus:border-teal-500`}
-          />
-          {errors.name && (
-            <p className="text-red-500 text-sm mt-1">{errors.name}</p>
-          )}
+        <div className="grid grid-cols-1 sm:grid-cols-2 gap-4">
+          <div>
+            <input type="text" name="name" placeholder="Your Name *" value={formData.name} onChange={handleChange} className={inputClass("name")} />
+            {errors.name && <p className="text-red-500 text-xs mt-1">{errors.name}</p>}
+          </div>
+          <div>
+            <input type="email" name="email" placeholder="Email Address *" value={formData.email} onChange={handleChange} className={inputClass("email")} />
+            {errors.email && <p className="text-red-500 text-xs mt-1">{errors.email}</p>}
+          </div>
         </div>
         <div>
-          <input
-            type="email"
-            name="email"
-            placeholder="Email Address *"
-            value={formData.email}
-            onChange={handleChange}
-            className={`w-full p-3 border ${
-              errors.email ? "border-red-500" : "border-stone-300"
-            } rounded-lg text-sm md:text-base focus:ring-teal-500 focus:border-teal-500`}
-          />
-          {errors.email && (
-            <p className="text-red-500 text-sm mt-1">{errors.email}</p>
-          )}
-        </div>{" "}
-        <div>
-          <input
-            type="tel"
-            name="phone"
-            placeholder="Contact Number *"
-            value={formData.phone}
-            onChange={handleChange}
-            className={`w-full p-3 border ${
-              errors.phone ? "border-red-500" : "border-stone-300"
-            } rounded-lg text-sm md:text-base focus:ring-teal-500 focus:border-teal-500`}
-          />
-          {errors.phone && (
-            <p className="text-red-500 text-sm mt-1">{errors.phone}</p>
-          )}
+          <input type="tel" name="phone" placeholder="Contact Number *" value={formData.phone} onChange={handleChange} className={inputClass("phone")} />
+          {errors.phone && <p className="text-red-500 text-xs mt-1">{errors.phone}</p>}
         </div>
         <div>
-          <textarea
-            name="message"
-            placeholder="Your Message... *"
-            value={formData.message}
-            onChange={handleChange}
-            className={`w-full p-3 border ${
-              errors.message ? "border-red-500" : "border-stone-300"
-            } rounded-lg h-24 text-sm md:text-base focus:ring-teal-500 focus:border-teal-500`}
-          ></textarea>
-          {errors.message && (
-            <p className="text-red-500 text-sm mt-1">{errors.message}</p>
-          )}
+          <textarea name="message" placeholder="Your Message... *" value={formData.message} onChange={handleChange} className={`${inputClass("message")} h-28`}></textarea>
+          {errors.message && <p className="text-red-500 text-xs mt-1">{errors.message}</p>}
         </div>
-        {/* Conditional Rendering for Buttons */}
+
         {isWhatsApp ? (
-          <button
+          <motion.button
+            whileHover={{ scale: 1.02 }}
+            whileTap={{ scale: 0.98 }}
             type="button"
-            className="w-full bg-amber-500 text-white py-3 rounded-lg hover:bg-amber-600 transition font-semibold shadow-sm"
             onClick={sendToWhatsapp}
+            className="w-full flex items-center justify-center gap-2 bg-emerald-500 text-white py-3.5 rounded-lg hover:bg-emerald-600 transition-all font-semibold shadow-lg shadow-emerald-500/20"
           >
+            <MessageSquare className="w-5 h-5" />
             Book via WhatsApp
-          </button>
+          </motion.button>
         ) : (
-          <button
+          <motion.button
+            whileHover={{ scale: 1.02 }}
+            whileTap={{ scale: 0.98 }}
             type="submit"
-            className="w-full bg-amber-500 text-white py-3 rounded-lg hover:bg-amber-600 transition font-semibold shadow-sm"
+            className="w-full flex items-center justify-center gap-2 bg-emerald-500 text-white py-3.5 rounded-lg hover:bg-emerald-600 transition-all font-semibold shadow-lg shadow-emerald-500/20"
           >
+            <Send className="w-5 h-5" />
             Book Appointment
-          </button>
+          </motion.button>
         )}
       </form>
 
-      {status && <p className="mt-4 text-center text-stone-600">{status}</p>}
+      {status && <p className="mt-4 text-center text-sm text-emerald-700">{status}</p>}
     </div>
   );
 }
