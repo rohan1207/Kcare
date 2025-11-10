@@ -32,6 +32,7 @@ import BlogDetailPage from "./pages/BlogDetailPage";
 import GalleryPage from "./pages/Gallery";
 import FounderDetail from "./pages/FounderDetail";
 import RecognitionPage from "./pages/Recognition";
+import TestimonialsPage from "./pages/TestimonialsPage";
 
 export default function App() {
   return (
@@ -84,6 +85,7 @@ function AppInner() {
           <Route path="/blogs" element={<BlogsPage />} />
           <Route path="/blogs/:blogId" element={<BlogDetailPage />} />
           <Route path="/gallery" element={<GalleryPage />} />
+          <Route path="/testimonials" element={<TestimonialsPage />} />
           <Route path="/recognition" element={<RecognitionPage />} />
           <Route path="/founders/:slug" element={<FounderDetail />} />
         </Routes>

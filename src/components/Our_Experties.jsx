@@ -42,13 +42,23 @@ const ExpertiseCards = () => {
       image:
         "/gastro_intestinal.jpg",
       color: "emerald"
+    },
+    {
+      id: 5,
+      title: "Proctoscopy",
+      subtitle: "",
+      description:
+        "A safe and precise diagnostic procedure to examine the rectum and anal canal for conditions like hemorrhoids, fissures, and other rectal disorders.",
+      image:
+        "/gastro_intestinal.jpg",
+      color: "teal"
     }
   ];
 
   const getCardWidth = (index) => {
-    if (hoveredIndex === null) return "25%";
+    if (hoveredIndex === null) return "20%";
     if (hoveredIndex === index) return "52%";
-    return "16%";
+    return "12%";
   };
 
   return (
@@ -120,9 +130,11 @@ const ExpertiseCards = () => {
                   <h3 className="text-white text-3xl font-light leading-tight mb-1">
                     {card.title}
                   </h3>
-                  <h3 className="text-white text-3xl font-medium leading-tight mb-6">
-                    {card.subtitle}
-                  </h3>
+                  {card.subtitle && (
+                    <h3 className="text-white text-3xl font-medium leading-tight mb-6">
+                      {card.subtitle}
+                    </h3>
+                  )}
 
                   {/* Description - Fade only, reserve space to avoid bounce */}
                   <div className="relative min-h-[140px]">
@@ -139,14 +151,6 @@ const ExpertiseCards = () => {
                           <p className="text-white/90 text-lg font-light leading-relaxed mb-6 max-w-md">
                             {card.description}
                           </p>
-
-                          <motion.button
-                            className="bg-turquoise-400 hover:bg-turquoise-300 text-stone-900 font-semibold px-8 py-3 rounded-full transition-colors w-fit shadow-md shadow-turquoise-900/20"
-                            whileHover={{ scale: 1.05 }}
-                            whileTap={{ scale: 0.95 }}
-                          >
-                            Learn more
-                          </motion.button>
                         </motion.div>
                       )}
                     </AnimatePresence>

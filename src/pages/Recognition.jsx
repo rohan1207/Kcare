@@ -1,58 +1,69 @@
 import React from "react";
 import { motion } from "framer-motion";
-import { Award, Newspaper, CheckCircle } from "lucide-react";
+import { Award, Newspaper, CheckCircle, Radio, FileText } from "lucide-react";
 
 const Blur = () => (
   <>
-    <div className="absolute top-0 right-0 -z-10 h-[700px] w-[600px] rounded-full bg-gradient-to-br from-emerald-50 to-sky-50/70 blur-3xl opacity-80" />
-    <div className="absolute bottom-0 left-0 -z-10 h-[600px] w-[600px] rounded-full bg-gradient-to-tr from-blue-50 to-emerald-50/70 blur-3xl opacity-60" />
+    <div className="absolute top-0 right-0 -z-10 h-[700px] w-[600px] rounded-full bg-gradient-to-br from-teal-50 to-sky-50/70 blur-3xl opacity-80" />
+    <div className="absolute bottom-0 left-0 -z-10 h-[600px] w-[600px] rounded-full bg-gradient-to-tr from-blue-50 to-teal-50/70 blur-3xl opacity-60" />
   </>
 );
 
 const recognitions = [
   {
     id: 1,
-    type: "Award",
-    title: "Best Surgical Practice in Pune 2024",
+    type: "Article Publication",
+    title: "Preventive Measures to Promote Healthy Gut in 2024",
     description:
-      "Honored by the Pune Medical Association for our outstanding commitment to patient care, surgical innovation, and clinical excellence.",
-    date: "October 15, 2024",
+      "Published article focusing on preventive healthcare strategies and measures to maintain optimal gut health and digestive wellness.",
+    date: "2024",
     image: "/blog2_2.jpg",
-    source: "Pune Medical Association",
-    icon: Award,
+    source: "India TV",
+    icon: FileText,
   },
   {
     id: 2,
-    type: "In the News",
-    title: "Pioneering Robotic Surgery for Complex Cases",
+    type: "Article Publication",
+    title: "Red Flags in Constipation – How Early Detection and Treatment Can Aid in Good Bowel Care",
     description:
-      "Featured in the Times of India for successfully performing a groundbreaking robotic-assisted surgery, reducing patient recovery time by 70%.",
-    date: "September 5, 2024",
+      "Comprehensive article discussing warning signs of serious constipation, emphasizing the importance of early detection and timely treatment for maintaining bowel health.",
+    date: "2024",
     image: "recognition2.png",
-    source: "Times of India",
-    icon: Newspaper,
+    source: "India TV",
+    icon: FileText,
   },
   {
     id: 3,
-    type: "Certification",
-    title: "NABH Accreditation",
+    type: "Article Publication",
+    title: "Navigating Red Flags – Recognizing Common Symptoms and Signs of Crohn's and Colitis",
     description:
-      "Achieved full accreditation from the National Accreditation Board for Hospitals & Healthcare Providers for the highest standards in quality and patient safety.",
-    date: "August 20, 2024",
+      "In-depth article providing insights into identifying critical symptoms and warning signs of inflammatory bowel diseases including Crohn's disease and ulcerative colitis.",
+    date: "2024",
     image: "recognition3.png",
-    source: "NABH India",
-    icon: CheckCircle,
+    source: "HealthSite.com",
+    icon: FileText,
   },
   {
     id: 4,
-    type: "Award",
-    title: "Excellence in Laparoscopic Surgery",
+    type: "Article Publication",
+    title: "Causes of Abdominal Pain and Inflammation in Females",
     description:
-      "Dr. Pramod Kadam was recognized for his exceptional skill and contribution to the field of minimally invasive surgery.",
-    date: "June 12, 2024",
+      "Expert analysis of various causes of abdominal pain and inflammation specific to female patients, providing valuable diagnostic and treatment insights.",
+    date: "2024",
     image: "recognition4.png",
-    source: "Indian Association of Gastrointestinal Endo-Surgeons",
-    icon: Award,
+    source: "HealthSite.com",
+    icon: FileText,
+  },
+  {
+    id: 5,
+    type: "Radio Program",
+    title: "Stomach Pain & Digestive Health",
+    description:
+      "Special phone-in program on Hello Doctor Radio, addressing patient queries and concerns about stomach pain, digestive health, and gastrointestinal wellness.",
+    date: "2024",
+    image: "/blog2_2.jpg",
+    source: "Hello Doctor Radio",
+    icon: Radio,
   },
 ];
 
@@ -76,9 +87,9 @@ const RecognitionPage = () => {
         transition={{ duration: 0.8 }}
         className="relative bg-gradient-to-br from-turquoise-600 via-turquoise-700 to-turquoise-900  text-white overflow-hidden pt-32 pb-24 sm:pt-40 sm:pb-32"
       >
-        <div className="absolute top-0 right-0 w-40 h-40 bg-emerald-400/20 rounded-full blur-3xl" />
-        <div className="absolute bottom-0 left-0 w-40 h-40 bg-emerald-500/10 rounded-full blur-3xl" />
-        <div className="absolute inset-0 bg-gradient-to-br from-emerald-600/10 to-transparent mix-blend-overlay" />
+        <div className="absolute top-0 right-0 w-40 h-40 bg-teal-400/20 rounded-full blur-3xl" />
+        <div className="absolute bottom-0 left-0 w-40 h-40 bg-teal-500/10 rounded-full blur-3xl" />
+        <div className="absolute inset-0 bg-gradient-to-br from-teal-600/10 to-transparent mix-blend-overlay" />
 
         <div className="relative max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
           <motion.h1
@@ -88,8 +99,8 @@ const RecognitionPage = () => {
             className="text-4xl md:text-6xl font-light tracking-tight"
           >
             Recognitions{" "}
-            <span className="font-serif italic text-emerald-400">&</span>{" "}
-            <span className="font-medium">Achievements</span>
+            <span className="font-serif italic text-teal-400">&</span>{" "}
+            <span className="font-medium">Article Publications</span>
           </motion.h1>
           <motion.p
             initial={{ y: 20, opacity: 0 }}
@@ -97,8 +108,7 @@ const RecognitionPage = () => {
             transition={{ delay: 0.4, type: "spring" }}
             className="mt-4 text-lg md:text-xl max-w-3xl mx-auto text-white/90 font-light leading-relaxed"
           >
-            Our commitment to excellence, recognized by leading institutions and
-            publications.
+            Our expertise and insights featured in leading publications and media platforms.
           </motion.p>
         </div>
       </motion.div>
@@ -113,7 +123,7 @@ const RecognitionPage = () => {
               initial="offscreen"
               whileInView="onscreen"
               viewport={{ once: true, amount: 0.3 }}
-              className="bg-white/90 backdrop-blur-sm rounded-[2rem] shadow-xl overflow-hidden group ring-1 ring-emerald-100/80 hover:shadow-2xl hover:-translate-y-1 transition-all duration-300"
+              className="bg-white/90 backdrop-blur-sm rounded-[2rem] shadow-xl overflow-hidden group ring-1 ring-teal-100/80 hover:shadow-2xl hover:-translate-y-1 transition-all duration-300"
             >
               <div className="relative">
                 <img
@@ -123,14 +133,14 @@ const RecognitionPage = () => {
                 />
                 <div className="absolute inset-0 bg-gradient-to-t from-black/70 to-transparent"></div>
                 <div className="absolute top-4 right-4">
-                  <span className="inline-flex items-center gap-2 rounded-full bg-emerald-400/100 px-3 py-1 text-sm font-medium text-white ring-1 ring-emerald-400/30 backdrop-blur-sm">
+                  <span className="inline-flex items-center gap-2 rounded-full bg-teal-400/100 px-3 py-1 text-sm font-medium text-white ring-1 ring-teal-400/30 backdrop-blur-sm">
                     <item.icon className="w-4 h-4" />
                     {item.type}
                   </span>
                 </div>
               </div>
               <div className="p-6 sm:p-8">
-                <p className="text-sm font-medium text-emerald-600 mb-2">
+                <p className="text-sm font-medium text-teal-600 mb-2">
                   {item.source}
                 </p>
                 <h2 className="text-2xl font-light text-stone-900 mb-3 leading-tight">

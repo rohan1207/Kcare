@@ -66,7 +66,7 @@ const ScrollStatsOverlay = () => {
   }, [hasAnimated]);
 
   const animateNumbers = () => {
-    const finalValues = [98, 65, 90, 75];
+    const finalValues = [99, 95, 90, 95];
     const duration = 2000; // 2 seconds
     const steps = 60;
     const stepDuration = duration / steps;
@@ -87,14 +87,14 @@ const ScrollStatsOverlay = () => {
 
   const statItems = [
     {
-      percentage: '98%',
-      value: 98,
+      percentage: '99%',
+      value: 99,
       description: 'Successful outcomes in robotic and laparoscopic procedures',
       gradient: ['#10b981', '#14b8a6'], // emerald to teal
     },
     {
-      percentage: '65%',
-      value: 65,
+      percentage: '95%',
+      value: 95,
       description: 'Faster recovery compared to traditional open surgery',
       gradient: ['#60a5fa', '#3b82f6'], // blue
     },
@@ -105,8 +105,8 @@ const ScrollStatsOverlay = () => {
       gradient: ['#059669', '#0f766e'], // emerald to teal dark
     },
     {
-      percentage: '75%',
-      value: 75,
+      percentage: '95%',
+      value: 95,
       description: 'Shorter hospital stays due to minimally invasive techniques',
       gradient: ['#06b6d4', '#2563eb'], // cyan to blue
     },
@@ -144,10 +144,10 @@ const ScrollStatsOverlay = () => {
               <h2 className="text-5xl md:text-6xl italic font-light text-gray-700 mb-8">
                 Precision & innovation
               </h2>
-              <p className="text-lg text-gray-600 leading-relaxed">
+              <p className="text-md text-gray-600 leading-relaxed">
                 Our advanced robotic and laparoscopic systems enable surgeons to perform
                 complex procedures with minimal incisions, ensuring faster recovery,
-                <br />
+                
                 reduced pain, and exceptional surgical accuracy.
               </p>
             </div>
@@ -208,7 +208,7 @@ const ScrollStatsOverlay = () => {
                   </div>
 
                   {/* Description */}
-                  <p className="text-center text-sm text-gray-600 leading-relaxed max-w-xs">
+                  <p className="text-center text-sm text-gray-600 leading-relaxed max-w-[180px] min-h-[44px]">
                     {stat.description}
                   </p>
                 </div>

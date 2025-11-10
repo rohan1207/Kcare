@@ -8,19 +8,19 @@ import { Link } from "react-router-dom";
 const slides = [
   {
     image:
-      "https://images.unsplash.com/photo-1576091160550-2173dba999ef?q=80&w=2070&auto=format&fit=crop",
+      "https://images.unsplash.com/photo-1631815589968-fdb09a223b1e?q=80&w=2071&auto=format&fit=crop",
     feature: "PRECISION-DRIVEN ROBOTIC SURGERY",
     color: "#7dd3c0",
   },
   {
     image:
-      "https://images.unsplash.com/photo-1579684385127-1ef15d508118?q=80&w=2080&auto=format&fit=crop",
+      "https://images.unsplash.com/photo-1551076805-e1869033e561?q=80&w=2080&auto=format&fit=crop",
     feature: "MINIMALLY INVASIVE • MAXIMUM CARE",
     color: "#ffd97d",
   },
   {
     image:
-      "https://images.unsplash.com/photo-1666214280557-f1b5022eb634?q=80&w=2070&auto=format&fit=crop",
+      "https://images.unsplash.com/photo-1516549655169-df83a0774514?q=80&w=2070&auto=format&fit=crop",
     feature: "FASTER RECOVERY THROUGH MODERN LAPAROSCOPY",
     color: "#c5b3ff",
   },
@@ -51,7 +51,7 @@ const WAVE_DATA = [
   { image: slides[2].image, feature: slides[2].feature, color: COLORS[2] },
   {
     image:
-      "https://images.unsplash.com/photo-1519494080410-f9aa76cb4283?q=80&w=2080&auto=format&fit=crop",
+      "https://images.unsplash.com/photo-1582750433449-648ed127bb54?q=80&w=2087&auto=format&fit=crop",
     feature: "ADVANCED CARE • HUMAN TOUCH",
     color: COLORS[3],
   },
@@ -321,7 +321,7 @@ const Hero = () => {
       <div className="absolute inset-0 bg-[#041f1c]/30 pointer-events-none z-0" />
 
       {/* Content */}
-      <div className="relative z-10 flex flex-col justify-center h-full px-8 md:px-24">
+      <div className="relative z-30 flex flex-col justify-center h-full px-8 md:px-24 pointer-events-none">
         <motion.h1
           key={index + "title"}
           initial={{ opacity: 0, y: 30 }}
@@ -341,7 +341,7 @@ const Hero = () => {
         >
           Delivering precision-driven care with compassion and excellence.
         </motion.p>
-        <div className="mt-10 flex gap-4">
+        <div className="mt-10 flex gap-4 pointer-events-auto">
           <button 
             onClick={openModal}
             className="cursor-pointer bg-turquoise-400 hover:bg-turquoise-300 text-stone-900 font-semibold px-8 py-3 rounded-full transition-colors"
@@ -359,7 +359,7 @@ const Hero = () => {
       {/* Progressive Wavy Lines Layer (interactive) */}
       <div
         ref={wavesRef}
-        className="pointer-events-auto absolute bottom-0 left-0 right-0 h-56 md:h-64 z-10"
+        className="pointer-events-auto absolute bottom-0 left-0 right-0 h-56 md:h-64 z-20"
       >
         <svg
           ref={svgRef}

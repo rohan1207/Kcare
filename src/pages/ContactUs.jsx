@@ -52,8 +52,7 @@ export default function ContactUs() {
             transition={{ delay: 0.4, type: "spring" }}
             className="mt-4 text-lg md:text-xl max-w-3xl mx-auto text-white/90 font-light leading-relaxed"
           >
-            We're here to help. Reach out to us for appointments, inquiries, or
-            any support you may need.
+            We're here to help. Reach out to us for appointments, inquiries, or any support you may need.
           </motion.p>
         </div>
       </motion.div>
@@ -72,22 +71,42 @@ export default function ContactUs() {
       {/* Main Content */}
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-16 md:py-24">
         <div className="grid lg:grid-cols-5 gap-12">
-          {/* Contact Form */}
-          <motion.div
-            variants={fadeInUp}
-            initial="hidden"
-            whileInView="visible"
-            viewport={{ once: true, amount: 0.3 }}
-            className="lg:col-span-3 bg-white/90 backdrop-blur-sm rounded-[2rem] p-8 shadow-lg ring-1 ring-turquoise-100/80"
-          >
-            <h2 className="text-3xl font-light text-stone-900 mb-1">
-              Schedule an <span className="font-medium">Appointment</span>
-            </h2>
-            <p className="text-stone-600/90 mb-6 font-light">
-              Fill out the form below to book your consultation.
-            </p>
-            <ContactForm />
-          </motion.div>
+          {/* Contact Forms */}
+          <div className="lg:col-span-3 space-y-8">
+            {/* Enquiry Form */}
+            <motion.div
+              variants={fadeInUp}
+              initial="hidden"
+              whileInView="visible"
+              viewport={{ once: true, amount: 0.3 }}
+              className="bg-white/90 backdrop-blur-sm rounded-[2rem] p-8 shadow-lg ring-1 ring-turquoise-100/80"
+            >
+              <h2 className="text-3xl font-light text-stone-900 mb-1">
+                General <span className="font-medium">Enquiry</span>
+              </h2>
+              <p className="text-stone-600/90 mb-6 font-light">
+                Have a question? Send us your enquiry and we'll get back to you.
+              </p>
+              <ContactForm formType="enquiry" />
+            </motion.div>
+
+            {/* Appointment Form */}
+            <motion.div
+              variants={fadeInUp}
+              initial="hidden"
+              whileInView="visible"
+              viewport={{ once: true, amount: 0.3 }}
+              className="bg-white/90 backdrop-blur-sm rounded-[2rem] p-8 shadow-lg ring-1 ring-turquoise-100/80"
+            >
+              <h2 className="text-3xl font-light text-stone-900 mb-1">
+                Schedule an <span className="font-medium">Appointment</span>
+              </h2>
+              <p className="text-stone-600/90 mb-6 font-light">
+                Fill out the form below to book your consultation.
+              </p>
+              <ContactForm formType="appointment" />
+            </motion.div>
+          </div>
 
           {/* Map and Hours */}
           <motion.div
@@ -97,9 +116,9 @@ export default function ContactUs() {
             viewport={{ once: true, amount: 0.3 }}
             className="lg:col-span-2 space-y-8"
           >
-            <div className="bg-white/90 backdrop-blur-sm rounded-[2rem] p-8 shadow-lg ring-1 ring-emerald-100/80">
+            <div className="bg-white/90 backdrop-blur-sm rounded-[2rem] p-8 shadow-lg ring-1 ring-turquoise-100/80">
               <h3 className="text-2xl font-light text-stone-900 mb-4 flex items-center gap-3">
-                <MapPin className="w-6 h-6 text-emerald-500" />
+                <MapPin className="w-6 h-6 text-turquoise-500" />
                 Our Location
               </h3>
               <div
@@ -113,7 +132,7 @@ export default function ContactUs() {
               >
                 {isMapLoading && (
                   <div className="absolute inset-0 flex items-center justify-center bg-slate-100 z-10">
-                    <div className="w-8 h-8 border-2 border-emerald-400 border-t-transparent rounded-full animate-spin"></div>
+                    <div className="w-8 h-8 border-2 border-turquoise-400 border-t-transparent rounded-full animate-spin"></div>
                   </div>
                 )}
                 <div className="absolute inset-0 bg-black/10 group-hover:bg-black/20 transition-all duration-300"></div>
@@ -129,29 +148,27 @@ export default function ContactUs() {
               </div>
             </div>
 
-            <div className="bg-white/90 backdrop-blur-sm rounded-[2rem] p-8 shadow-lg ring-1 ring-emerald-100/80">
+            <div className="bg-white/90 backdrop-blur-sm rounded-[2rem] p-8 shadow-lg ring-1 ring-turquoise-100/80">
               <h3 className="text-2xl font-light text-stone-900 mb-4 flex items-center gap-3">
-                <Clock className="w-6 h-6 text-emerald-500" />
-                Opening Hours
+                <Clock className="w-6 h-6 text-turquoise-500" />
+                Clinic Timings
               </h3>
               <div className="space-y-3 text-stone-600 font-light">
                 <div className="flex justify-between items-center border-b border-stone-200/70 pb-2">
-                  <span>Mon - Fri</span>
-                  <span className="font-medium text-stone-800">
-                    11:00 am – 7:00 pm
-                  </span>
-                </div>
-                <div className="flex justify-between items-center border-b border-stone-200/70 pb-2">
-                  <span>Saturday</span>
-                  <span className="font-medium text-stone-800">
-                    11:00 am – 3:00 pm
-                  </span>
+                  <span>Mon - Sat</span>
+                  <div className="text-right">
+                    <div className="font-medium text-stone-800">10:00 am – 3:00 pm</div>
+                    <div className="font-medium text-stone-800">5:00 pm – 11:00 pm</div>
+                  </div>
                 </div>
                 <div className="flex justify-between items-center">
                   <span>Sunday</span>
-                  <span className="font-medium text-red-500 bg-red-50 px-2 py-1 rounded-full text-xs">
-                    Closed
+                  <span className="font-medium text-stone-800">
+                    4:00 pm – 8:00 pm
                   </span>
+                </div>
+                <div className="mt-2 text-xs text-stone-500 italic">
+                  (By prior appointments)
                 </div>
               </div>
             </div>

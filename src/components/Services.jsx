@@ -5,7 +5,23 @@ import { Link } from "react-router-dom";
 
 const SERVICES = [
   {
-    title: "Laparoscopic Gallbladder Surgery",
+    title: "Piles (Haemorrhoids)",
+    image: "/piles.jpg",
+    description:
+      "Advanced laser and surgical hemorrhoid treatments for pain-free recovery.",
+    category: "Proctology",
+    path: "/services/piles-treatment",
+  },
+  {
+    title: "Hernia",
+    image: "/hernia.webp",
+    description:
+      "Precision robotic-assisted hernia surgery offering faster recovery and minimal discomfort.",
+    category: "General Surgery",
+    path: "/services/robotic-hernia-repair",
+  },
+  {
+    title: "Gallbladder Stones",
     image: "/gall_bladder.jpg",
     description:
       "Advanced laparoscopic gallbladder removal ensuring quick recovery and minimal scarring.",
@@ -13,7 +29,7 @@ const SERVICES = [
     path: "/services/gall-bladder-removal",
   },
   {
-    title: "Laparoscopic Appendectomy",
+    title: "Appendix",
     image: "/appendix.jpg",
     description:
       "Minimally invasive appendix removal with fast healing and reduced postoperative pain.",
@@ -21,12 +37,60 @@ const SERVICES = [
     path: "/services/laparoscopic-appendectomy",
   },
   {
-    title: "Robotic Hernia Repair",
-    image: "/hernia.webp",
+    title: "Thyroid",
+    image: "/thyroid.jpg",
     description:
-      "Precision robotic-assisted hernia surgery offering faster recovery and minimal discomfort.",
+      "State-of-the-art thyroid surgery using advanced and safe techniques for precise outcomes.",
+    category: "Endocrine",
+    path: "/services/advanced-thyroid-surgery",
+  },
+  {
+    title: "Breast",
+    image: "/breast.jpg",
+    description:
+      "Comprehensive breast procedures with advanced surgical precision and care.",
+    category: "Oncology",
+    path: "/services/breast-surgery",
+  },
+  {
+    title: "Diabetic Foot",
+    image: "/diabetic_foot.jpg",
+    description:
+      "Comprehensive diabetic foot management for faster healing and infection prevention.",
+    category: "Specialized Care",
+    path: "/services/diabetic-foot-care",
+  },
+  {
+    title: "Gastrointestinal Surgeries",
+    image: "/gastro_intestinal.jpg",
+    description:
+      "Comprehensive gastrointestinal surgical care using precision techniques for optimal outcomes.",
     category: "General Surgery",
-    path: "/services/robotic-hernia-repair",
+    path: "/services/gastrointestinal-surgeries",
+  },
+  {
+    title: "Burn Injuries",
+    image: "/breast.jpg",
+    description:
+      "Expert burn injury treatment with advanced care and skin grafting techniques.",
+    category: "Specialized Care",
+    path: "/services/burn-injuries",
+  },
+  {
+    title: "Fistula Treatment",
+    image: "/fistula.jpg",
+    description:
+      "Minimally invasive fistula surgery ensuring complete healing and minimal recurrence.",
+    category: "Proctology",
+    path: "/services/fistula-treatment",
+  },
+  {
+    title: "Anal Fissure Treatment",
+    image: "/fissure.jpg",
+    description:
+      "Modern laser and surgical treatments for fissures with minimal discomfort and fast recovery.",
+    category: "Proctology",
+    path: "/services/laser-fissure-treatment",
   },
   {
     title: "Hydrocele Surgery",
@@ -35,30 +99,6 @@ const SERVICES = [
       "Safe and effective hydrocele correction with minimal invasive techniques.",
     category: "Urology",
     path: "/services/hydrocele-surgery",
-  },
-  {
-    title: "Diabetic Foot Care",
-    image: "/diabetic_foot.jpg",
-    description:
-      "Comprehensive diabetic foot management for faster healing and infection prevention.",
-    category: "Specialized Care",
-    path: "/services/diabetic-foot-care",
-  },
-  {
-    title: "Breast Surgery",
-    image: "/breast.jpg",
-    description:
-      "Comprehensive breast procedures with advanced surgical precision and care.",
-    category: "Oncology",
-    path: "/services/breast-surgery",
-  },
-  {
-    title: "Advanced Thyroid Surgery",
-    image: "/thyroid.jpg",
-    description:
-      "State-of-the-art thyroid surgery using advanced and safe techniques for precise outcomes.",
-    category: "Endocrine",
-    path: "/services/advanced-thyroid-surgery",
   },
   {
     title: "Pilonidal Sinus Care",
@@ -100,30 +140,6 @@ const SERVICES = [
     category: "General Surgery",
     path: "/services/cyst-removal",
   },
-  {
-    title: "Anal Fissure Treatment",
-    image: "/fissure.jpg",
-    description:
-      "Modern laser and surgical treatments for fissures with minimal discomfort and fast recovery.",
-    category: "Proctology",
-    path: "/services/laser-fissure-treatment",
-  },
-  {
-    title: "Piles Treatment",
-    image: "/piles.jpg",
-    description:
-      "Advanced laser and surgical hemorrhoid treatments for pain-free recovery.",
-    category: "Proctology",
-    path: "/services/piles-treatment",
-  },
-  {
-    title: "Fistula Treatment",
-    image: "/fistula.jpg",
-    description:
-      "Minimally invasive fistula surgery ensuring complete healing and minimal recurrence.",
-    category: "Proctology",
-    path: "/services/fistula-treatment",
-  },
 ];
 
 function ServiceCard({ service, index }) {
@@ -133,15 +149,15 @@ function ServiceCard({ service, index }) {
       animate={{ opacity: 1, y: 0 }}
       transition={{
         duration: 0.6,
-        delay: index * 0.15,
+        delay: index * 0.1,
         type: "spring",
         stiffness: 50,
         damping: 15,
       }}
-      className="group relative overflow-hidden rounded-[2rem] bg-gradient-to-br from-slate-900 to-slate-800 shadow-xl ring-1 ring-slate-800/5 transition-all duration-500 hover:shadow-2xl hover:-translate-y-2"
+      className="group relative overflow-hidden rounded-2xl bg-gradient-to-br from-slate-900 to-slate-800 shadow-lg ring-1 ring-slate-800/5 transition-all duration-500 hover:shadow-xl hover:-translate-y-1"
     >
       {/* Image with gradient */}
-      <div className="relative aspect-[4/3]">
+      <div className="relative aspect-[5/3]">
         <img
           src={service.image}
           alt={service.title}
@@ -152,31 +168,20 @@ function ServiceCard({ service, index }) {
       </div>
 
       {/* Content container */}
-      <div className="absolute inset-0 p-5 pr-20 flex flex-col justify-end">
+      <div className="absolute inset-0 p-4 pr-16 flex flex-col justify-end">
         {/* Default state content */}
-  <div className="transition-all duration-300 ease-in-out group-hover:opacity-0 group-hover:-translate-y-12">
-          <span className="inline-flex rounded-full bg-turquoise-500/90 text-white backdrop-blur-md px-3 py-1 text-[11px] font-medium tracking-wide mb-3 shadow-lg shadow-turquoise-500/20">
-            {service.category}
-          </span>
-          <h3 className="text-white text-[1.35rem] font-light tracking-tight drop-shadow-lg">
+        <div className="transition-all duration-300 ease-in-out group-hover:opacity-0 group-hover:-translate-y-8">
+          <h3 className="text-white text-xl font-semibold tracking-tight drop-shadow-lg leading-snug">
             {service.title}
           </h3>
         </div>
 
         {/* Hover state content */}
-  <div className="absolute inset-0 p-5 flex flex-col justify-end opacity-0 transition-all duration-300 ease-in-out group-hover:opacity-100 group-hover:-translate-y-12">
-          <div className="flex items-center gap-2 text-sm mb-3">
-            <span className="inline-flex rounded-full bg-turquoise-500/90 text-white backdrop-blur-md px-3 py-1 font-medium tracking-wide shadow-lg shadow-turquoise-500/20">
-              {service.category}
-            </span>
-            <span className="text-turquoise-300 font-medium tracking-wide">
-              {service.duration}
-            </span>
-          </div>
-          <h3 className="text-white text-[1.35rem] font-light tracking-tight mb-2.5">
+        <div className="absolute inset-0 p-4 flex flex-col justify-end opacity-0 transition-all duration-300 ease-in-out group-hover:opacity-100 group-hover:-translate-y-8">
+          <h3 className="text-white text-xl font-semibold tracking-tight mb-2 leading-snug">
             {service.title}
           </h3>
-          <p className="text-slate-300/90 leading-relaxed line-clamp-2 text-sm mb-4 font-light">
+          <p className="text-white leading-relaxed line-clamp-2 text-sm ">
             {service.description}
           </p>
         </div>
@@ -185,13 +190,13 @@ function ServiceCard({ service, index }) {
         <Link
           to={service.path}
           aria-label={`Learn more about ${service.title}`}
-          className="absolute bottom-5 right-5 inline-flex items-center justify-center gap-2 h-12 w-12 rounded-full bg-white group-hover:bg-turquoise-400 text-slate-900 group-hover:text-white shadow-lg overflow-hidden px-0 transition-all duration-300 ease-out group-hover:w-40 group-hover:px-4"
+          className="absolute bottom-4 right-4 inline-flex items-center justify-center gap-2 h-10 w-10 rounded-full bg-white group-hover:bg-turquoise-400 text-slate-900 group-hover:text-white shadow-lg overflow-hidden px-0 transition-all duration-300 ease-out group-hover:w-32 group-hover:px-3"
         >
-          <span className="mr-1 text-xs font-medium opacity-0 w-0 overflow-hidden transition-all duration-300 group-hover:opacity-100 group-hover:w-auto">
+          <span className="mr-1 text-sm font-medium opacity-0 w-0 overflow-hidden transition-all duration-300 group-hover:opacity-100 group-hover:w-auto">
             Learn more
           </span>
           <ArrowRight
-            className="h-5 w-5 transition-transform duration-300"
+            className="h-4 w-4 transition-transform duration-300"
             strokeWidth={2.5}
           />
         </Link>
@@ -201,7 +206,7 @@ function ServiceCard({ service, index }) {
 }
 
 export default function Services() {
-  const [visibleRows, setVisibleRows] = useState(2);
+  const [visibleRows, setVisibleRows] = useState(3);
 
   const ITEMS_PER_ROW = 3;
   const visibleServices = SERVICES.slice(0, visibleRows * ITEMS_PER_ROW);
@@ -245,8 +250,8 @@ export default function Services() {
           </p>
         </motion.div>
 
-  {/* Cards Grid - 3 per row (smaller gaps) */}
-  <div className="grid gap-6 md:gap-8 grid-cols-1 md:grid-cols-2 lg:grid-cols-3 mb-16">
+  {/* Cards Grid - 3 per row (smaller gaps and cards) */}
+  <div className="grid gap-5 md:gap-6 grid-cols-1 md:grid-cols-2 lg:grid-cols-3 mb-12">
           <AnimatePresence mode="wait">
             {visibleServices.map((service, index) => (
               <ServiceCard

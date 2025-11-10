@@ -6,24 +6,35 @@ import { useAppointmentModal } from "../contexts/AppointmentModalContext";
 const STATS = [
   {
     icon: <Award className="h-5 w-5 text-turquoise-500" />,
-    label: "10+ Years Experience",
+    label: "12+ Years Experience",
   },
   {
     icon: <Stethoscope className="h-5 w-5 text-turquoise-500" />,
-    label: "Board-Certified",
+    label: "MBBS, DNB General Surgery",
   },
   {
     icon: <Zap className="h-5 w-5 text-turquoise-500" />,
-    label: "Robotic & Laser Expert",
+    label: "Senior Surgeon at Ruby Hall Clinic",
   },
 ];
 
 const SPECIALITIES = [
   "Hernia Repair",
   "Gallbladder Surgery",
-  "Advanced Laparoscopy",
-  "Laser Proctology",
+  "Appendix Surgery",
+  "Laser Piles, Fissure & Fistula",
+  "Proctoscopy",
+  "Pilonidal Sinus, Rectal Prolapse Surgery",
+  "Intestinal Surgeries",
   "Diabetic Foot Care",
+  "Breast Surgery",
+  "Thyroid Surgery",
+  "Burn Injuries & Skin Grafting",
+  "Stapler Circumcision",
+  "Rafaelo Surgeries",
+  "Hydrocele, Torsion Testis & Ovaries",
+  "Lymph Nodes, Lipoma, Cyst, Abscess",
+  "Benign & Cancer Surgeries",
 ];
 
 const MainFounder = () => {
@@ -80,18 +91,26 @@ const MainFounder = () => {
           {/* Text Content - 3 columns */}
           <div className="lg:col-span-3 p-8 sm:p-10 lg:p-12">
             <motion.div variants={itemVariants}>
-              <span className="inline-block text-sm font-semibold text-turquoise-600 tracking-wide uppercase bg-turquoise-50 px-3 py-1 rounded-full">
+              <span className="inline-block px-4 py-1.5 bg-gradient-to-r from-turquoise-50 to-sky-50 rounded-full text-turquoise-700 font-medium text-sm border border-turquoise-100">
                 Meet Our Founder
               </span>
               <h2 className="mt-4 text-3xl sm:text-4xl lg:text-5xl font-light tracking-tight text-stone-900 leading-tight">
-                Dr. Pramod{" "}
+                Dr. Pramod Janardhan{" "}
                 <span className="font-semibold bg-gradient-to-r from-turquoise-600 to-turquoise-500 bg-clip-text text-transparent">
                   Kadam
                 </span>
               </h2>
-              <p className="mt-4 text-base sm:text-lg text-stone-600 leading-relaxed max-w-2xl">
-                Board-certified general surgeon with 10+ years of experience in
-                advanced surgical procedures and exceptional patient care.
+              <p className="mt-2 text-base sm:text-lg text-turquoise-600 font-medium">
+                MBBS, DNB General Surgery
+              </p>
+              <p className="mt-2 text-base sm:text-lg text-stone-700 leading-relaxed">
+                Advanced Robotic, Laparoscopic & Laser Surgery
+              </p>
+              <p className="mt-2 text-sm text-stone-600">
+                MMC Registration No. – 2007124223
+              </p>
+              <p className="mt-3 text-base text-stone-600 leading-relaxed max-w-2xl">
+                Senior Surgeon at Ruby Hall Clinic, Pune with 12+ years of experience in advanced surgical procedures.
               </p>
             </motion.div>
 
@@ -142,12 +161,6 @@ const MainFounder = () => {
                 Learn More
                 <ArrowRight className="h-4 w-4 transform group-hover:translate-x-1 transition-transform" />
               </Link>
-              <button
-                onClick={openModal}
-                className="inline-flex items-center gap-2 px-6 py-2.5 border-2 border-turquoise-200 text-turquoise-700 hover:bg-turquoise-50 text-sm font-semibold rounded-full transition-all duration-300"
-              >
-                Book Consultation
-              </button>
             </motion.div>
           </div>
 

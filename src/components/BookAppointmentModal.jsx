@@ -140,31 +140,31 @@ export default function BookAppointmentModal({ isOpen, onClose }) {
             animate={{ opacity: 1, scale: 1, y: 0 }}
             exit={{ opacity: 0, scale: 0.95, y: 20 }}
             transition={{ type: "spring", duration: 0.5 }}
-            className="fixed inset-0 z-50 flex items-center justify-center p-4 sm:p-6 pointer-events-none overflow-y-auto mt-14"
+            className="fixed inset-0 z-50 flex items-center justify-center p-4 pointer-events-none overflow-y-auto mt-10"
           >
-            <div className="bg-white rounded-2xl shadow-2xl w-full max-w-2xl my-8 pointer-events-auto">
+            <div className="bg-white rounded-2xl shadow-2xl w-full max-w-2xl max-h-[90vh] my-auto pointer-events-auto flex flex-col">
               {/* Header */}
-              <div className="bg-gradient-to-r from-turquoise-500 to-turquoise-600 text-white px-6 py-4 rounded-t-2xl flex items-center justify-between">
+              <div className="bg-gradient-to-r from-turquoise-500 to-turquoise-600 text-white px-5 py-3.5 rounded-t-2xl flex items-center justify-between flex-shrink-0">
                 <div>
-                  <h2 className="text-xl font-semibold">Book Appointment</h2>
+                  <h2 className="text-lg font-semibold">Book Appointment</h2>
                   <p className="text-turquoise-50 text-xs mt-0.5">
                     Schedule your consultation with our experts
                   </p>
                 </div>
                 <button
                   onClick={onClose}
-                  className="text-white hover:bg-white/20 rounded-full p-2 transition-colors flex-shrink-0"
+                  className="text-white hover:bg-white/20 rounded-full p-1.5 transition-colors flex-shrink-0"
                 >
                   <X className="h-5 w-5" />
                 </button>
               </div>
 
               {/* Form */}
-              <form onSubmit={handleSubmit} className="p-5 space-y-4 max-h-[calc(90vh-120px)] overflow-y-auto">
+              <form onSubmit={handleSubmit} className="p-5 space-y-3.5 overflow-y-auto flex-1">
                 {/* Name */}
                 <div>
-                  <label className="flex items-center gap-2 text-sm font-medium text-stone-700 mb-1.5">
-                    <User className="h-4 w-4 text-turquoise-600" />
+                  <label className="flex items-center gap-1.5 text-xs font-medium text-stone-700 mb-1">
+                    <User className="h-3.5 w-3.5 text-turquoise-600" />
                     Full Name <span className="text-red-500">*</span>
                   </label>
                   <input
@@ -173,22 +173,22 @@ export default function BookAppointmentModal({ isOpen, onClose }) {
                     value={formData.name}
                     onChange={handleChange}
                     placeholder="Enter your full name"
-                    className={`w-full px-3.5 py-2.5 rounded-lg border ${
+                    className={`w-full px-3 py-2 rounded-lg border ${
                       errors.name
                         ? "border-red-300 focus:ring-red-500"
                         : "border-stone-300 focus:ring-turquoise-500"
-                    } focus:outline-none focus:ring-2 transition-all text-sm`}
+                    } focus:outline-none focus:ring-1 transition-all text-sm`}
                   />
                   {errors.name && (
-                    <p className="text-red-500 text-xs mt-1">{errors.name}</p>
+                    <p className="text-red-500 text-xs mt-0.5">{errors.name}</p>
                   )}
                 </div>
 
                 {/* Phone & Email */}
-                <div className="grid md:grid-cols-2 gap-4">
+                <div className="grid md:grid-cols-2 gap-3">
                   <div>
-                    <label className="flex items-center gap-2 text-sm font-medium text-stone-700 mb-1.5">
-                      <Phone className="h-4 w-4 text-turquoise-600" />
+                    <label className="flex items-center gap-1.5 text-xs font-medium text-stone-700 mb-1">
+                      <Phone className="h-3.5 w-3.5 text-turquoise-600" />
                       Phone Number <span className="text-red-500">*</span>
                     </label>
                     <input
@@ -197,20 +197,20 @@ export default function BookAppointmentModal({ isOpen, onClose }) {
                       value={formData.phone}
                       onChange={handleChange}
                       placeholder="9876543210"
-                      className={`w-full px-3.5 py-2.5 rounded-lg border ${
+                      className={`w-full px-3 py-2 rounded-lg border ${
                         errors.phone
                           ? "border-red-300 focus:ring-red-500"
                           : "border-stone-300 focus:ring-turquoise-500"
-                      } focus:outline-none focus:ring-2 transition-all text-sm`}
+                      } focus:outline-none focus:ring-1 transition-all text-sm`}
                     />
                     {errors.phone && (
-                      <p className="text-red-500 text-xs mt-1">{errors.phone}</p>
+                      <p className="text-red-500 text-xs mt-0.5">{errors.phone}</p>
                     )}
                   </div>
 
                   <div>
-                    <label className="flex items-center gap-2 text-sm font-medium text-stone-700 mb-1.5">
-                      <Mail className="h-4 w-4 text-turquoise-600" />
+                    <label className="flex items-center gap-1.5 text-xs font-medium text-stone-700 mb-1">
+                      <Mail className="h-3.5 w-3.5 text-turquoise-600" />
                       Email <span className="text-red-500">*</span>
                     </label>
                     <input
@@ -219,33 +219,33 @@ export default function BookAppointmentModal({ isOpen, onClose }) {
                       value={formData.email}
                       onChange={handleChange}
                       placeholder="your@email.com"
-                      className={`w-full px-3.5 py-2.5 rounded-lg border ${
+                      className={`w-full px-3 py-2 rounded-lg border ${
                         errors.email
                           ? "border-red-300 focus:ring-red-500"
                           : "border-stone-300 focus:ring-turquoise-500"
-                      } focus:outline-none focus:ring-2 transition-all text-sm`}
+                      } focus:outline-none focus:ring-1 transition-all text-sm`}
                     />
                     {errors.email && (
-                      <p className="text-red-500 text-xs mt-1">{errors.email}</p>
+                      <p className="text-red-500 text-xs mt-0.5">{errors.email}</p>
                     )}
                   </div>
                 </div>
 
                 {/* Service Selection */}
                 <div>
-                  <label className="flex items-center gap-2 text-sm font-medium text-stone-700 mb-1.5">
-                    <FileText className="h-4 w-4 text-turquoise-600" />
+                  <label className="flex items-center gap-1.5 text-xs font-medium text-stone-700 mb-1">
+                    <FileText className="h-3.5 w-3.5 text-turquoise-600" />
                     Service Required <span className="text-red-500">*</span>
                   </label>
                   <select
                     name="service"
                     value={formData.service}
                     onChange={handleChange}
-                    className={`w-full px-3.5 py-2.5 rounded-lg border ${
+                    className={`w-full px-3 py-2 rounded-lg border ${
                       errors.service
                         ? "border-red-300 focus:ring-red-500"
                         : "border-stone-300 focus:ring-turquoise-500"
-                    } focus:outline-none focus:ring-2 transition-all bg-white text-sm h-11 appearance-none cursor-pointer
+                    } focus:outline-none focus:ring-1 transition-all bg-white text-sm h-10 appearance-none cursor-pointer
                     bg-[url('data:image/svg+xml;charset=UTF-8,%3csvg xmlns=%27http://www.w3.org/2000/svg%27 fill=%27none%27 viewBox=%270 0 20 20%27%3e%3cpath stroke=%27%236b7280%27 stroke-linecap=%27round%27 stroke-linejoin=%27round%27 stroke-width=%271.5%27 d=%27m6 8 4 4 4-4%27/%3e%3c/svg%3e')] 
                     bg-[length:1.25rem] bg-[right_0.5rem_center] bg-no-repeat pr-10`}
                     size="1"
@@ -258,14 +258,14 @@ export default function BookAppointmentModal({ isOpen, onClose }) {
                     ))}
                   </select>
                   {errors.service && (
-                    <p className="text-red-500 text-xs mt-1">{errors.service}</p>
+                    <p className="text-red-500 text-xs mt-0.5">{errors.service}</p>
                   )}
                 </div>
 
                 {/* Other Service Input (conditional) */}
                 {formData.service === "Other (please specify)" && (
                   <div>
-                    <label className="text-sm font-medium text-stone-700 mb-1.5 block">
+                    <label className="text-xs font-medium text-stone-700 mb-1 block">
                       Please specify the service <span className="text-red-500">*</span>
                     </label>
                     <input
@@ -274,23 +274,23 @@ export default function BookAppointmentModal({ isOpen, onClose }) {
                       value={formData.otherService}
                       onChange={handleChange}
                       placeholder="Type your service requirement"
-                      className={`w-full px-3.5 py-2.5 rounded-lg border ${
+                      className={`w-full px-3 py-2 rounded-lg border ${
                         errors.otherService
                           ? "border-red-300 focus:ring-red-500"
                           : "border-stone-300 focus:ring-turquoise-500"
-                      } focus:outline-none focus:ring-2 transition-all text-sm`}
+                      } focus:outline-none focus:ring-1 transition-all text-sm`}
                     />
                     {errors.otherService && (
-                      <p className="text-red-500 text-xs mt-1">{errors.otherService}</p>
+                      <p className="text-red-500 text-xs mt-0.5">{errors.otherService}</p>
                     )}
                   </div>
                 )}
 
                 {/* Date & Time */}
-                <div className="grid md:grid-cols-2 gap-4">
+                <div className="grid md:grid-cols-2 gap-3">
                   <div>
-                    <label className="flex items-center gap-2 text-sm font-medium text-stone-700 mb-1.5">
-                      <Calendar className="h-4 w-4 text-turquoise-600" />
+                    <label className="flex items-center gap-1.5 text-xs font-medium text-stone-700 mb-1">
+                      <Calendar className="h-3.5 w-3.5 text-turquoise-600" />
                       Preferred Date <span className="text-red-500">*</span>
                     </label>
                     <input
@@ -299,23 +299,23 @@ export default function BookAppointmentModal({ isOpen, onClose }) {
                       value={formData.date}
                       onChange={handleChange}
                       min={today}
-                      className={`w-full px-3.5 py-2.5 rounded-lg border ${
+                      className={`w-full px-3 py-2 rounded-lg border ${
                         errors.date
                           ? "border-red-300 focus:ring-red-500"
                           : "border-stone-300 focus:ring-turquoise-500"
-                      } focus:outline-none focus:ring-2 transition-all text-sm cursor-pointer
+                      } focus:outline-none focus:ring-1 transition-all text-sm cursor-pointer
                       [&::-webkit-calendar-picker-indicator]:cursor-pointer
                       [&::-webkit-calendar-picker-indicator]:opacity-70
                       [&::-webkit-calendar-picker-indicator]:hover:opacity-100`}
                     />
                     {errors.date && (
-                      <p className="text-red-500 text-xs mt-1">{errors.date}</p>
+                      <p className="text-red-500 text-xs mt-0.5">{errors.date}</p>
                     )}
                   </div>
 
                   <div>
-                    <label className="flex items-center gap-2 text-sm font-medium text-stone-700 mb-1.5">
-                      <Clock className="h-4 w-4 text-turquoise-600" />
+                    <label className="flex items-center gap-1.5 text-xs font-medium text-stone-700 mb-1">
+                      <Clock className="h-3.5 w-3.5 text-turquoise-600" />
                       Preferred Time <span className="text-red-500">*</span>
                     </label>
                     <input
@@ -323,61 +323,61 @@ export default function BookAppointmentModal({ isOpen, onClose }) {
                       name="time"
                       value={formData.time}
                       onChange={handleChange}
-                      className={`w-full px-3.5 py-2.5 rounded-lg border ${
+                      className={`w-full px-3 py-2 rounded-lg border ${
                         errors.time
                           ? "border-red-300 focus:ring-red-500"
                           : "border-stone-300 focus:ring-turquoise-500"
-                      } focus:outline-none focus:ring-2 transition-all text-sm cursor-pointer
+                      } focus:outline-none focus:ring-1 transition-all text-sm cursor-pointer
                       [&::-webkit-calendar-picker-indicator]:cursor-pointer
                       [&::-webkit-calendar-picker-indicator]:opacity-70
                       [&::-webkit-calendar-picker-indicator]:hover:opacity-100`}
                     />
                     {errors.time && (
-                      <p className="text-red-500 text-xs mt-1">{errors.time}</p>
+                      <p className="text-red-500 text-xs mt-0.5">{errors.time}</p>
                     )}
                   </div>
                 </div>
 
                 {/* Additional Message */}
                 <div>
-                  <label className="text-sm font-medium text-stone-700 mb-1.5 block">
+                  <label className="text-xs font-medium text-stone-700 mb-1 block">
                     Additional Message (Optional)
                   </label>
                   <textarea
                     name="message"
                     value={formData.message}
                     onChange={handleChange}
-                    rows="3"
+                    rows="2"
                     placeholder="Any specific concerns or questions..."
-                    className="w-full px-3.5 py-2.5 rounded-lg border border-stone-300 focus:ring-turquoise-500 focus:outline-none focus:ring-2 transition-all resize-none text-sm"
+                    className="w-full px-3 py-2 rounded-lg border border-stone-300 focus:ring-turquoise-500 focus:outline-none focus:ring-1 transition-all resize-none text-sm"
                   />
                 </div>
 
                 {/* Submit Status Messages */}
                 {submitStatus === "success" && (
-                  <div className="bg-green-50 border border-green-200 text-green-700 px-4 py-2.5 rounded-lg text-sm">
+                  <div className="bg-green-50 border border-green-200 text-green-700 px-3 py-2 rounded-lg text-xs">
                     ✓ Appointment request sent successfully! We'll contact you soon.
                   </div>
                 )}
                 {submitStatus === "error" && (
-                  <div className="bg-red-50 border border-red-200 text-red-700 px-4 py-2.5 rounded-lg text-sm">
+                  <div className="bg-red-50 border border-red-200 text-red-700 px-3 py-2 rounded-lg text-xs">
                     ✗ Failed to send request. Please try again or call us directly.
                   </div>
                 )}
 
                 {/* Submit Button */}
-                <div className="flex gap-3 pt-2">
+                <div className="flex gap-2.5 pt-1">
                   <button
                     type="button"
                     onClick={onClose}
-                    className="flex-1 px-5 py-2.5 rounded-lg border-2 border-stone-300 text-stone-700 font-semibold hover:bg-stone-50 transition-colors text-sm"
+                    className="flex-1 px-4 py-2 rounded-lg border-2 border-stone-300 text-stone-700 font-semibold hover:bg-stone-50 transition-colors text-sm"
                   >
                     Cancel
                   </button>
                   <button
                     type="submit"
                     disabled={isSubmitting}
-                    className="flex-1 px-5 py-2.5 rounded-lg bg-gradient-to-r from-turquoise-500 to-turquoise-600 hover:from-turquoise-600 hover:to-turquoise-700 text-white font-semibold shadow-lg shadow-turquoise-500/30 transition-all disabled:opacity-50 disabled:cursor-not-allowed inline-flex items-center justify-center gap-2 text-sm"
+                    className="flex-1 px-4 py-2 rounded-lg bg-gradient-to-r from-turquoise-500 to-turquoise-600 hover:from-turquoise-600 hover:to-turquoise-700 text-white font-semibold shadow-lg shadow-turquoise-500/30 transition-all disabled:opacity-50 disabled:cursor-not-allowed inline-flex items-center justify-center gap-2 text-sm"
                   >
                     {isSubmitting ? (
                       <>

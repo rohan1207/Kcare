@@ -25,7 +25,7 @@ export default function Footer() {
 
             <div className="mt-6 flex items-center gap-3">
               <a
-                href="#book"
+                href="/contact"
                 className="inline-flex items-center gap-2 rounded-full bg-turquoise-400 text-stone-900 px-5 py-2.5 text-sm font-semibold shadow-md shadow-turquoise-900/20 hover:bg-turquoise-300 transition-colors"
               >
                 Book an Appointment
@@ -33,13 +33,13 @@ export default function Footer() {
               <span className="inline-flex items-center gap-2 rounded-full border border-turquoise-400/30 px-3 py-2 text-xs font-medium text-turquoise-300 bg-turquoise-400/10">
                 <svg
                   xmlns="http://www.w3.org/2000/svg"
-                  className="h-3 w-3 text-turquoise-500"
+                  className="h-3 w-3 text-turquoise-400"
                   viewBox="0 0 20 20"
                   fill="currentColor"
                 >
                   <path d="M10 2a6 6 0 016 6v1h1a1 1 0 011 1v2a1 1 0 01-1 1h-1v1a6 6 0 11-12 0v-1H3a1 1 0 01-1-1V10a1 1 0 011-1h1V9a6 6 0 016-6z" />
                 </svg>
-                Board-certified care
+                Expert Care 24/7
               </span>
             </div>
           </div>
@@ -48,39 +48,47 @@ export default function Footer() {
           <div className="lg:w-2/3 grid grid-cols-2 sm:grid-cols-3 gap-8">
             <div>
               <h4 className="text-xs font-semibold uppercase tracking-wider text-white/60">
-                Explore
+                Quick Links
               </h4>
               <ul className="mt-3 space-y-2 text-sm">
                 <li>
                   <a
-                    className="text-white/80 hover:text-turquoise-400 transition-colors"
-                    href="#home"
+                    className="text-white/80 hover:text-turquoise-300 transition-colors"
+                    href="/"
                   >
                     Home
                   </a>
                 </li>
                 <li>
                   <a
-                    className="text-white/80 hover:text-turquoise-400 transition-colors"
-                    href="#services"
+                    className="text-white/80 hover:text-turquoise-300 transition-colors"
+                    href="/about"
                   >
-                    Services
+                    About Us
                   </a>
                 </li>
                 <li>
                   <a
-                    className="text-white/80 hover:text-turquoise-400 transition-colors"
-                    href="/technology"
+                    className="text-white/80 hover:text-turquoise-300 transition-colors"
+                    href="/blogs"
                   >
-                    Technology
+                    Blogs
                   </a>
                 </li>
                 <li>
                   <a
-                    className="text-white/80 hover:text-turquoise-400 transition-colors"
-                    href="#pricing"
+                    className="text-white/80 hover:text-turquoise-300 transition-colors"
+                    href="/gallery"
                   >
-                    Pricing
+                    Gallery
+                  </a>
+                </li>
+                <li>
+                  <a
+                    className="text-white/80 hover:text-turquoise-300 transition-colors"
+                    href="/recognition"
+                  >
+                    Recognitions
                   </a>
                 </li>
               </ul>
@@ -88,80 +96,92 @@ export default function Footer() {
 
             <div>
               <h4 className="text-xs font-semibold uppercase tracking-wider text-white/60">
-                Patients
+                Popular Services
               </h4>
               <ul className="mt-3 space-y-2 text-sm">
                 <li>
                   <a
-                    className="text-white/80 hover:text-turquoise-400 transition-colors"
-                    href="#testimonials"
+                    className="text-white/80 hover:text-turquoise-300 transition-colors"
+                    href="/services/piles-treatment"
+                  >
+                    Piles Treatment
+                  </a>
+                </li>
+                <li>
+                  <a
+                    className="text-white/80 hover:text-turquoise-300 transition-colors"
+                    href="/services/fistula-treatment"
+                  >
+                    Fistula Treatment
+                  </a>
+                </li>
+                <li>
+                  <a
+                    className="text-white/80 hover:text-turquoise-300 transition-colors"
+                    href="/services/robotic-hernia-repair"
+                  >
+                    Robotic Hernia Repair
+                  </a>
+                </li>
+                <li>
+                  <a
+                    className="text-white/80 hover:text-turquoise-300 transition-colors"
+                    href="/services/gall-bladder-removal"
+                  >
+                    Gall Bladder Removal
+                  </a>
+                </li>
+                <li>
+                  <a
+                    className="text-white/80 hover:text-turquoise-300 transition-colors"
+                    href="/testimonials"
                   >
                     Testimonials
                   </a>
                 </li>
-                <li>
-                  <a
-                    className="text-white/80 hover:text-turquoise-400 transition-colors"
-                    href="#faq"
-                  >
-                    FAQ
-                  </a>
-                </li>
-                <li>
-                  <a
-                    className="text-white/80 hover:text-turquoise-400 transition-colors"
-                    href="/book"
-                  >
-                    Book consultation
-                  </a>
-                </li>
-                <li>
-                  <a
-                    className="text-white/80 hover:text-turquoise-400 transition-colors"
-                    href="#learn"
-                  >
-                    Learn more
-                  </a>
-                </li>
               </ul>
             </div>
 
             <div>
               <h4 className="text-xs font-semibold uppercase tracking-wider text-white/60">
-                Contact
+                Contact Us
               </h4>
               <ul className="mt-3 space-y-2 text-sm">
                 <li>
                   <a
-                    className="text-white/80 hover:text-turquoise-400 transition-colors"
-                    href="#contact"
+                    className="text-white/80 hover:text-turquoise-300 transition-colors flex items-start gap-2"
+                    href="https://maps.app.goo.gl/yRiS3JvhrWyccoNJ7"
+                    target="_blank"
+                    rel="noopener noreferrer"
                   >
-                    Get in touch
+                    <span className="mt-0.5">📍</span>
+                    <span>Porwal Rd, Dhanori, Pune 411047</span>
                   </a>
                 </li>
                 <li>
                   <a
-                    className="text-white/80 hover:text-turquoise-400 transition-colors"
-                    href="#portal"
+                    className="text-white/80 hover:text-turquoise-300 transition-colors flex items-center gap-2"
+                    href="tel:+919890777456"
                   >
-                    Patient portal
+                    <span>📞</span>
+                    <span>98907 77456</span>
                   </a>
                 </li>
                 <li>
                   <a
-                    className="text-white/80 hover:text-turquoise-400 transition-colors"
-                    href="#location"
+                    className="text-white/80 hover:text-turquoise-300 transition-colors flex items-center gap-2"
+                    href="mailto:kcareclinic777@gmail.com"
                   >
-                    Find us
+                    <span>✉️</span>
+                    <span>kcareclinic777@gmail.com</span>
                   </a>
                 </li>
-                <li>
-                  <a
-                    className="text-white/80 hover:text-turquoise-400 transition-colors"
-                    href="tel:+1234567890"
-                  >
-                    +1 (234) 567-890
-                  </a>
+                <li className="pt-2">
+                  <div className="text-white/70 text-xs">
+                    <p className="font-medium text-white/80">Clinic Timings:</p>
+                    <p>Mon-Sat: 10am-3pm, 5pm-11pm</p>
+                    <p>Sunday: 4pm-8pm</p>
+                  </div>
                 </li>
               </ul>
             </div>

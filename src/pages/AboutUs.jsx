@@ -19,6 +19,7 @@ import {
 import OurTeam from "../components/OurTeam";
 import MainFounder from "../components/MainFounder";
 import CoFounder from "../components/CoFounder";
+import GalleryPage from "./Gallery";
 const AboutUs = () => {
   const [isVisible, setIsVisible] = useState({});
   const [activeTab, setActiveTab] = useState("founder");
@@ -66,23 +67,29 @@ const AboutUs = () => {
   }, []);
 
   const specialties = [
-    "DIABETIC FOOT",
-    "BREAST",
-    "THYROID",
-    "FISSURE",
-    "PILES",
-    "FISTULA",
-    "APPENDIX",
-    "HERNIA",
-    "GALL BLADDER",
-    "HYDROCELE",
-    "PILONIDAL SINUS",
-    "RECTAL PROLAPSE",
-    "PHYMOSIS",
-    "ABSCESS",
-    "CYST",
-    "Robotic Surgery",
-    "Laparoscopic Surgery",
+    "Piles (Haemorrhoids)",
+    "Hernia",
+    "Gallbladder Stones",
+    "Appendix",
+    "Thyroid",
+    "Breast",
+    "Diabetic Foot",
+    "Gastrointestinal Surgeries",
+    "Burn Injuries",
+    "Fissure",
+    "Fistula",
+    "Pilonidal Sinus",
+    "Rectal Prolapse",
+    "Phimosis",
+    "Hydrocele",
+    "Cyst",
+    "Abscess",
+    "Wart Treatment",
+    "Ingrown Toe Nail Infection and Removal",
+    "Testicle or Ovarian Torsion",
+    "Trauma Surgery (Abdomen Trauma)",
+    "Lymph Nodes Excision",
+    "Cellulitis",
   ];
 
   const facilities = [
@@ -119,9 +126,8 @@ const AboutUs = () => {
   ];
 
   const stats = [
-    { number: "15+", label: "Years of Experience", icon: Calendar },
-    { number: "10k+", label: "Successful Surgeries", icon: Users },
-    { number: "11+", label: "Years as Specialist", icon: UserCheck },
+    { number: "12+", label: "Years of Experience", icon: Calendar },
+    { number: "20k+", label: "Successful Surgeries", icon: Users },
     { number: "24/7", label: "Emergency Care", icon: Clock },
   ];
 
@@ -170,9 +176,7 @@ const AboutUs = () => {
               transition={{ delay: 0.3 }}
               className="text-4xl md:text-[64px] font-light leading-[1.05] tracking-tight mb-4"
             >
-              About
-              <br />
-              <span className="font-medium">Kcare Clinic</span>
+              About <span className="font-medium">Kcare Clinic</span>
               <br />
               <span className="font-serif italic text-turquoise-400">Excellence</span>
             </motion.h1>
@@ -180,10 +184,9 @@ const AboutUs = () => {
               initial={{ y: 20, opacity: 0 }}
               animate={{ y: 0, opacity: 1 }}
               transition={{ delay: 0.4 }}
-              className="text-lg md:text-2xl max-w-3xl mx-auto leading-relaxed font-light text-white/90 mt-6"
+              className="text-lg md:text-xl max-w-3xl mx-auto leading-relaxed font-light text-white/90 mt-6"
             >
-              Pioneering the future of surgical care with robotic and
-              laparoscopic expertise, delivering precision and compassion in every procedure.
+              Pioneering the future of surgical care with robotic and laparoscopic expertise, delivering precision and compassion in every procedure.
             </motion.p>
           </div>
         </div>
@@ -192,7 +195,7 @@ const AboutUs = () => {
 
       {/* Stats Section */}
       <div className="relative -mt-10 z-10 max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-        <div className="grid grid-cols-2 lg:grid-cols-4 gap-4 sm:gap-6">
+        <div className="grid grid-cols-1 md:grid-cols-3 gap-4 sm:gap-6">
           {stats.map((stat, index) => (
             <motion.div
               key={index}
@@ -227,7 +230,7 @@ const AboutUs = () => {
               { id: "overview", label: "Overview" },
               { id: "vision", label: "Vision & Mission" },
               { id: "facilities", label: "Facilities" },
-              { id: "team", label: "Our Team" },
+              { id: "gallery", label: "Gallery" },
             ].map((tab) => (
               <button
                 key={tab.id}
@@ -253,9 +256,7 @@ const AboutUs = () => {
               {" "}
               <div className="flex flex-col h-full">
                 <h2 className="text-3xl sm:text-4xl font-light leading-tight tracking-tight text-stone-900 mb-8">
-                  About
-                  <br />
-                  <span className="font-medium">Kcare Clinic</span>
+                  About <span className="font-medium">Kcare Clinic</span>
                   <br />
                   <span className="font-serif italic text-turquoise-600">Excellence</span>
                 </h2>
@@ -268,7 +269,7 @@ const AboutUs = () => {
                     outcomes and faster recovery.
                   </p>
                 </div>
-                <div className="mt-8 grid sm:grid-cols-2 gap-4">
+                <div className="mt-8 grid sm:grid-cols-1 gap-4">
                   <motion.div
                     whileHover={{ scale: 1.02 }}
                     transition={{ duration: 0.2 }}
@@ -281,19 +282,6 @@ const AboutUs = () => {
                       Location
                     </h3>
                     <p className="text-stone-600/90 font-light">Pune, Maharashtra</p>
-                  </motion.div>
-                  <motion.div
-                    whileHover={{ scale: 1.02 }}
-                    transition={{ duration: 0.2 }}
-                    className="bg-turquoise-50/50 rounded-[2rem] p-6 ring-1 ring-turquoise-100/50 flex flex-col items-center sm:items-start text-center sm:text-left backdrop-blur-sm"
-                  >
-                    <div className="bg-turquoise-50 rounded-2xl p-3 mb-3 ring-1 ring-turquoise-100">
-                      <Award className="w-6 h-6 text-turquoise-600" />
-                    </div>
-                    <h3 className="font-medium text-stone-900 mb-2">
-                      Accreditation
-                    </h3>
-                    <p className="text-stone-600/90 font-light">NABH Accredited Facility</p>
                   </motion.div>
                 </div>
               </div>
@@ -312,19 +300,26 @@ const AboutUs = () => {
                   <div className="relative z-10 flex-grow">
                     <h3 className="text-2xl font-light mb-6 leading-tight">
                       Why Choose
-                      <br /><span className="font-medium">Kcare Clinic?</span>
+                      <br /><span className="font-medium">Us</span>
                     </h3>
                     <ul className="space-y-4">
                       {[
-                        "Pioneers in Robotic & Laparoscopic Surgery",
-                        "Led by highly experienced surgeons",
-                        "State-of-the-art medical equipment",
-                        "Affordable healthcare packages",
-                        "Cashless facility for all mediclaims",
-                        "24/7 emergency and ambulance services",
-                        "Comprehensive diagnostic services",
-                        "Patient-centric care with compassion",
-                        "Hygienic and comfortable environment",
+                        {
+                          title: "Expertise in Advanced Laparoscopic & Robotic Techniques",
+                          desc: "Skilled in performing a wide range of procedures with precision and safety."
+                        },
+                        {
+                          title: "Patient-Centered Care",
+                          desc: "We ensure every patient feels heard, informed, and confident about their treatment."
+                        },
+                        {
+                          title: "Faster Recovery, Better Outcomes",
+                          desc: "Our minimally invasive approach reduces pain, scarring, and downtime."
+                        },
+                        {
+                          title: "State-of-the-Art Technology",
+                          desc: "Equipped with the latest surgical systems and diagnostic facilities."
+                        },
                       ].map((item, index) => (
                         <motion.li
                           key={index}
@@ -334,7 +329,10 @@ const AboutUs = () => {
                           className="flex items-start"
                         >
                           <CheckCircle className="w-5 h-5 mr-3 mt-0.5 text-turquoise-400 flex-shrink-0" />
-                          <span className="text-sm font-light text-white/90">{item}</span>
+                          <div>
+                            <span className="text-sm font-medium text-white block mb-1">{item.title}</span>
+                            <span className="text-sm font-light text-white/80">{item.desc}</span>
+                          </div>
                         </motion.li>
                       ))}
                     </ul>
@@ -592,6 +590,16 @@ const AboutUs = () => {
                 </p>
               </div>
               <OurTeam />
+            </motion.div>
+          )}
+          {(activeTab === "gallery") && (
+            <motion.div
+              initial={{ opacity: 0, y: 20 }}
+              animate={{ opacity: 1, y: 0 }}
+              transition={{ duration: 0.5 }}
+              className="max-w-7xl mx-auto"
+            >
+              <GalleryPage />
             </motion.div>
           )}
         </motion.div>

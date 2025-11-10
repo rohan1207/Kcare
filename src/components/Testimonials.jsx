@@ -1,5 +1,8 @@
-import { motion } from "framer-motion";
-import { ArrowRight, Star, Quote } from "lucide-react";
+import { motion, AnimatePresence } from "framer-motion";
+import { ArrowRight, Star, Quote, X } from "lucide-react";
+import { useState } from "react";
+import { Link } from "react-router-dom";
+import testimonialsData from "../data/Testimonials.json";
 
 const VIDEO_TESTIMONIALS = [
   {
@@ -18,41 +21,23 @@ const VIDEO_TESTIMONIALS = [
   },
 ];
 
-const TESTIMONIALS = [
-  {
-    name: "Sarah Johnson",
-    role: "Recovery Patient",
-    avatar:
-      "https://images.unsplash.com/photo-1544723795-3fb6469f5b39?q=80&w=200&auto=format&fit=crop",
-    quote:
-      "It was the best decision I made for my health. The team is caring and precise. They explained everything and made me comfortable every step of the way.",
-    rating: 5,
-    procedure: "Laparoscopic Surgery",
-    tone: "lightBlue",
-  },
-  {
-    name: "Emily Davis",
-    role: "Recent Patient",
-    avatar:
-      "https://images.unsplash.com/photo-1438761681033-6461ffad8d80?q=80&w=200&auto=format&fit=crop",
-    quote:
-      "As someone with surgical anxiety, finding a clinic where I felt at ease was crucial. The robotic approach made recovery smoother than I imagined.",
-    rating: 5,
-    procedure: "Robotic Surgery",
-    tone: "white",
-  },
-  {
-    name: "Michael Chen",
-    role: "Regular Patient",
-    avatar:
-      "https://images.unsplash.com/photo-1507003211169-0a1dd7228f2d?q=80&w=200&auto=format&fit=crop",
-    quote:
-      "Consistent high‑quality care keeps me coming back. Professionalism and empathy are evident in every visit. The team's expertise is unmatched.",
-    rating: 5,
-    procedure: "General Surgery",
-    tone: "mint",
-  },
-];
+// Map testimonials from JSON to component format
+const TESTIMONIALS = testimonialsData.slice(0, 3).map((testimonial, index) => {
+  const tones = ["lightBlue", "white", "mint"];
+  const avatars = [
+    "/user.png"
+  ];
+  
+  return {
+    name: testimonial.name,
+    role: "Patient",
+    avatar: avatars[index % avatars.length],
+    quote: testimonial.text,
+    rating: testimonial.rating,
+    procedure: "Surgical Care",
+    tone: tones[index % tones.length],
+  };
+});
 
 const popUp = {
   hidden: { opacity: 0, y: 40, scale: 0.98 },
@@ -83,7 +68,7 @@ function YouTubeEmbed({ embedId }) {
   );
 }
 
-function TestimonialCard({ t, index }) {
+function TestimonialCard({ t, index, onReadMore }) {
   const base =
     "rounded-3xl p-8 shadow-lg ring-1 text-gray-700 leading-relaxed backdrop-blur-sm h-full flex flex-col";
   const tones = {
@@ -120,23 +105,125 @@ function TestimonialCard({ t, index }) {
           ))}
         </div>
       </div>
-      <div className="mt-6 relative">
+      <div className="mt-6 relative flex-1">
         <Quote className="absolute -top-2 -left-2 w-8 h-8 text-turquoise-300/60" />
-        <p className="text-stone-700 relative z-10 leading-relaxed font-light">
+        <p className="text-stone-700 relative z-10 leading-relaxed font-light line-clamp-5">
           {t.quote}
         </p>
+        {t.quote.length > 350 && (
+          <button
+            onClick={() => onReadMore(t)}
+            className="mt-3 text-turquoise-600 hover:text-turquoise-700 font-medium text-sm inline-flex items-center gap-1 transition-colors"
+          >
+            Read more
+            <ArrowRight className="w-3.5 h-3.5" />
+          </button>
+        )}
       </div>
       <div className="mt-4 text-sm text-stone-600 font-medium">{t.role}</div>
     </motion.article>
   );
 }
 
+function TestimonialModal({ testimonial, onClose }) {
+  if (!testimonial) return null;
+
+  return (
+    <AnimatePresence>
+      <motion.div
+        initial={{ opacity: 0 }}
+        animate={{ opacity: 1 }}
+        exit={{ opacity: 0 }}
+        onClick={onClose}
+        className="fixed inset-0 bg-black/60 backdrop-blur-sm z-50 flex items-center justify-center p-4"
+      >
+        <motion.div
+          initial={{ opacity: 0, scale: 0.95, y: 20 }}
+          animate={{ opacity: 1, scale: 1, y: 0 }}
+          exit={{ opacity: 0, scale: 0.95, y: 20 }}
+          transition={{ type: "spring", stiffness: 300, damping: 30 }}
+          onClick={(e) => e.stopPropagation()}
+          className="bg-white rounded-3xl shadow-2xl max-w-2xl w-full max-h-[85vh] overflow-y-auto relative"
+        >
+          {/* Close button */}
+          <button
+            onClick={onClose}
+            className="absolute top-6 right-6 z-10 bg-stone-100 hover:bg-stone-200 rounded-full p-2 transition-colors"
+          >
+            <X className="w-5 h-5 text-stone-700" />
+          </button>
+
+          {/* Content */}
+          <div className="p-8 sm:p-10">
+            {/* Header */}
+            <div className="flex items-start gap-4 mb-6">
+              <img
+                src={testimonial.avatar}
+                alt={testimonial.name}
+                className="h-16 w-16 rounded-full object-cover ring-4 ring-turquoise-50 shadow-lg"
+              />
+              <div className="flex-1">
+                <div className="font-semibold text-xl text-stone-900">
+                  {testimonial.name}
+                </div>
+                <div className="text-sm text-stone-600 mt-1">
+                  {testimonial.procedure}
+                </div>
+                <div className="flex gap-1 mt-2">
+                  {[...Array(testimonial.rating)].map((_, i) => (
+                    <Star
+                      key={i}
+                      className="w-4 h-4 text-yellow-400 fill-yellow-400"
+                    />
+                  ))}
+                </div>
+              </div>
+            </div>
+
+            {/* Testimonial text */}
+            <div className="relative">
+              <Quote className="absolute -top-2 -left-2 w-10 h-10 text-turquoise-200/60" />
+              <div className="relative z-10 text-stone-700 leading-relaxed text-base font-light pl-6">
+                {testimonial.quote}
+              </div>
+            </div>
+
+            {/* Footer */}
+            <div className="mt-8 pt-6 border-t border-stone-100">
+              <div className="text-sm text-stone-600 font-medium">
+                {testimonial.role}
+              </div>
+            </div>
+          </div>
+        </motion.div>
+      </motion.div>
+    </AnimatePresence>
+  );
+}
+
 export default function Testimonials() {
+  const [selectedTestimonial, setSelectedTestimonial] = useState(null);
+
+  const handleReadMore = (testimonial) => {
+    setSelectedTestimonial(testimonial);
+  };
+
+  const handleCloseModal = () => {
+    setSelectedTestimonial(null);
+  };
   return (
     <section
       id="testimonials"
       className="relative isolate py-20 sm:py-28 bg-gradient-to-b from-white to-slate-50/30 overflow-hidden"
     >
+      {/* Testimonial Modal */}
+      {selectedTestimonial && (
+        <TestimonialModal
+          testimonial={selectedTestimonial}
+          onClose={handleCloseModal}
+        />
+      )}
+
       {/* Decorative elements */}
       <div className="absolute inset-0 -z-10 overflow-hidden">
         <div className="absolute top-0 right-0 w-[600px] h-[600px] rounded-full bg-gradient-to-br from-turquoise-50 to-sky-50/70 blur-3xl opacity-80" />
@@ -184,8 +271,8 @@ export default function Testimonials() {
 
             {/* First row cards (visible as soon as section is in view) */}
             <div className="mt-8 grid gap-5 sm:grid-cols-2 h-full">
-              <TestimonialCard t={TESTIMONIALS[0]} index={0} />
-              <TestimonialCard t={TESTIMONIALS[1]} index={0.2} />
+              <TestimonialCard t={TESTIMONIALS[0]} index={0} onReadMore={handleReadMore} />
+              <TestimonialCard t={TESTIMONIALS[1]} index={0.2} onReadMore={handleReadMore} />
             </div>
           </div>
 
@@ -236,7 +323,7 @@ export default function Testimonials() {
           </motion.div>
 
           <div className="lg:col-span-5">
-            <TestimonialCard t={TESTIMONIALS[2]} index={0.15} />
+            <TestimonialCard t={TESTIMONIALS[2]} index={0.15} onReadMore={handleReadMore} />
           </div>
         </div>
 
@@ -248,12 +335,12 @@ export default function Testimonials() {
           transition={{ delay: 0.1 }}
           className="mt-10 flex justify-end"
         >
-          <a
-            href="#"
+          <Link
+            to="/testimonials"
             className="inline-flex items-center gap-2 rounded-full bg-turquoise-400 hover:bg-turquoise-300 text-stone-900 px-6 py-3 text-sm font-semibold shadow-md shadow-turquoise-900/10 transition-colors"
           >
             View all testimonials <ArrowRight className="h-4 w-4" />
-          </a>
+          </Link>
         </motion.div>
       </div>
     </section>

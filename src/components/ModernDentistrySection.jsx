@@ -88,9 +88,7 @@ export default function WhyChooseUsSection() {
                 techniques enable us to perform complex procedures with minimal
                 incisions, reducing pain and accelerating your recovery time.
               </p>
-              <button className="mt-8 bg-turquoise-400 hover:bg-turquoise-300 text-stone-900 font-semibold px-8 py-3 rounded-full transition-colors w-fit relative z-10">
-                Learn more
-              </button>
+              
             </div>
           </motion.div>
 

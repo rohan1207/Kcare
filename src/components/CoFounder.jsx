@@ -1,7 +1,6 @@
 import { motion } from "framer-motion";
-import { Award, Phone, GraduationCap, Heart, ArrowRight } from "lucide-react";
+import { Award, GraduationCap, Heart, ArrowRight } from "lucide-react";
 import { Link } from "react-router-dom";
-import { useAppointmentModal } from "../contexts/AppointmentModalContext";
 
 const STATS = [
   {
@@ -10,25 +9,22 @@ const STATS = [
   },
   {
     icon: <GraduationCap className="h-5 w-5 text-turquoise-500" />,
-    label: "MBA, PGDEMS, BAMS",
+    label: "BAMS, PGD Emergency Medical Services",
   },
   {
     icon: <Heart className="h-5 w-5 text-turquoise-500" />,
-    label: "AHA BLS/ACLS Instructor",
+    label: "AHA Certified BLS & ACLS Instructor",
   },
 ];
 
 const SPECIALITIES = [
-  "Emergency Medicine",
-  "Hospital Administration",
-  "ACLS/BLS Training",
-  "Patient Care Coordination",
-  "Female Anorectal Physician",
+  "Associate doctor to Senior Surgeon-Dr. Pramod Kadam since 10+ years",
+  "Emergency Physician at Ruby Hall Clinic, Pune",
+  "Assistant Manager of Accident & Emergency Department",
+  "MBA Hospital Administration & Healthcare Management",
 ];
 
 export default function CoFounder() {
-  const { openModal } = useAppointmentModal();
-  
   const containerVariants = {
     hidden: { opacity: 0 },
     visible: {
@@ -95,7 +91,7 @@ export default function CoFounder() {
           <div className="lg:col-span-3 p-8 sm:p-10 lg:p-12">
             <motion.div variants={itemVariants}>
               <span className="inline-block text-sm font-semibold text-turquoise-600 tracking-wide uppercase bg-turquoise-50 px-3 py-1 rounded-full">
-                Meet Our Co‑founder & CEO
+                Meet Our Co‑founder
               </span>
               <h2 className="mt-4 text-3xl sm:text-4xl lg:text-5xl font-light tracking-tight text-stone-900 leading-tight">
                 Dr. Shital Satish{" "}
@@ -103,9 +99,10 @@ export default function CoFounder() {
                   Sharma
                 </span>
               </h2>
-              <p className="mt-3 text-sm text-stone-600">MMC Reg. No. I‑70646‑A</p>
+              <p className="mt-2 text-base text-turquoise-600 font-medium">BAMS, PGD Emergency Medical Services</p>
+              <p className="mt-2 text-sm text-stone-600">MMC Registration No. – I‑70646‑A</p>
               <p className="mt-4 text-base sm:text-lg text-stone-600 leading-relaxed max-w-2xl">
-                BAMS, PGDEMS, MBA (Hospital Administration & Healthcare Management). AHA‑certified BLS & ACLS Instructor with 13+ years in Emergency Medicine and hospital operations.
+                Associate doctor to Senior Surgeon-Dr. Pramod Kadam since 10+ years. 13 years of experience at Ruby Hall Clinic, Pune as Emergency Physician & Assistant Manager of Accident & Emergency Department.
               </p>
             </motion.div>
 
@@ -150,13 +147,6 @@ export default function CoFounder() {
                 Learn More
                 <ArrowRight className="h-4 w-4 transform group-hover:translate-x-1 transition-transform" />
               </Link>
-              <button
-                onClick={openModal}
-                className="inline-flex items-center gap-2 px-6 py-2.5 border-2 border-turquoise-200 text-turquoise-700 hover:bg-turquoise-50 text-sm font-semibold rounded-full transition-all duration-300"
-              >
-                <Phone className="h-4 w-4" />
-                Book Appointment
-              </button>
             </motion.div>
           </div>
         </motion.div>

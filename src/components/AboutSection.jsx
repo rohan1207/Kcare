@@ -1,5 +1,6 @@
 import { ArrowRight, Plus } from "lucide-react";
 import { motion } from "framer-motion";
+import { Link } from "react-router-dom";
 
 // Decorative elements
 const Blur = () => (
@@ -80,11 +81,7 @@ export default function AboutSection() {
                 viewport={{ once: true }}
                 transition={{ delay: 0.4, duration: 0.5 }}
               >
-                <h2 className="text-4xl sm:text-5xl font-light tracking-tight text-slate-900 leading-[1.15]">
-                  The Future of <span className="font-medium">Surgery</span>,
-                  <br />
-                  Delivered with Care.
-                </h2>
+               
 
                 <p className="mt-6 text-lg text-slate-600 max-w-xl leading-relaxed font-light">
                   We are a team of dedicated specialists committed to providing
@@ -94,7 +91,16 @@ export default function AboutSection() {
                   experience.
                 </p>
 
-               
+                {/* CTA Button */}
+                <div className="mt-8 flex flex-wrap gap-3">
+                  <Link
+                    to="/about"
+                    className="group inline-flex items-center gap-2 px-6 py-2.5 bg-gradient-to-r from-turquoise-400 to-turquoise-600 hover:from-turquoise-500 hover:to-turquoise-700 text-white text-sm font-semibold rounded-full shadow-lg shadow-turquoise-500/30 transition-all duration-300"
+                  >
+                    Learn More
+                    <ArrowRight className="h-4 w-4 transform group-hover:translate-x-1 transition-transform" />
+                  </Link>
+                </div>
               </motion.div>
             </div>
 
