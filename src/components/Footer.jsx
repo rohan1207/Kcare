@@ -13,9 +13,9 @@ export default function Footer() {
           {/* Brand + short mission */}
           <div className="lg:w-1/3">
             <a href="/" className="inline-flex items-center gap-3">
-              <img src="/logo4.png" alt="Kcare" className="h-12 w-auto" />
+              <img src="/logo4.png" alt="K Care" className="h-12 w-auto" />
               <span className="font-display text-2xl font-semibold tracking-tight text-white">
-                Kcare Clinic
+                K Care Clinic
               </span>
             </a>
             <p className="mt-4 max-w-md text-sm text-white/80 leading-relaxed">
@@ -28,7 +28,7 @@ export default function Footer() {
                 href="/contact"
                 className="inline-flex items-center gap-2 rounded-full bg-turquoise-400 text-stone-900 px-5 py-2.5 text-sm font-semibold shadow-md shadow-turquoise-900/20 hover:bg-turquoise-300 transition-colors"
               >
-                Book an Appointment
+                Book an appointment
               </a>
               <span className="inline-flex items-center gap-2 rounded-full border border-turquoise-400/30 px-3 py-2 text-xs font-medium text-turquoise-300 bg-turquoise-400/10">
                 <svg
@@ -39,7 +39,7 @@ export default function Footer() {
                 >
                   <path d="M10 2a6 6 0 016 6v1h1a1 1 0 011 1v2a1 1 0 01-1 1h-1v1a6 6 0 11-12 0v-1H3a1 1 0 01-1-1V10a1 1 0 011-1h1V9a6 6 0 016-6z" />
                 </svg>
-                Expert Care 24/7
+                Expert care 24/7
               </span>
             </div>
           </div>
@@ -48,7 +48,7 @@ export default function Footer() {
           <div className="lg:w-2/3 grid grid-cols-2 sm:grid-cols-3 gap-8">
             <div>
               <h4 className="text-xs font-semibold uppercase tracking-wider text-white/60">
-                Quick Links
+                Quick links
               </h4>
               <ul className="mt-3 space-y-2 text-sm">
                 <li>
@@ -64,7 +64,7 @@ export default function Footer() {
                     className="text-white/80 hover:text-turquoise-300 transition-colors"
                     href="/about"
                   >
-                    About Us
+                    About us
                   </a>
                 </li>
                 <li>
@@ -86,6 +86,14 @@ export default function Footer() {
                 <li>
                   <a
                     className="text-white/80 hover:text-turquoise-300 transition-colors"
+                    href="/testimonials"
+                  >
+                    Testimonials
+                  </a>
+                </li>
+                <li>
+                  <a
+                    className="text-white/80 hover:text-turquoise-300 transition-colors"
                     href="/recognition"
                   >
                     Recognitions
@@ -96,7 +104,7 @@ export default function Footer() {
 
             <div>
               <h4 className="text-xs font-semibold uppercase tracking-wider text-white/60">
-                Popular Services
+                Popular services
               </h4>
               <ul className="mt-3 space-y-2 text-sm">
                 <li>
@@ -104,15 +112,7 @@ export default function Footer() {
                     className="text-white/80 hover:text-turquoise-300 transition-colors"
                     href="/services/piles-treatment"
                   >
-                    Piles Treatment
-                  </a>
-                </li>
-                <li>
-                  <a
-                    className="text-white/80 hover:text-turquoise-300 transition-colors"
-                    href="/services/fistula-treatment"
-                  >
-                    Fistula Treatment
+                    Piles treatment
                   </a>
                 </li>
                 <li>
@@ -120,23 +120,39 @@ export default function Footer() {
                     className="text-white/80 hover:text-turquoise-300 transition-colors"
                     href="/services/robotic-hernia-repair"
                   >
-                    Robotic Hernia Repair
+                    Robotic hernia
                   </a>
                 </li>
                 <li>
                   <a
                     className="text-white/80 hover:text-turquoise-300 transition-colors"
-                    href="/services/gall-bladder-removal"
+                    href="/services/fistula-treatment"
                   >
-                    Gall Bladder Removal
+                    Fistula treatment
                   </a>
                 </li>
                 <li>
                   <a
                     className="text-white/80 hover:text-turquoise-300 transition-colors"
-                    href="/testimonials"
+                    href="/services/laparoscopic-appendectomy"
                   >
-                    Testimonials
+                    Laparoscopic appendectomy
+                  </a>
+                </li>
+                <li>
+                  <a
+                    className="text-white/80 hover:text-turquoise-300 transition-colors"
+                    href="/services/advanced-thyroid-surgery"
+                  >
+                    Thyroid surgery
+                  </a>
+                </li>
+                <li>
+                  <a
+                    className="text-white/80 hover:text-turquoise-300 transition-colors"
+                    href="/services/breast-surgery"
+                  >
+                    Breast surgery
                   </a>
                 </li>
               </ul>
@@ -144,7 +160,7 @@ export default function Footer() {
 
             <div>
               <h4 className="text-xs font-semibold uppercase tracking-wider text-white/60">
-                Contact Us
+                Contact us
               </h4>
               <ul className="mt-3 space-y-2 text-sm">
                 <li>
@@ -161,10 +177,10 @@ export default function Footer() {
                 <li>
                   <a
                     className="text-white/80 hover:text-turquoise-300 transition-colors flex items-center gap-2"
-                    href="tel:+919890777456"
+                    href="tel:+9373619006"
                   >
                     <span>📞</span>
-                    <span>98907 77456</span>
+                    <span>93736 19006</span>
                   </a>
                 </li>
                 <li>
@@ -178,9 +194,10 @@ export default function Footer() {
                 </li>
                 <li className="pt-2">
                   <div className="text-white/70 text-xs">
-                    <p className="font-medium text-white/80">Clinic Timings:</p>
+                    <p className="font-medium text-white/80">Clinic timings:</p>
                     <p>Mon-Sat: 10am-3pm, 5pm-11pm</p>
                     <p>Sunday: 4pm-8pm</p>
+                    <p>By prior appointment</p>
                   </div>
                 </li>
               </ul>
@@ -190,7 +207,7 @@ export default function Footer() {
 
         <div className="mt-10 border-t border-white/10 pt-6 flex flex-col-reverse sm:flex-row items-center justify-between gap-4">
           <div className="text-sm text-white/60 font-light">
-            © {new Date().getFullYear()} Kcare Clinic. All rights reserved.
+            © {new Date().getFullYear()} K Care Clinic. All rights reserved.
           </div>
           <div className="text-sm text-white/60 font-light">
             Designed & Developed by TheSocialKollab

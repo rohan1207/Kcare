@@ -1,7 +1,6 @@
 import { useState } from "react";
 import { motion, AnimatePresence } from "framer-motion";
 import { X, Calendar, Clock, User, Phone, Mail, FileText, Send } from "lucide-react";
-import emailjs from "@emailjs/browser";
 
 const SERVICES = [
   "Laparoscopic Gallbladder Surgery",
@@ -53,14 +52,6 @@ export default function BookAppointmentModal({ isOpen, onClose }) {
     if (!formData.phone.trim()) newErrors.phone = "Phone is required";
     else if (!/^\d{10}$/.test(formData.phone.replace(/\s/g, "")))
       newErrors.phone = "Enter a valid 10-digit phone number";
-    if (!formData.email.trim()) newErrors.email = "Email is required";
-    else if (!/\S+@\S+\.\S+/.test(formData.email))
-      newErrors.email = "Enter a valid email";
-    if (!formData.service) newErrors.service = "Please select a service";
-    if (formData.service === "Other (please specify)" && !formData.otherService.trim())
-      newErrors.otherService = "Please specify the service";
-    if (!formData.date) newErrors.date = "Date is required";
-    if (!formData.time) newErrors.time = "Time is required";
 
     setErrors(newErrors);
     return Object.keys(newErrors).length === 0;
@@ -74,44 +65,116 @@ export default function BookAppointmentModal({ isOpen, onClose }) {
     setSubmitStatus(null);
 
     try {
-      // EmailJS configuration
-      const serviceID = "service_habzvn7"; // Replace with your EmailJS service ID
-      const templateID = "template_ydeuhrx"; // Replace with your EmailJS template ID
-      const publicKey = "fy809dMTqWWHb3HwU"; // Replace with your EmailJS public key
+      // Format WhatsApp message - ensure proper formatting
+      const serviceText = formData.service === "Other (please specify)"
+        ? formData.otherService || "Not specified"
+        : formData.service || "Not specified";
+      
+      // Format date if provided
+      let dateText = "Not specified";
+      if (formData.date) {
+        const date = new Date(formData.date);
+        dateText = date.toLocaleDateString('en-IN', { 
+          weekday: 'short', 
+          year: 'numeric', 
+          month: 'short', 
+          day: 'numeric' 
+        });
+      }
+      
+      // Format time if provided
+      let timeText = "Not specified";
+      if (formData.time) {
+        const [hours, minutes] = formData.time.split(':');
+        const hour12 = parseInt(hours) % 12 || 12;
+        const ampm = parseInt(hours) >= 12 ? 'PM' : 'AM';
+        timeText = `${hour12}:${minutes} ${ampm}`;
+      }
+      
+      const emailText = formData.email || "Not provided";
+      const messageText = formData.message || "No additional message";
 
-      const templateParams = {
-        from_name: formData.name,
-        from_email: formData.email,
-        service:
-          formData.service === "Other (please specify)"
-            ? formData.otherService
-            : formData.service,
-        date: formData.date,
-        time: formData.time,
-      };
+      // Build WhatsApp message with proper formatting
+      const whatsappMessage = `*New Appointment Request*
 
-      await emailjs.send(serviceID, templateID, templateParams, publicKey);
+*Name:* ${formData.name}
+*Phone:* ${formData.phone}
+*Email:* ${emailText}
+*Service:* ${serviceText}
+*Preferred Date:* ${dateText}
+*Preferred Time:* ${timeText}
+
+*Additional Message:*
+${messageText}`;
+
+      // Phone number with country code (India: 91)
+      const phoneNumber = "919373619006";
+      
+      // Properly encode the message - handle special characters
+      const encodedMessage = encodeURIComponent(whatsappMessage);
+      
+      // Detect platform
+      const userAgent = navigator.userAgent || navigator.vendor || window.opera;
+      const isMobile = /android|webos|iphone|ipad|ipod|blackberry|iemobile|opera mini/i.test(userAgent.toLowerCase());
+      const isIOS = /iphone|ipad|ipod/i.test(userAgent.toLowerCase());
+      const isAndroid = /android/i.test(userAgent.toLowerCase());
+      
+      let whatsappUrl;
+      
+      if (isMobile) {
+        // Mobile devices - use native app protocol
+        if (isIOS) {
+          // iOS: Use whatsapp:// protocol
+          whatsappUrl = `whatsapp://send?phone=${phoneNumber}&text=${encodedMessage}`;
+        } else if (isAndroid) {
+          // Android: Use whatsapp:// protocol
+          whatsappUrl = `whatsapp://send?phone=${phoneNumber}&text=${encodedMessage}`;
+        } else {
+          // Other mobile - use web API
+          whatsappUrl = `https://api.whatsapp.com/send?phone=${phoneNumber}&text=${encodedMessage}`;
+        }
+      } else {
+        // Desktop/Web - use web.whatsapp.com
+        whatsappUrl = `https://web.whatsapp.com/send?phone=${phoneNumber}&text=${encodedMessage}`;
+      }
+
+      // Open WhatsApp with message
+      if (isMobile && (isIOS || isAndroid)) {
+        // For mobile native apps, try direct navigation first
+        try {
+          window.location.href = whatsappUrl;
+          // Fallback to web version after a delay if native doesn't open
+          setTimeout(() => {
+            const webFallback = `https://api.whatsapp.com/send?phone=${phoneNumber}&text=${encodedMessage}`;
+            window.open(webFallback, '_blank');
+          }, 2000);
+        } catch (err) {
+          // If native fails, use web version
+          window.open(`https://api.whatsapp.com/send?phone=${phoneNumber}&text=${encodedMessage}`, '_blank');
+        }
+      } else {
+        // Desktop or web - open in new tab/window
+        window.open(whatsappUrl, '_blank', 'noopener,noreferrer');
+      }
 
       setSubmitStatus("success");
-      // Reset form
-      setFormData({
-        name: "",
-        phone: "",
-        email: "",
-        service: "",
-        otherService: "",
-        date: "",
-        time: "",
-        message: "",
-      });
-
-      // Close modal after 2 seconds
+      
+      // Reset form after a short delay
       setTimeout(() => {
-        onClose();
-        setSubmitStatus(null);
-      }, 2000);
+        setFormData({
+          name: "",
+          phone: "",
+          email: "",
+          service: "",
+          otherService: "",
+          date: "",
+          time: "",
+          message: "",
+        });
+      }, 1000);
+      
     } catch (error) {
-      console.error("EmailJS Error:", error);
+      console.error("WhatsApp Error:", error);
       setSubmitStatus("error");
     } finally {
       setIsSubmitting(false);
@@ -211,7 +274,7 @@ export default function BookAppointmentModal({ isOpen, onClose }) {
                   <div>
                     <label className="flex items-center gap-1.5 text-xs font-medium text-stone-700 mb-1">
                       <Mail className="h-3.5 w-3.5 text-turquoise-600" />
-                      Email <span className="text-red-500">*</span>
+                      Email (Optional)
                     </label>
                     <input
                       type="email"
@@ -219,15 +282,8 @@ export default function BookAppointmentModal({ isOpen, onClose }) {
                       value={formData.email}
                       onChange={handleChange}
                       placeholder="your@email.com"
-                      className={`w-full px-3 py-2 rounded-lg border ${
-                        errors.email
-                          ? "border-red-300 focus:ring-red-500"
-                          : "border-stone-300 focus:ring-turquoise-500"
-                      } focus:outline-none focus:ring-1 transition-all text-sm`}
+                      className="w-full px-3 py-2 rounded-lg border border-stone-300 focus:ring-turquoise-500 focus:outline-none focus:ring-1 transition-all text-sm"
                     />
-                    {errors.email && (
-                      <p className="text-red-500 text-xs mt-0.5">{errors.email}</p>
-                    )}
                   </div>
                 </div>
 
@@ -235,31 +291,22 @@ export default function BookAppointmentModal({ isOpen, onClose }) {
                 <div>
                   <label className="flex items-center gap-1.5 text-xs font-medium text-stone-700 mb-1">
                     <FileText className="h-3.5 w-3.5 text-turquoise-600" />
-                    Service Required <span className="text-red-500">*</span>
+                    Service Required (Optional)
                   </label>
                   <select
                     name="service"
                     value={formData.service}
                     onChange={handleChange}
-                    className={`w-full px-3 py-2 rounded-lg border ${
-                      errors.service
-                        ? "border-red-300 focus:ring-red-500"
-                        : "border-stone-300 focus:ring-turquoise-500"
-                    } focus:outline-none focus:ring-1 transition-all bg-white text-sm h-10 appearance-none cursor-pointer
-                    bg-[url('data:image/svg+xml;charset=UTF-8,%3csvg xmlns=%27http://www.w3.org/2000/svg%27 fill=%27none%27 viewBox=%270 0 20 20%27%3e%3cpath stroke=%27%236b7280%27 stroke-linecap=%27round%27 stroke-linejoin=%27round%27 stroke-width=%271.5%27 d=%27m6 8 4 4 4-4%27/%3e%3c/svg%3e')] 
-                    bg-[length:1.25rem] bg-[right_0.5rem_center] bg-no-repeat pr-10`}
+                    className="w-full px-3 py-2 rounded-lg border border-stone-300 focus:ring-turquoise-500 focus:outline-none focus:ring-1 transition-all bg-white text-sm h-10 appearance-none cursor-pointer bg-[url('data:image/svg+xml;charset=UTF-8,%3csvg xmlns=%27http://www.w3.org/2000/svg%27 fill=%27none%27 viewBox=%270 0 20 20%27%3e%3cpath stroke=%27%236b7280%27 stroke-linecap=%27round%27 stroke-linejoin=%27round%27 stroke-width=%271.5%27 d=%27m6 8 4 4 4-4%27/%3e%3c/svg%3e')] bg-[length:1.25rem] bg-[right_0.5rem_center] bg-no-repeat pr-10"
                     size="1"
                   >
-                    <option value="">Select a service</option>
+                    <option value="">Select a service (optional)</option>
                     {SERVICES.map((service) => (
                       <option key={service} value={service}>
                         {service}
                       </option>
                     ))}
                   </select>
-                  {errors.service && (
-                    <p className="text-red-500 text-xs mt-0.5">{errors.service}</p>
-                  )}
                 </div>
 
                 {/* Other Service Input (conditional) */}
@@ -291,7 +338,7 @@ export default function BookAppointmentModal({ isOpen, onClose }) {
                   <div>
                     <label className="flex items-center gap-1.5 text-xs font-medium text-stone-700 mb-1">
                       <Calendar className="h-3.5 w-3.5 text-turquoise-600" />
-                      Preferred Date <span className="text-red-500">*</span>
+                      Preferred Date (Optional)
                     </label>
                     <input
                       type="date"
@@ -299,42 +346,23 @@ export default function BookAppointmentModal({ isOpen, onClose }) {
                       value={formData.date}
                       onChange={handleChange}
                       min={today}
-                      className={`w-full px-3 py-2 rounded-lg border ${
-                        errors.date
-                          ? "border-red-300 focus:ring-red-500"
-                          : "border-stone-300 focus:ring-turquoise-500"
-                      } focus:outline-none focus:ring-1 transition-all text-sm cursor-pointer
-                      [&::-webkit-calendar-picker-indicator]:cursor-pointer
-                      [&::-webkit-calendar-picker-indicator]:opacity-70
-                      [&::-webkit-calendar-picker-indicator]:hover:opacity-100`}
+                      className="w-full px-3 py-2 rounded-lg border border-stone-300 focus:ring-turquoise-500 focus:outline-none focus:ring-1 transition-all text-sm cursor-pointer [&::-webkit-calendar-picker-indicator]:cursor-pointer [&::-webkit-calendar-picker-indicator]:opacity-70 [&::-webkit-calendar-picker-indicator]:hover:opacity-100"
                     />
-                    {errors.date && (
-                      <p className="text-red-500 text-xs mt-0.5">{errors.date}</p>
-                    )}
                   </div>
 
                   <div>
                     <label className="flex items-center gap-1.5 text-xs font-medium text-stone-700 mb-1">
                       <Clock className="h-3.5 w-3.5 text-turquoise-600" />
-                      Preferred Time <span className="text-red-500">*</span>
+                      Preferred Time (Optional)
                     </label>
                     <input
                       type="time"
                       name="time"
                       value={formData.time}
                       onChange={handleChange}
-                      className={`w-full px-3 py-2 rounded-lg border ${
-                        errors.time
-                          ? "border-red-300 focus:ring-red-500"
-                          : "border-stone-300 focus:ring-turquoise-500"
-                      } focus:outline-none focus:ring-1 transition-all text-sm cursor-pointer
-                      [&::-webkit-calendar-picker-indicator]:cursor-pointer
-                      [&::-webkit-calendar-picker-indicator]:opacity-70
-                      [&::-webkit-calendar-picker-indicator]:hover:opacity-100`}
+                      step="900"
+                      className="w-full px-3 py-2 rounded-lg border border-stone-300 focus:ring-turquoise-500 focus:outline-none focus:ring-1 transition-all text-sm cursor-pointer [&::-webkit-calendar-picker-indicator]:cursor-pointer [&::-webkit-calendar-picker-indicator]:opacity-70 [&::-webkit-calendar-picker-indicator]:hover:opacity-100 [&::-webkit-datetime-edit-hour-field]:text-sm [&::-webkit-datetime-edit-minute-field]:text-sm [&::-webkit-datetime-edit-ampm-field]:text-sm"
                     />
-                    {errors.time && (
-                      <p className="text-red-500 text-xs mt-0.5">{errors.time}</p>
-                    )}
                   </div>
                 </div>
 
@@ -355,13 +383,27 @@ export default function BookAppointmentModal({ isOpen, onClose }) {
 
                 {/* Submit Status Messages */}
                 {submitStatus === "success" && (
-                  <div className="bg-green-50 border border-green-200 text-green-700 px-3 py-2 rounded-lg text-xs">
-                    ✓ Appointment request sent successfully! We'll contact you soon.
+                  <div className="bg-green-50 border border-green-200 text-green-700 px-3 py-2 rounded-lg text-xs flex items-center justify-between gap-2">
+                    <span>✓ Appointment request sent successfully! We'll contact you soon.</span>
+                    <button
+                      type="button"
+                      onClick={() => setSubmitStatus(null)}
+                      className="text-green-700 hover:text-green-900 flex-shrink-0"
+                    >
+                      <X className="h-4 w-4" />
+                    </button>
                   </div>
                 )}
                 {submitStatus === "error" && (
-                  <div className="bg-red-50 border border-red-200 text-red-700 px-3 py-2 rounded-lg text-xs">
-                    ✗ Failed to send request. Please try again or call us directly.
+                  <div className="bg-red-50 border border-red-200 text-red-700 px-3 py-2 rounded-lg text-xs flex items-center justify-between gap-2">
+                    <span>✗ Failed to send request. Please try again or call us directly.</span>
+                    <button
+                      type="button"
+                      onClick={() => setSubmitStatus(null)}
+                      className="text-red-700 hover:text-red-900 flex-shrink-0"
+                    >
+                      <X className="h-4 w-4" />
+                    </button>
                   </div>
                 )}
 

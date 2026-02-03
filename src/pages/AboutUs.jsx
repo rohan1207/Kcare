@@ -16,13 +16,13 @@ import {
   Award,
   CheckCircle,
 } from "react-feather";
-import OurTeam from "../components/OurTeam";
+
 import MainFounder from "../components/MainFounder";
 import CoFounder from "../components/CoFounder";
 import GalleryPage from "./Gallery";
 const AboutUs = () => {
   const [isVisible, setIsVisible] = useState({});
-  const [activeTab, setActiveTab] = useState("founder");
+  const [activeTab, setActiveTab] = useState("overview");
 
   useEffect(() => {
     const observer = new IntersectionObserver(
@@ -67,29 +67,34 @@ const AboutUs = () => {
   }, []);
 
   const specialties = [
-    "Piles (Haemorrhoids)",
-    "Hernia",
-    "Gallbladder Stones",
-    "Appendix",
-    "Thyroid",
-    "Breast",
+    "Piles (Hemorrhoids)",
+    "Hernia (Robotic or Laparoscopic Hernia Repair)",
+    "Gall Bladder Stones (Robotic or Laparoscopic Cholecystectomy)",
+    "Appendicitis (Robotic or Laparoscopic Appendectomy)",
+    "Advanced Thyroid Surgery",
+    "Breast Surgery",
     "Diabetic Foot",
-    "Gastrointestinal Surgeries",
+    "Intestinal Surgeries (Bowel Obstruction / Colostomy / Laparotomy)",
     "Burn Injuries",
-    "Fissure",
-    "Fistula",
+    "Fissure (Laser Treatment)",
+    "Fistula Treatment",
     "Pilonidal Sinus",
     "Rectal Prolapse",
     "Phimosis",
     "Hydrocele",
-    "Cyst",
-    "Abscess",
+    "Cyst & Lipoma Removal",
+    "Abscess Drainage",
     "Wart Treatment",
-    "Ingrown Toe Nail Infection and Removal",
+    "Ingrown Toenail Infection & Removal",
     "Testicle or Ovarian Torsion",
     "Trauma Surgery (Abdomen Trauma)",
-    "Lymph Nodes Excision",
+    "Lymph Node Excision",
     "Cellulitis",
+    "Varicose Vein Treatment",
+    "Video Proctoscopy (VAAFT / Diagnostic Proctoscopy)",
+    "Corn Removal",
+    "Female Piles Doctor",
+    "General Physician",
   ];
 
   const facilities = [
@@ -127,7 +132,7 @@ const AboutUs = () => {
 
   const stats = [
     { number: "12+", label: "Years of Experience", icon: Calendar },
-    { number: "20k+", label: "Successful Surgeries", icon: Users },
+    { number: "15k +", label: "Successful Surgeries", icon: Users },
     { number: "24/7", label: "Emergency Care", icon: Clock },
   ];
 
@@ -139,9 +144,9 @@ const AboutUs = () => {
   // Decorative background elements
   const Blur = () => (
     <>
-      <div className="absolute top-0 right-0 -z-10 h-[600px] w-[600px] rounded-full bg-gradient-to-br from-turquoise-50 to-sky-50/70 blur-3xl opacity-80" />
-      <div className="absolute bottom-0 left-0 -z-10 h-[600px] w-[600px] rounded-full bg-gradient-to-tr from-blue-50 to-turquoise-50/70 blur-3xl opacity-60" />
-      <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 -z-10 h-[800px] w-[800px] rounded-full bg-gradient-to-r from-turquoise-50/40 to-transparent blur-3xl opacity-60" />
+      <div className="absolute top-0 right-0 -z-10 h-[400px] sm:h-[500px] md:h-[600px] w-[400px] sm:w-[500px] md:w-[600px] rounded-full bg-gradient-to-br from-turquoise-50 to-sky-50/70 blur-3xl opacity-80" />
+      <div className="absolute bottom-0 left-0 -z-10 h-[400px] sm:h-[500px] md:h-[600px] w-[400px] sm:w-[500px] md:w-[600px] rounded-full bg-gradient-to-tr from-blue-50 to-turquoise-50/70 blur-3xl opacity-60" />
+      <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 -z-10 h-[600px] sm:h-[700px] md:h-[800px] w-[600px] sm:w-[700px] md:w-[800px] rounded-full bg-gradient-to-r from-turquoise-50/40 to-transparent blur-3xl opacity-60" />
     </>
   );
 
@@ -156,27 +161,27 @@ const AboutUs = () => {
         className="relative bg-gradient-to-br from-turquoise-600 via-turquoise-700 to-turquoise-900  text-white overflow-hidden "
       >
         {/* Decorative elements */}
-        <div className="absolute top-0 right-0 w-40 h-40 bg-turquoise-400/20 rounded-full blur-3xl" />
-        <div className="absolute bottom-0 left-0 w-40 h-40 bg-turquoise-500/10 rounded-full blur-3xl" />
+        <div className="absolute top-0 right-0 w-32 sm:w-36 md:w-40 h-32 sm:h-36 md:h-40 bg-turquoise-400/20 rounded-full blur-3xl" />
+        <div className="absolute bottom-0 left-0 w-32 sm:w-36 md:w-40 h-32 sm:h-36 md:h-40 bg-turquoise-500/10 rounded-full blur-3xl" />
         <div className="absolute inset-0 bg-gradient-to-br from-turquoise-600/10 to-transparent mix-blend-overlay" />
-        <div className="relative max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-12 sm:py-16">
+        <div className="relative max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-10 sm:py-12 md:py-14 lg:py-16">
           <div className="text-center">
             <motion.div
               initial={{ scale: 0.5, opacity: 0 }}
               animate={{ scale: 1, opacity: 1 }}
               transition={{ delay: 0.2 }}
-              className=" -mt-5 inline-flex items-center gap-2.5 rounded-full bg-turquoise-50 px-5 py-2.5 text-sm font-medium text-turquoise-700 mb-6 shadow-sm shadow-turquoise-100/50 ring-1 ring-turquoise-100"
+              className=" -mt-5 inline-flex items-center gap-2 sm:gap-2.5 rounded-full bg-turquoise-50 px-4 sm:px-5 py-2 sm:py-2.5 text-xs sm:text-sm font-medium text-turquoise-700 mb-4 sm:mb-5 md:mb-6 shadow-sm shadow-turquoise-100/50 ring-1 ring-turquoise-100"
             >
-              <span className="h-1.5 w-1.5 rounded-full bg-turquoise-500"></span>
+              <span className="h-1 sm:h-1.5 w-1 sm:w-1.5 rounded-full bg-turquoise-500"></span>
               Advanced Surgical Care
             </motion.div>
             <motion.h1
               initial={{ y: 20, opacity: 0 }}
               animate={{ y: 0, opacity: 1 }}
               transition={{ delay: 0.3 }}
-              className="text-4xl md:text-[64px] font-light leading-[1.05] tracking-tight mb-4"
+              className="text-3xl sm:text-4xl md:text-5xl lg:text-6xl xl:text-[64px] font-light leading-[1.05] tracking-tight mb-3 sm:mb-4"
             >
-              About <span className="font-medium">Kcare Clinic</span>
+              About <span className="font-medium"> K Care Clinic</span>
               <br />
               <span className="font-serif italic text-turquoise-400">Excellence</span>
             </motion.h1>
@@ -184,7 +189,7 @@ const AboutUs = () => {
               initial={{ y: 20, opacity: 0 }}
               animate={{ y: 0, opacity: 1 }}
               transition={{ delay: 0.4 }}
-              className="text-lg md:text-xl max-w-3xl mx-auto leading-relaxed font-light text-white/90 mt-6"
+              className="text-base sm:text-lg md:text-xl max-w-3xl mx-auto leading-relaxed font-light text-white/90 mt-4 sm:mt-5 md:mt-6"
             >
               Pioneering the future of surgical care with robotic and laparoscopic expertise, delivering precision and compassion in every procedure.
             </motion.p>
@@ -202,13 +207,13 @@ const AboutUs = () => {
               initial={{ y: 20, opacity: 0 }}
               animate={{ y: 0, opacity: 1 }}
               transition={{ delay: 0.1 * index }}
-              className="bg-white/90 backdrop-blur-sm rounded-[2rem] p-6 shadow-xl shadow-turquoise-900/20 ring-1 ring-turquoise-100/80 hover:shadow-2xl hover:-translate-y-1 transition-all duration-300"
+              className="bg-white/90 backdrop-blur-sm rounded-2xl sm:rounded-[1.75rem] md:rounded-[2rem] p-5 sm:p-6 shadow-xl shadow-turquoise-900/20 ring-1 ring-turquoise-100/80 hover:shadow-2xl hover:-translate-y-1 transition-all duration-300"
             >
-              <stat.icon className="w-8 h-8 text-turquoise-600 mb-3" />
-              <div className="text-3xl sm:text-4xl font-light text-stone-900 mb-1">
+              <stat.icon className="w-6 sm:w-7 md:w-8 h-6 sm:h-7 md:h-8 text-turquoise-600 mb-2 sm:mb-3" />
+              <div className="text-2xl sm:text-3xl md:text-4xl font-light text-stone-900 mb-1">
                 {stat.number}
               </div>
-              <div className="text-stone-600/90 text-sm sm:text-base font-light">
+              <div className="text-stone-600/90 text-xs sm:text-sm md:text-base font-light">
                 {stat.label}
               </div>
             </motion.div>
@@ -217,17 +222,18 @@ const AboutUs = () => {
       </div>
 
       {/* Main Content Tabs */}
-      <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-16">
+      <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-12 sm:py-14 md:py-16">
         <motion.div
           initial={{ opacity: 0 }}
           animate={{ opacity: 1 }}
           transition={{ delay: 0.5 }}
-          className="mb-12"
+          className="mb-8 sm:mb-10 md:mb-12"
         >
-          <div className="flex flex-wrap justify-center gap-2 sm:gap-4 mb-8">
+          <div className="flex flex-wrap justify-center gap-2 sm:gap-3 md:gap-4 mb-6 sm:mb-7 md:mb-8">
             {[
-              { id: "founder", label: "Founder" },
               { id: "overview", label: "Overview" },
+              { id: "founder", label: "Founder" },
+              
               { id: "vision", label: "Vision & Mission" },
               { id: "facilities", label: "Facilities" },
               { id: "gallery", label: "Gallery" },
@@ -235,7 +241,7 @@ const AboutUs = () => {
               <button
                 key={tab.id}
                 onClick={() => setActiveTab(tab.id)}
-                className={`px-4 sm:px-6 py-2 sm:py-3 rounded-full font-medium transition-all duration-300 text-sm sm:text-base ${
+                className={`px-3 sm:px-4 md:px-6 py-2 sm:py-2.5 md:py-3 rounded-full font-medium transition-all duration-300 text-xs sm:text-sm md:text-base ${
                   activeTab === tab.id
                     ? "bg-[#019e9e] text-white shadow-lg shadow-turquoise-900/20"
                     : "bg-turquoise-50/70 text-turquoise-700 hover:bg-turquoise-100/80 ring-1 ring-turquoise-100/50"
@@ -251,37 +257,35 @@ const AboutUs = () => {
               initial={{ opacity: 0, y: 20 }}
               animate={{ opacity: 1, y: 0 }}
               transition={{ duration: 0.5 }}
-              className="grid lg:grid-cols-2 gap-8 lg:gap-12 items-stretch h-full"
+              className="grid lg:grid-cols-2 gap-6 sm:gap-8 lg:gap-12 items-stretch h-full"
             >
               {" "}
               <div className="flex flex-col h-full">
-                <h2 className="text-3xl sm:text-4xl font-light leading-tight tracking-tight text-stone-900 mb-8">
+                <h2 className="text-2xl sm:text-3xl md:text-4xl font-light leading-tight tracking-tight text-stone-900 mb-6 sm:mb-7 md:mb-8">
                   About <span className="font-medium">Kcare Clinic</span>
                   <br />
                   <span className="font-serif italic text-turquoise-600">Excellence</span>
                 </h2>
-                <div className="flex-grow space-y-6 text-stone-600/90 leading-relaxed">
-                  <p className="text-lg font-light">
-                    Kcare Clinic is a premier surgical facility in Pune,
-                    specializing in advanced robotic and laparoscopic
-                    surgeries. Our commitment is to provide patient-centric
-                    care using cutting-edge technology, ensuring better
-                    outcomes and faster recovery.
+                <div className="flex-grow space-y-4 sm:space-y-5 md:space-y-6 text-stone-600/90 leading-relaxed">
+                  <p className="text-base sm:text-lg font-light">
+                  We are a team of dedicated specialists committed to providing personalized, top-quality surgical care. By blending state-of-the-art robotic and laparoscopic technology with a human touch, we ensure better outcomes and a seamless patient experience. At K Care Clinic, we are dedicated to provide advanced, minimally invasive surgical care with a focus on precision, safety, and faster recovery. Led by an experienced Laparoscopic and Robotic Surgeon, our clinic combines cutting-edge technology with compassionate, patient-centered treatment. 
+We believe surgery should not only treat but also transform, helping patients return to their normal lives quickly and comfortably. Our state-of-the-art facilities are equipped with the latest robotic and laparoscopic systems, ensuring smaller incisions, minimal pain, and reduced hospital stays. Every patient is unique, and so is our approach. From consultation to post-surgery care, we prioritize clear communication, personalized treatment plans, and holistic recovery. Whether it's a simple laparoscopic procedure or complex robotic-assisted surgery, our goal is the same excellence in minimally invasive care.
+
                   </p>
                 </div>
-                <div className="mt-8 grid sm:grid-cols-1 gap-4">
+                <div className="mt-6 sm:mt-7 md:mt-8 grid sm:grid-cols-1 gap-3 sm:gap-4">
                   <motion.div
                     whileHover={{ scale: 1.02 }}
                     transition={{ duration: 0.2 }}
-                    className="bg-turquoise-50/50 rounded-[2rem] p-6 ring-1 ring-turquoise-100/50 flex flex-col items-center sm:items-start text-center sm:text-left backdrop-blur-sm"
+                    className="bg-turquoise-50/50 rounded-2xl sm:rounded-[1.75rem] md:rounded-[2rem] p-5 sm:p-6 ring-1 ring-turquoise-100/50 flex flex-col items-center sm:items-start text-center sm:text-left backdrop-blur-sm"
                   >
-                    <div className="bg-turquoise-50 rounded-2xl p-3 mb-3 ring-1 ring-turquoise-100">
-                      <MapPin className="w-6 h-6 text-turquoise-600" />
+                    <div className="bg-turquoise-50 rounded-xl sm:rounded-2xl p-2.5 sm:p-3 mb-2 sm:mb-3 ring-1 ring-turquoise-100">
+                      <MapPin className="w-5 sm:w-6 h-5 sm:h-6 text-turquoise-600" />
                     </div>
-                    <h3 className="font-medium text-stone-900 mb-2">
+                    <h3 className="font-medium text-stone-900 mb-1 sm:mb-2 text-sm sm:text-base">
                       Location
                     </h3>
-                    <p className="text-stone-600/90 font-light">Pune, Maharashtra</p>
+                    <p className="text-stone-600/90 font-light text-xs sm:text-sm md:text-base">2ND Floor, Sai Aangan, 283/3, Porwal Rd, opposite 2M Medico, Kotwal Colony, Dhanori, Pune</p>
                   </motion.div>
                 </div>
               </div>
@@ -291,18 +295,18 @@ const AboutUs = () => {
                 transition={{ duration: 0.5 }}
                 className="h-full"
               >
-                <div className="bg-[#019e9e] rounded-[2rem] p-8 text-white h-full flex flex-col relative overflow-hidden shadow-xl shadow-turquoise-900/20">
+                <div className="bg-[#019e9e] rounded-2xl sm:rounded-[1.75rem] md:rounded-[2rem] p-6 sm:p-7 md:p-8 text-white h-full flex flex-col relative overflow-hidden shadow-xl shadow-turquoise-900/20">
                   {/* Decorative elements */}
-                  <div className="absolute top-0 right-0 w-40 h-40 bg-turquoise-400/20 rounded-full blur-3xl" />
-                  <div className="absolute bottom-0 left-0 w-40 h-40 bg-turquoise-500/10 rounded-full blur-3xl" />
+                  <div className="absolute top-0 right-0 w-32 sm:w-36 md:w-40 h-32 sm:h-36 md:h-40 bg-turquoise-400/20 rounded-full blur-3xl" />
+                  <div className="absolute bottom-0 left-0 w-32 sm:w-36 md:w-40 h-32 sm:h-36 md:h-40 bg-turquoise-500/10 rounded-full blur-3xl" />
                   <div className="absolute inset-0 bg-gradient-to-br from-turquoise-600/10 to-transparent mix-blend-overlay" />
                   
                   <div className="relative z-10 flex-grow">
-                    <h3 className="text-2xl font-light mb-6 leading-tight">
+                    <h3 className="text-xl sm:text-2xl font-light mb-4 sm:mb-5 md:mb-6 leading-tight">
                       Why Choose
                       <br /><span className="font-medium">Us</span>
                     </h3>
-                    <ul className="space-y-4">
+                    <ul className="space-y-3 sm:space-y-4">
                       {[
                         {
                           title: "Expertise in Advanced Laparoscopic & Robotic Techniques",
@@ -328,10 +332,10 @@ const AboutUs = () => {
                           transition={{ delay: index * 0.1 }}
                           className="flex items-start"
                         >
-                          <CheckCircle className="w-5 h-5 mr-3 mt-0.5 text-turquoise-400 flex-shrink-0" />
+                          <CheckCircle className="w-4 sm:w-5 h-4 sm:h-5 mr-2 sm:mr-3 mt-0.5 text-turquoise-400 flex-shrink-0" />
                           <div>
-                            <span className="text-sm font-medium text-white block mb-1">{item.title}</span>
-                            <span className="text-sm font-light text-white/80">{item.desc}</span>
+                            <span className="text-xs sm:text-sm font-medium text-white block mb-0.5 sm:mb-1">{item.title}</span>
+                            <span className="text-xs sm:text-sm font-light text-white/80">{item.desc}</span>
                           </div>
                         </motion.li>
                       ))}
@@ -347,25 +351,25 @@ const AboutUs = () => {
               initial={{ opacity: 0, y: 20 }}
               animate={{ opacity: 1, y: 0 }}
               transition={{ duration: 0.5 }}
-              className="space-y-12"
+              className="space-y-8 sm:space-y-10 md:space-y-12"
             >
-              <div className="grid lg:grid-cols-2 gap-8">
+              <div className="grid lg:grid-cols-2 gap-6 sm:gap-8">
                 <motion.div
                   whileHover={{ y: -5 }}
-                  className="bg-[#019e9e] rounded-[2rem] p-8 sm:p-12 text-white relative overflow-hidden shadow-xl shadow-turquoise-900/20"
+                  className="bg-[#019e9e] rounded-2xl sm:rounded-[1.75rem] md:rounded-[2rem] p-6 sm:p-8 md:p-10 lg:p-12 text-white relative overflow-hidden shadow-xl shadow-turquoise-900/20"
                 >
                   {/* Decorative elements */}
-                  <div className="absolute top-0 right-0 w-40 h-40 bg-turquoise-400/20 rounded-full blur-3xl" />
-                  <div className="absolute bottom-0 left-0 w-40 h-40 bg-turquoise-500/10 rounded-full blur-3xl" />
+                  <div className="absolute top-0 right-0 w-32 sm:w-36 md:w-40 h-32 sm:h-36 md:h-40 bg-turquoise-400/20 rounded-full blur-3xl" />
+                  <div className="absolute bottom-0 left-0 w-32 sm:w-36 md:w-40 h-32 sm:h-36 md:h-40 bg-turquoise-500/10 rounded-full blur-3xl" />
                   <div className="absolute inset-0 bg-gradient-to-br from-turquoise-600/10 to-transparent mix-blend-overlay" />
                   <div className="relative z-10">
-                    <div className="bg-turquoise-400/20 rounded-2xl w-16 h-16 flex items-center justify-center mb-8 ring-1 ring-turquoise-400/30">
-                      <Eye className="w-8 h-8 text-turquoise-400" />
+                    <div className="bg-turquoise-400/20 rounded-xl sm:rounded-2xl w-12 sm:w-14 md:w-16 h-12 sm:h-14 md:h-16 flex items-center justify-center mb-6 sm:mb-7 md:mb-8 ring-1 ring-turquoise-400/30">
+                      <Eye className="w-6 sm:w-7 md:w-8 h-6 sm:h-7 md:h-8 text-turquoise-400" />
                     </div>
-                    <h2 className="text-3xl sm:text-4xl font-light leading-tight mb-6">
+                    <h2 className="text-2xl sm:text-3xl md:text-4xl font-light leading-tight mb-4 sm:mb-5 md:mb-6">
                       Our <span className="font-medium">Vision</span>
                     </h2>
-                    <p className="text-lg sm:text-xl leading-relaxed text-white/90 font-light">
+                    <p className="text-base sm:text-lg md:text-xl leading-relaxed text-white/90 font-light">
                       To be a leading center of excellence in surgical care,
                       renowned for our expertise in robotic and laparoscopic
                       procedures, and our unwavering commitment to patient
@@ -376,22 +380,22 @@ const AboutUs = () => {
 
                 <motion.div
                   whileHover={{ y: -5 }}
-                  className="bg-white/90 backdrop-blur-sm rounded-[2rem] p-8 sm:p-12 shadow-xl shadow-turquoise-900/20 ring-1 ring-turquoise-100/80 relative overflow-hidden"
+                  className="bg-white/90 backdrop-blur-sm rounded-2xl sm:rounded-[1.75rem] md:rounded-[2rem] p-6 sm:p-8 md:p-10 lg:p-12 shadow-xl shadow-turquoise-900/20 ring-1 ring-turquoise-100/80 relative overflow-hidden"
                 >
                   <div className="absolute inset-0 bg-gradient-to-br from-turquoise-50/50 to-blue-50/50"></div>
-                  <div className="absolute top-0 right-0 w-32 h-32 bg-turquoise-200/20 rounded-full -translate-y-16 translate-x-16 blur-2xl"></div>
-                  <div className="absolute bottom-0 left-0 w-24 h-24 bg-turquoise-200/30 rounded-full translate-y-12 -translate-x-12 blur-2xl"></div>
+                  <div className="absolute top-0 right-0 w-24 sm:w-28 md:w-32 h-24 sm:h-28 md:h-32 bg-turquoise-200/20 rounded-full -translate-y-12 sm:-translate-y-14 md:-translate-y-16 translate-x-12 sm:translate-x-14 md:translate-x-16 blur-2xl"></div>
+                  <div className="absolute bottom-0 left-0 w-20 sm:w-22 md:w-24 h-20 sm:h-22 md:h-24 bg-turquoise-200/30 rounded-full translate-y-10 sm:translate-y-11 md:translate-y-12 -translate-x-10 sm:-translate-x-11 md:-translate-x-12 blur-2xl"></div>
                   <div className="relative z-10">
-                    <div className="bg-turquoise-50 rounded-2xl w-16 h-16 flex items-center justify-center mb-8 ring-1 ring-turquoise-100">
-                      <Heart className="w-8 h-8 text-turquoise-600" />
+                    <div className="bg-turquoise-50 rounded-xl sm:rounded-2xl w-12 sm:w-14 md:w-16 h-12 sm:h-14 md:h-16 flex items-center justify-center mb-6 sm:mb-7 md:mb-8 ring-1 ring-turquoise-100">
+                      <Heart className="w-6 sm:w-7 md:w-8 h-6 sm:h-7 md:h-8 text-turquoise-600" />
                     </div>
-                    <h2 className="text-3xl sm:text-4xl font-light leading-tight mb-6 text-stone-900">
+                    <h2 className="text-2xl sm:text-3xl md:text-4xl font-light leading-tight mb-4 sm:mb-5 md:mb-6 text-stone-900">
                       Our Mission &
                       <br /><span className="font-medium">Objectives</span>
                     </h2>
-                    <p className="text-lg sm:text-xl leading-relaxed text-stone-600/90 font-light">
-                      Our mission is to provide accessible, affordable, and
-                      high-quality surgical care. We aim to leverage advanced
+                    <p className="text-base sm:text-lg md:text-xl leading-relaxed text-stone-600/90 font-light">
+                    Our mission is to provide accessible, affordable, and high-quality surgical & Medical care.
+                     We aim to leverage advanced
                       technology to minimize patient discomfort, reduce
                       recovery time, and achieve the best possible clinical
                       outcomes, always adhering to the highest ethical
@@ -405,15 +409,15 @@ const AboutUs = () => {
                   initial={{ opacity: 0, y: 20 }}
                   animate={{ opacity: 1, y: 0 }}
                   transition={{ delay: 0.3 }}
-                  className="bg-white/90 backdrop-blur-sm rounded-[2rem] shadow-xl shadow-turquoise-900/20 ring-1 ring-turquoise-100/80 overflow-hidden"
+                  className="bg-white/90 backdrop-blur-sm rounded-2xl sm:rounded-[1.75rem] md:rounded-[2rem] shadow-xl shadow-turquoise-900/20 ring-1 ring-turquoise-100/80 overflow-hidden"
                 >
-                  <div className="relative p-8 sm:p-12">
+                  <div className="relative p-6 sm:p-8 md:p-10 lg:p-12">
                     <div className="absolute inset-0 bg-gradient-to-br from-turquoise-50/80 to-white"></div>
                   <div className="relative z-10">
-                    <h3 className="text-2xl sm:text-3xl font-light text-stone-900 mb-8 text-center">
+                    <h3 className="text-xl sm:text-2xl md:text-3xl font-light text-stone-900 mb-6 sm:mb-7 md:mb-8 text-center">
                       Our Core <span className="font-medium">Values</span>
                     </h3>
-                    <div className="grid sm:grid-cols-2 lg:grid-cols-4 gap-6">
+                    <div className="grid grid-cols-2 lg:grid-cols-4 gap-4 sm:gap-5 md:gap-6">
                       {[
                         {
                           icon: Heart,
@@ -453,21 +457,21 @@ const AboutUs = () => {
                             scale: 1.02,
                             transition: { duration: 0.2 },
                           }}
-                          className="group relative rounded-2xl p-6 transition-all duration-300"
+                          className="group relative rounded-xl sm:rounded-2xl p-4 sm:p-5 md:p-6 transition-all duration-300"
                         >
                           <div
-                            className={`absolute inset-0 bg-gradient-to-br ${value.bg} rounded-2xl opacity-50 group-hover:opacity-100 transition-opacity duration-300`}
+                            className={`absolute inset-0 bg-gradient-to-br ${value.bg} rounded-xl sm:rounded-2xl opacity-50 group-hover:opacity-100 transition-opacity duration-300`}
                           ></div>
                           <div className="relative">
                             <div
-                              className={`bg-gradient-to-br ${value.gradient} rounded-xl p-3 w-12 h-12 flex items-center justify-center mb-4 mx-auto transform group-hover:scale-110 transition-transform duration-300`}
+                              className={`bg-gradient-to-br ${value.gradient} rounded-lg sm:rounded-xl p-2.5 sm:p-3 w-10 sm:w-11 md:w-12 h-10 sm:h-11 md:h-12 flex items-center justify-center mb-3 sm:mb-4 mx-auto transform group-hover:scale-110 transition-transform duration-300`}
                             >
-                              <value.icon className="w-6 h-6 text-white" />
+                              <value.icon className="w-5 sm:w-5.5 md:w-6 h-5 sm:h-5.5 md:h-6 text-white" />
                             </div>
-                            <h4 className="font-medium text-stone-900 mb-2 text-center">
+                            <h4 className="font-medium text-stone-900 mb-1 sm:mb-2 text-center text-sm sm:text-base">
                               {value.title}
                             </h4>
-                            <p className="text-sm text-stone-600/90 text-center font-light">
+                            <p className="text-xs sm:text-sm text-stone-600/90 text-center font-light">
                               {value.desc}
                             </p>
                           </div>
@@ -486,21 +490,19 @@ const AboutUs = () => {
               animate={{ opacity: 1, y: 0 }}
               transition={{ duration: 0.5 }}
             >
-              <div className="text-center mb-12">
-                <h2 className="text-3xl sm:text-4xl font-light leading-tight tracking-tight text-stone-900 mb-4">
-                  World-Class
-                  <br />
-                  <span className="font-medium">Facilities</span> & <span className="font-serif italic text-turquoise-600">Services</span>
+              <div className="text-center mb-8 sm:mb-10 md:mb-12">
+                <h2 className="text-2xl sm:text-3xl md:text-4xl font-light leading-tight tracking-tight text-stone-900 mb-3 sm:mb-4">
+                  World-Class <span className="font-medium">Facilities</span> & <span className="font-serif italic text-turquoise-600">Services  at our Panel Hospitals </span>
                 </h2>
-                <p className="text-lg text-stone-600/90 max-w-3xl mx-auto font-light">
+                <p className="text-sm sm:text-base md:text-lg text-stone-600/90 max-w-3xl mx-auto font-light">
                   State-of-the-art infrastructure and advanced medical equipment
                   to provide the best possible care
                 </p>
               </div>
 
-              <div className="grid lg:grid-cols-2 gap-8">
-                <div className="space-y-6">
-                  <h3 className="text-2xl font-light text-stone-900 mb-6">
+              <div className="grid lg:grid-cols-2 gap-6 sm:gap-8">
+                <div className="space-y-4 sm:space-y-5 md:space-y-6">
+                  <h3 className="text-xl sm:text-2xl font-light text-stone-900 mb-4 sm:mb-5 md:mb-6">
                     Key <span className="font-medium">Facilities</span>
                   </h3>
                   {facilities.map((facility, index) => (
@@ -510,16 +512,16 @@ const AboutUs = () => {
                       animate={{ opacity: 1, x: 0 }}
                       transition={{ delay: index * 0.1 }}
                       whileHover={{ scale: 1.02 }}
-                      className="flex items-start space-x-4 bg-white/90 backdrop-blur-sm p-6 rounded-[2rem] shadow-xl shadow-turquoise-900/20 ring-1 ring-turquoise-100/80 hover:shadow-2xl hover:-translate-y-1 transition-all duration-300"
+                      className="flex items-start space-x-3 sm:space-x-4 bg-white/90 backdrop-blur-sm p-4 sm:p-5 md:p-6 rounded-2xl sm:rounded-[1.75rem] md:rounded-[2rem] shadow-xl shadow-turquoise-900/20 ring-1 ring-turquoise-100/80 hover:shadow-2xl hover:-translate-y-1 transition-all duration-300"
                     >
-                      <div className="bg-turquoise-50 p-3 rounded-2xl ring-1 ring-turquoise-100">
-                        <facility.icon className="w-6 h-6 text-turquoise-600" />
+                      <div className="bg-turquoise-50 p-2.5 sm:p-3 rounded-xl sm:rounded-2xl ring-1 ring-turquoise-100 flex-shrink-0">
+                        <facility.icon className="w-5 sm:w-6 h-5 sm:h-6 text-turquoise-600" />
                       </div>
                       <div>
-                        <h4 className="font-medium text-stone-900 mb-1">
+                        <h4 className="font-medium text-stone-900 mb-0.5 sm:mb-1 text-sm sm:text-base">
                           {facility.title}
                         </h4>
-                        <p className="text-stone-600/90 text-sm font-light">
+                        <p className="text-stone-600/90 text-xs sm:text-sm font-light">
                           {facility.desc}
                         </p>
                       </div>
@@ -527,27 +529,27 @@ const AboutUs = () => {
                   ))}
                 </div>
 
-                <div className="space-y-6">
-                  <h3 className="text-2xl font-light text-stone-900 mb-6">
+                <div className="space-y-4 sm:space-y-5 md:space-y-6">
+                  <h3 className="text-xl sm:text-2xl font-light text-stone-900 mb-4 sm:mb-5 md:mb-6">
                     Our <span className="font-medium">Specialties</span>
                   </h3>
                   <motion.div
                     initial={{ opacity: 0, y: 20 }}
                     animate={{ opacity: 1, y: 0 }}
                     transition={{ delay: 0.3 }}
-                    className="bg-gradient-to-br from-turquoise-50/70 to-turquoise-100/70 rounded-[2rem] p-8 shadow-xl shadow-turquoise-900/20 ring-1 ring-turquoise-100/50 backdrop-blur-sm"
+                    className="bg-gradient-to-br from-turquoise-50/70 to-turquoise-100/70 rounded-2xl sm:rounded-[1.75rem] md:rounded-[2rem] p-6 sm:p-7 md:p-8 shadow-xl shadow-turquoise-900/20 ring-1 ring-turquoise-100/50 backdrop-blur-sm"
                   >
-                    <div className="grid grid-cols-2 gap-4">
+                    <div className="grid grid-cols-1 sm:grid-cols-2 gap-3 sm:gap-4">
                       {specialties.map((service, index) => (
                         <motion.div
                           key={index}
                           initial={{ opacity: 0, x: 20 }}
                           animate={{ opacity: 1, x: 0 }}
                           transition={{ delay: index * 0.05 }}
-                          className="flex items-center space-x-3"
+                          className="flex items-center space-x-2 sm:space-x-3"
                         >
-                          <CheckCircle className="w-5 h-5 text-turquoise-600 flex-shrink-0" />
-                          <span className="text-stone-900 text-sm sm:text-base font-light">
+                          <CheckCircle className="w-4 sm:w-5 h-4 sm:h-5 text-turquoise-600 flex-shrink-0" />
+                          <span className="text-stone-900 text-xs sm:text-sm md:text-base font-light">
                             {service}
                           </span>
                         </motion.div>
@@ -597,7 +599,7 @@ const AboutUs = () => {
               initial={{ opacity: 0, y: 20 }}
               animate={{ opacity: 1, y: 0 }}
               transition={{ duration: 0.5 }}
-              className="max-w-7xl mx-auto"
+              className="max-w-7xl mx-auto mt-24"
             >
               <GalleryPage />
             </motion.div>

@@ -66,7 +66,7 @@ const ScrollStatsOverlay = () => {
   }, [hasAnimated]);
 
   const animateNumbers = () => {
-    const finalValues = [99, 95, 90, 95];
+    const finalValues = [99, 95, 99, 95];
     const duration = 2000; // 2 seconds
     const steps = 60;
     const stepDuration = duration / steps;
@@ -99,8 +99,8 @@ const ScrollStatsOverlay = () => {
       gradient: ['#60a5fa', '#3b82f6'], // blue
     },
     {
-      percentage: '90%',
-      value: 90,
+      percentage: '99%',
+      value: 99,
       description: 'Reduction in post-surgery pain and complications',
       gradient: ['#059669', '#0f766e'], // emerald to teal dark
     },
@@ -130,21 +130,21 @@ const ScrollStatsOverlay = () => {
         {/* Stats overlay that scrolls over image */}
         <div
           ref={statsRef}
-          className="absolute inset-0 w-full h-screen flex items-center justify-center mb-20"
+          className="absolute inset-0 w-full h-screen flex items-center justify-center mb-12 sm:mb-16 md:mb-20"
         >
           <div
             ref={statsContentRef}
-            className="bg-white rounded-t-[3rem] w-full min-h-screen flex flex-col items-center justify-center py-16 px-8"
+            className="bg-white rounded-t-[2rem] sm:rounded-t-[2.5rem] md:rounded-t-[3rem] w-full min-h-screen flex flex-col items-center justify-center py-8 sm:py-12 md:py-16 px-4 sm:px-6 md:px-8"
           >
             {/* Header */}
-            <div className="text-center mb-16 max-w-3xl">
-              <h2 className="text-5xl md:text-6xl font-light text-gray-800 mb-4">
+            <div className="text-center mb-8 sm:mb-12 md:mb-16 max-w-3xl px-4">
+              <h2 className="text-2xl sm:text-3xl md:text-4xl lg:text-5xl xl:text-6xl font-light text-gray-800 mb-2 sm:mb-3 md:mb-4">
                 Transforming Surgery with
               </h2>
-              <h2 className="text-5xl md:text-6xl italic font-light text-gray-700 mb-8">
+              <h2 className="text-2xl sm:text-3xl md:text-4xl lg:text-5xl xl:text-6xl italic font-light text-gray-700 mb-4 sm:mb-6 md:mb-8">
                 Precision & innovation
               </h2>
-              <p className="text-md text-gray-600 leading-relaxed">
+              <p className="text-xs sm:text-sm md:text-base text-gray-600 leading-relaxed">
                 Our advanced robotic and laparoscopic systems enable surgeons to perform
                 complex procedures with minimal incisions, ensuring faster recovery,
                 
@@ -153,11 +153,11 @@ const ScrollStatsOverlay = () => {
             </div>
 
             {/* Stats grid */}
-            <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8 max-w-7xl w-full">
+            <div className="grid grid-cols-2 lg:grid-cols-4 gap-4 sm:gap-6 md:gap-8 max-w-7xl w-full">
               {statItems.map((stat, index) => (
                 <div key={index} className="flex flex-col items-center">
                   {/* Circular progress indicator */}
-                  <div className="relative w-48 h-48 mb-6">
+                  <div className="relative w-24 h-24 sm:w-32 sm:h-32 md:w-40 md:h-40 lg:w-48 lg:h-48 mb-3 sm:mb-4 md:mb-6">
                     <svg className="w-full h-full transform -rotate-90" viewBox="0 0 192 192">
                       <circle
                         cx="96"
@@ -201,14 +201,14 @@ const ScrollStatsOverlay = () => {
                       </defs>
                     </svg>
                     <div className="absolute inset-0 flex items-center justify-center">
-                      <span className="text-5xl font-bold text-gray-800 tabular-nums">
+                      <span className="text-xl sm:text-2xl md:text-3xl lg:text-4xl xl:text-5xl font-bold text-gray-800 tabular-nums">
                         {animatedValues[index]}%
                       </span>
                     </div>
                   </div>
 
                   {/* Description */}
-                  <p className="text-center text-sm text-gray-600 leading-relaxed max-w-[180px] min-h-[44px]">
+                  <p className="text-center text-[10px] sm:text-xs md:text-sm text-gray-600 leading-relaxed max-w-[120px] sm:max-w-[140px] md:max-w-[160px] lg:max-w-[180px] min-h-[36px] sm:min-h-[40px] md:min-h-[44px]">
                     {stat.description}
                   </p>
                 </div>

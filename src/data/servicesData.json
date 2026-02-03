@@ -1,636 +1,1459 @@
 [
   {
-    "id": "diabetic-foot-care",
-    "title": "Diabetic Foot Care",
-    "introduction": {
-      "heading": "Expert Diabetic Foot Care in K-Care, Pune",
-      "text": "Diabetic foot complications are a serious concern, potentially leading to severe infections and amputation if not managed properly. At K-Care, Pune, we provide specialized treatment to prevent complications, manage ulcers, and promote healing in diabetic patients, preserving limb function and ensuring mobility."
-    },
-    "doctor_expertise": {
-      "heading": "Dr. Pramod Kadam's Approach to Diabetic Foot Care",
-      "text": "Dr. Pramod Kadam, a leading surgeon with over 10 years of experience, offers a comprehensive approach to diabetic foot management. He combines his deep understanding of vascular and soft tissue surgery with advanced wound care technologies to create personalized treatment plans that focus on limb salvage and restoring quality of life.",
-      "quote": "Managing a diabetic foot is about proactive, multidisciplinary care. Our goal is to heal wounds, prevent recurrence, and keep our patients on their feet, living full lives."
-    },
-    "diagnostic_process": {
-      "heading": "Laying the Foundation for Effective Treatment",
-      "steps": [
-        "Comprehensive foot examination to assess nerve damage and blood flow.",
-        "Doppler ultrasound to evaluate circulation.",
-        "Wound culture and sensitivity tests for targeted antibiotic therapy.",
-        "X-rays or MRI to check for bone infections (osteomyelitis)."
-      ]
-    },
-    "ideal_candidates": {
-      "heading": "Who Needs Specialized Diabetic Foot Care?",
-      "points": [
-        "Patients with non-healing foot ulcers.",
-        "Individuals with diabetic neuropathy (loss of sensation).",
-        "Those with peripheral artery disease (poor circulation).",
-        "Patients with foot deformities or recurrent infections."
-      ]
-    },
-    "treatment_options": {
-      "heading": "Advanced Treatment Options for Diabetic Foot",
-      "options": [
-        {
-          "name": "Advanced Wound Debridement & Care",
-          "description": "Regular removal of non-viable tissue to promote healing, combined with specialized dressings."
-        },
-        {
-          "name": "Hyperbaric Oxygen Therapy (HBOT)",
-          "description": "Breathing pure oxygen in a pressurized environment to enhance the body's natural healing processes and fight infection."
-        },
-        {
-          "name": "Revascularization Procedures",
-          "description": "Surgical interventions to restore blood flow to the foot when circulation is compromised."
-        }
-      ]
-    },
-    "why_choose_us": {
-      "heading": "Why Choose Dr. Pramod Kadam for Diabetic Foot Care?",
-      "points": [
-        "Over 10 years of specialized surgical experience.",
-        "Focus on limb salvage and functional recovery.",
-        "Access to advanced technologies like HBOT.",
-        "Compassionate, patient-centered approach.",
-        "Collaborative care with diabetologists and podiatrists."
-      ]
-    },
-    "faqs": [
+    "id": 1,
+    "name": "Piles (Hemorrhoids)",
+    "phonescreenname": "Piles",
+    "cardimage": "/piles.jpg",
+    "bannerimage": "/piles_banner.webp",
+    "galleryimages": [
+      "/Piles.jpg"
+    ],
+    "slug": "piles-treatment",
+    "overview": "Piles are swollen veins around the anus or rectum that can cause bleeding, itching, or pain while passing stool. They're very common and often linked to constipation or straining during bowel movements.",
+    "whenToConsult": [
+      "Bleeding during or after passing stool",
+      "Pain, swelling, or itching in the anal region",
+      "A lump or feeling of something \"coming out\""
+    ],
+    "treatmentOptions": "Mild piles can often be managed with dietary changes, increased fibre, and medicines. For advanced cases, laser or stapler surgery offers a modern, painless solution. The laser piles procedure is performed under anaesthesia. It seals the swollen veins using focused laser energy without cuts or stitches.",
+    "whyChooseUs": "We use advanced laser and minimally invasive tools for a faster, safer, and more comfortable recovery — with minimal bleeding and almost no recurrence.",
+    "journeySteps": [
       {
-        "question": "How often should I get my feet checked?",
-        "answer": "If you have diabetes, you should have a comprehensive foot exam at least once a year. If you have known risk factors like neuropathy or poor circulation, more frequent checks are necessary."
+        "step": "01",
+        "title": "Consultation & Diagnosis",
+        "description": "A detailed check-up and proctoscopy to assess the grade of hemorrhoids and confirm the diagnosis."
       },
       {
-        "question": "Can diabetic foot ulcers be completely healed?",
-        "answer": "Yes, with timely and appropriate care, most diabetic foot ulcers can be healed. The key is a combination of professional wound care, off-loading pressure, and managing blood sugar levels."
+        "step": "02",
+        "title": "Personalized Treatment Plan",
+        "description": "Your doctor discusses options like medication or Laser Hemorrhoidoplasty (LHP) based on severity."
+      },
+      {
+        "step": "03",
+        "title": "Advanced Procedure",
+        "description": "Laser treatment precisely shrinks the piles with minimal bleeding and faster comfort."
+      },
+      {
+        "step": "04",
+        "title": "Post-Procedure Observation",
+        "description": "Short observation before discharge with guidance on diet and hygiene."
+      },
+      {
+        "step": "05",
+        "title": "Quick Return to Normal Life",
+        "description": "Resume regular activities quickly with minimal discomfort."
+      },
+      {
+        "step": "06",
+        "title": "Follow-Up & Complete Care",
+        "description": "A review ensures perfect healing and advice to prevent recurrence."
       }
     ]
   },
   {
-    "id": "laparoscopic-appendectomy",
-    "title": "Laparoscopic Appendectomy",
-    "introduction": {
-      "heading": "Advanced Appendix Treatment in K-Care, Pune",
-      "text": "Appendicitis is one of the most common surgical emergencies. When the appendix becomes inflamed, timely intervention is lifesaving. At K-Care, Pune, we specialize in managing appendicitis through advanced, minimally invasive techniques for a safer and faster recovery."
-    },
-    "doctor_expertise": {
-      "heading": "Dr. Pramod Kadam's Expertise in Appendix Surgery",
-      "text": "Dr. Pramod Kadam is a trusted expert in appendix treatment in K-Care, Pune. A leading General and Laparoscopic Surgeon, he specializes in laparoscopic appendectomy, offering patients quicker recovery, reduced scarring, and shorter hospital stays. His diagnostic precision and surgical skill have helped hundreds recover safely.",
-      "quote": "Appendicitis rarely gives a second warning. Recognizing the symptoms early and acting fast is key to preventing complications. Our approach is always to balance safety with minimal invasiveness."
-    },
-    "diagnostic_process": {
-      "heading": "Diagnostic Process for Appendicitis",
-      "steps": [
-        "Thorough physical assessment of abdominal pain, nausea, and fever.",
-        "Blood tests to check for elevated white blood cell count.",
-        "Ultrasound or CT scan to visualize appendix inflammation.",
-        "Clinical scoring systems like the Alvarado Score to support diagnosis."
-      ]
-    },
-    "ideal_candidates": {
-      "heading": "Who Is an Ideal Candidate for Appendix Surgery?",
-      "points": [
-        "Patients diagnosed with acute appendicitis.",
-        "Those with complicated appendicitis (e.g., abscess or perforation).",
-        "Individuals with recurring abdominal pain due to chronic appendicitis."
-      ]
-    },
-    "treatment_options": {
-      "heading": "Advanced Appendix Treatment Options",
-      "options": [
-        {
-          "name": "Laparoscopic Appendectomy",
-          "description": "A minimally invasive approach using 2–3 small incisions, offering faster healing and less post-operative pain."
-        },
-        {
-          "name": "Single Incision Laparoscopic Surgery (SILS)",
-          "description": "A cutting-edge technique performed through a single umbilical incision, resulting in virtually no visible scarring."
-        },
-        {
-          "name": "Open Appendectomy",
-          "description": "Reserved for complex or ruptured cases where a wider surgical field is needed for safety."
-        }
-      ]
-    },
-    "why_choose_us": {
-      "heading": "Why Choose Dr. Pramod Kadam for Appendix Treatment?",
-      "points": [
-        "Over 10 years of surgical experience.",
-        "Expert in advanced laparoscopic techniques.",
-        "Focus on rapid recovery and minimal scarring.",
-        "Access to modern, infection-controlled surgical facilities.",
-        "Trusted reputation with hundreds of successful procedures."
-      ]
-    },
-    "faqs": [
+    "id": 2,
+    "name": "Hernia (Robotic or Laparoscopic Hernia Repair)",
+    "phonescreenname": "Hernia",
+    "cardimage": "/Hernia.jpg",
+    "bannerimage": "/Hernia_Banner.jpg",
+    "galleryimages": [
+      "/Hernia.jpg"
+    ],
+    "slug": "robotic-hernia-repair",
+    "overview": "A hernia develops when an internal organ or tissue pushes through a weak spot in the muscle wall, often appearing as a bulge in the abdomen or groin. Hernias don't heal on their own and usually require surgery.",
+    "whenToConsult": [
+      "Visible bulge or swelling in the abdomen or groin",
+      "Pain while lifting, coughing, or bending",
+      "Discomfort that worsens by the end of the day"
+    ],
+    "treatmentOptions": "In Robotic Hernia Repair, the surgeon operates using robotic arms controlled from a console. This allows unmatched precision and flexibility, even for complex or recurrent hernias. A surgical mesh is placed to strengthen the muscle wall. Laparoscopic Hernia Repair, is a keyhole surgery performed through 3 tiny incisions using a camera and fine instruments.",
+    "whyChooseUs": "Robotic surgery ensures smaller incisions, less pain, faster healing, and better cosmetic results — handled by an experienced surgeon specializing in advanced robotic techniques.",
+    "journeySteps": [
       {
-        "question": "Is laparoscopic appendectomy painful?",
-        "answer": "Post-operative pain is significantly less compared to open surgery. It is well-managed with medication, and most patients feel comfortable within a day or two."
+        "step": "01",
+        "title": "Consultation & Diagnosis",
+        "description": "Examination and imaging identify the hernia site and type."
       },
       {
-        "question": "How soon can I resume daily activities after surgery?",
-        "answer": "Most patients can resume light activities within a few days and return to work or school within one to two weeks, depending on the nature of their activities."
+        "step": "02",
+        "title": "Personalized Treatment Plan",
+        "description": "Plan includes laparoscopic or robotic mesh repair options."
       },
       {
-        "question": "Can appendicitis be treated without surgery?",
-        "answer": "In some very specific, uncomplicated cases, antibiotics may be used. However, surgery remains the definitive and most reliable treatment to prevent rupture and other complications."
+        "step": "03",
+        "title": "Advanced Procedure",
+        "description": "Precise surgery restores muscle strength using minimal-access techniques."
+      },
+      {
+        "step": "04",
+        "title": "Post-Procedure Observation",
+        "description": "Brief hospital stay to monitor comfort and healing."
+      },
+      {
+        "step": "05",
+        "title": "Quick Return to Normal Life",
+        "description": "Resume walking and light activities within days."
+      },
+      {
+        "step": "06",
+        "title": "Follow-Up & Complete Care",
+        "description": "Regular check ensures lasting repair and comfort."
       }
     ]
   },
   {
-    "id": "robotic-hernia-repair",
-    "title": "Robotic Hernia Repair",
-    "introduction": {
-      "heading": "Advanced Robotic Hernia Repair in K-Care, Pune",
-      "text": "Hernias can be painful and disruptive to daily life. We offer state-of-the-art robotic surgery for complex hernias, providing a durable repair with enhanced precision, minimal pain, and a significantly reduced risk of recurrence."
-    },
-    "doctor_expertise": {
-      "heading": "Dr. Pramod Kadam's Expertise in Robotic Hernia Surgery",
-      "text": "Dr. Pramod Kadam is a certified robotic surgeon who utilizes the da Vinci Surgical System to perform intricate hernia repairs. This technology allows for 3D high-definition vision and wristed instruments that bend and rotate far greater than the human hand, enabling superior precision.",
-      "quote": "Robotic surgery transforms hernia repair. It allows us to perform complex reconstructions through tiny incisions, leading to a stronger repair, less pain, and a much faster return to normal life for our patients."
-    },
-    "diagnostic_process": {
-      "heading": "Diagnosing Hernias",
-      "steps": [
-        "Physical examination to identify the bulge and assess its reducibility.",
-        "Ultrasound or CT scan for complex or unclear cases to determine the hernia's size and contents.",
-        "Assessment of symptoms like pain, discomfort, or pressure."
-      ]
-    },
-    "ideal_candidates": {
-      "heading": "Who Is a Candidate for Robotic Hernia Repair?",
-      "points": [
-        "Patients with large or complex abdominal wall hernias.",
-        "Individuals with recurrent hernias after previous surgeries.",
-        "Patients seeking the benefits of minimally invasive surgery, including less pain and faster recovery."
-      ]
-    },
-    "treatment_options": {
-      "heading": "Advanced Hernia Repair Options",
-      "options": [
-        {
-          "name": "Robotic-Assisted Hernia Repair (e.g., TAPP, TEP)",
-          "description": "The da Vinci system is used to place a mesh to reinforce the abdominal wall from within, providing a very strong and durable repair."
-        },
-        {
-          "name": "Laparoscopic Hernia Repair",
-          "description": "A keyhole approach using a camera and long instruments to place the mesh."
-        },
-        {
-          "name": "Open Hernia Repair",
-          "description": "The traditional approach, now typically reserved for specific cases like strangulated hernias."
-        }
-      ]
-    },
-    "why_choose_us": {
-      "heading": "Why Choose Dr. Pramod Kadam for Hernia Repair?",
-      "points": [
-        "Certified and experienced robotic surgeon.",
-        "Specializes in complex and recurrent hernia cases.",
-        "Reduced recurrence rates and minimal post-operative pain.",
-        "Utilizes the latest da Vinci Surgical System for unparalleled precision."
-      ]
-    },
-    "faqs": [
+    "id": 3,
+    "name": "Gall Bladder Stones (Robotic or Laparoscopic Cholecystectomy)",
+    "phonescreenname": "Gall Bladder",
+    "cardimage": "/gallblader.webp",
+    "bannerimage": "/gallblader_banner.webp",
+    "galleryimages": [
+      "/Gall_Bladder_Stones.jpg"
+    ],
+    "slug": "gall-bladder-removal",
+    "overview": "Gallstones are hardened deposits that form in the gall bladder and can cause severe abdominal pain, nausea, or vomiting after meals. When symptoms are frequent or complications arise, removal of the gall bladder is the safest and most effective treatment.",
+    "whenToConsult": [
+      "Recurrent pain in the upper right abdomen or after fatty meals",
+      "Nausea, vomiting, or indigestion",
+      "History of gallstone attacks or infection (cholecystitis)"
+    ],
+    "treatmentOptions": "In Laparoscopic or Robotic Gall Bladder Removal, the surgeon makes 3–4 tiny keyhole incisions to insert a camera and instruments. The gall bladder is safely removed through one of these small cuts. The surgery is performed under general anaesthesia.",
+    "whyChooseUs": "We perform all gall bladder surgeries using advanced Laparoscopic or Robotic Techniques for minimal pain, faster recovery, and almost invisible scars.",
+    "journeySteps": [
       {
-        "question": "What are the advantages of robotic hernia surgery over laparoscopic?",
-        "answer": "Robotic surgery provides the surgeon with better visualization (3D-HD), improved dexterity, and greater precision, which can be particularly beneficial for complex hernias, potentially leading to lower complication rates."
+        "step": "01",
+        "title": "Consultation & Diagnosis",
+        "description": "Ultrasound confirms stones and gall bladder condition."
       },
       {
-        "question": "How long will I be in the hospital?",
-        "answer": "Most robotic hernia repairs are performed as a day care or short-stay surgery. Patients often go home the same day or the next day."
+        "step": "02",
+        "title": "Personalized Treatment Plan",
+        "description": "Laparoscopic or robotic removal is recommended for permanent relief."
+      },
+      {
+        "step": "03",
+        "title": "Advanced Procedure",
+        "description": "Tiny keyhole incisions used to remove the gall bladder safely."
+      },
+      {
+        "step": "04",
+        "title": "Post-Procedure Observation",
+        "description": "Monitored for stability before discharge."
+      },
+      {
+        "step": "05",
+        "title": "Quick Return to Normal Life",
+        "description": "Minimal scars and fast recovery to regular diet."
+      },
+      {
+        "step": "06",
+        "title": "Follow-Up & Complete Care",
+        "description": "Review ensures smooth digestion and wound healing"
       }
     ]
   },
   {
-    "id": "gall-bladder-removal",
-    "title": "Gall Bladder Removal",
-    "introduction": {
-      "heading": "Safe Gall Bladder Removal in K-Care, Pune",
-      "text": "Gallstones can cause severe pain, indigestion, and complications. We perform laparoscopic gallbladder removal (cholecystectomy) through tiny incisions, offering a definitive cure with a swift and comfortable recovery."
-    },
-    "doctor_expertise": {
-      "heading": "Dr. Pramod Kadam's Expertise in Gall Bladder Surgery",
-      "text": "Dr. Pramod Kadam has performed hundreds of laparoscopic cholecystectomies. His meticulous technique focuses on safety, particularly in identifying and preserving the critical bile duct structures, ensuring a smooth and complication-free procedure.",
-      "quote": "Gallbladder surgery is one of the most common procedures we do, and our goal is to make it as safe and comfortable as possible. For most patients, it's a same-day procedure that brings immediate relief from painful attacks."
-    },
-    "diagnostic_process": {
-      "heading": "Diagnosing Gallbladder Issues",
-      "steps": [
-        "Abdominal ultrasound to confirm the presence of gallstones.",
-        "Blood tests to check for signs of inflammation or bile duct blockage.",
-        "HIDA scan in some cases to assess gallbladder function."
-      ]
-    },
-    "ideal_candidates": {
-      "heading": "Who Needs Their Gallbladder Removed?",
-      "points": [
-        "Patients experiencing recurrent pain attacks (biliary colic) due to gallstones.",
-        "Individuals diagnosed with acute cholecystitis (gallbladder inflammation).",
-        "Those with complications like pancreatitis or jaundice caused by gallstones."
-      ]
-    },
-    "treatment_options": {
-      "heading": "Gallbladder Removal Techniques",
-      "options": [
-        {
-          "name": "Laparoscopic Cholecystectomy",
-          "description": "The gold standard procedure, performed through 3-4 small keyhole incisions for rapid recovery."
-        },
-        {
-          "name": "Single-Incision Laparoscopic Cholecystectomy (SILS)",
-          "description": "An advanced technique where the entire surgery is done through a single incision in the navel, leaving a virtually invisible scar."
-        }
-      ]
-    },
-    "why_choose_us": {
-      "heading": "Why Choose Dr. Pramod Kadam for Gallbladder Surgery?",
-      "points": [
-        "High volume of successful laparoscopic procedures.",
-        "Emphasis on safety and critical view of safety technique.",
-        "Same-day discharge possible for most patients.",
-        "Expertise in managing both simple and complex cases."
-      ]
-    },
-    "faqs": [
+    "id": 4,
+    "name": "Appendicitis (Robotic or Laparoscopic Appendectomy)",
+    "phonescreenname": "Appendicitis",
+    "cardimage": "/appendicitis.webp",
+    "bannerimage": "/appendicitis_b.jpg",
+    "galleryimages": [
+      "/Appendicitis.jpg"
+    ],
+    "slug": "laparoscopic-appendectomy",
+    "overview": "Appendicitis occurs when the appendix — a small pouch attached to the large intestine — becomes inflamed or infected. It causes sharp pain in the lower right abdomen, fever, and nausea. If left untreated, it can burst and lead to serious infection.",
+    "whenToConsult": [
+      "Sudden pain in the right lower abdomen",
+      "Loss of appetite, nausea, or vomiting",
+      "Fever or tenderness in the abdomen"
+    ],
+    "treatmentOptions": "The best treatment is surgical removal of the appendix. Robotic or Laparoscopic Appendectomy is a keyhole surgery performed through 3 tiny incisions using a camera and fine instruments. The procedure is done under general anaesthesia.",
+    "whyChooseUs": "Our laparoscopic approach ensures minimal pain, negligible scarring, and quicker healing — allowing you to resume normal life sooner.",
+    "journeySteps": [
       {
-        "question": "Can I live a normal life without a gallbladder?",
-        "answer": "Yes, absolutely. The gallbladder's function is to store bile, which is still produced by the liver. Your digestive system will adapt quickly, and you can eat a normal diet after a short adjustment period."
+        "step": "01",
+        "title": "Consultation & Diagnosis",
+        "description": "Physical exam and scans confirm inflammation of the appendix."
       },
       {
-        "question": "What is the recovery like?",
-        "answer": "Recovery is very fast. Most patients are walking around within hours of surgery and can return to office work within a week. Heavy lifting should be avoided for a few weeks."
+        "step": "02",
+        "title": "Personalized Treatment Plan",
+        "description": "Laparoscopic or robotic surgery advised for safe removal."
+      },
+      {
+        "step": "03",
+        "title": "Advanced Procedure",
+        "description": "Appendix removed through small incisions under anesthesia."
+      },
+      {
+        "step": "04",
+        "title": "Post-Procedure Observation",
+        "description": "Short monitoring to ensure comfort before discharge."
+      },
+      {
+        "step": "05",
+        "title": "Quick Return to Normal Life",
+        "description": "Rapid recovery with minimal pain and scars."
+      },
+      {
+        "step": "06",
+        "title": "Follow-Up & Complete Care",
+        "description": "Healing review and preventive care guidance."
       }
     ]
   },
   {
-    "id": "hydrocele-surgery",
-    "title": "Hydrocele Surgery",
-    "introduction": {
-      "heading": "Effective Hydrocele Surgery in K-Care, Pune",
-      "text": "A hydrocele is a collection of fluid around the testicle that can cause swelling and discomfort. We offer a simple, effective surgical procedure to correct hydroceles, with a focus on patient comfort and minimal downtime."
-    },
-    "doctor_expertise": {
-      "heading": "Dr. Pramod Kadam's Approach to Hydrocele Surgery",
-      "text": "Dr. Pramod Kadam performs hydrocelectomy using minimally invasive techniques that ensure a quick, outpatient procedure. His approach minimizes tissue trauma and promotes a swift, comfortable recovery.",
-      "quote": "Hydrocele surgery is a straightforward procedure that provides a permanent solution. We perform it with precision to ensure patients can return to their normal lives without discomfort or concern."
-    },
-    "diagnostic_process": {
-      "heading": "Diagnosing a Hydrocele",
-      "steps": [
-        "Physical examination of the scrotum.",
-        "Transillumination, where a light is shone through the scrotum to see the fluid.",
-        "Scrotal ultrasound to rule out other causes of swelling, such as a hernia or tumor."
-      ]
-    },
-    "ideal_candidates": {
-      "heading": "When is Hydrocele Surgery Recommended?",
-      "points": [
-        "When the hydrocele is large and causes discomfort, pain, or a heavy sensation.",
-        "If the swelling is cosmetically bothersome to the patient.",
-        "In cases where the hydrocele is associated with a hernia."
-      ]
-    },
-    "treatment_options": {
-      "heading": "Surgical Options for Hydrocele",
-      "options": [
-        {
-          "name": "Hydrocelectomy",
-          "description": "A surgical procedure performed through a small incision in the scrotum or groin to drain the fluid and remove or evert the sac that produces it, preventing recurrence."
-        }
-      ]
-    },
-    "why_choose_us": {
-      "heading": "Why Choose Dr. Pramod Kadam for Hydrocele Surgery?",
-      "points": [
-        "Expertise in minimally invasive techniques.",
-        "Performed as a quick, outpatient procedure.",
-        "Focus on patient comfort and minimal downtime.",
-        "High success rate with low risk of recurrence."
-      ]
-    },
-    "faqs": [
+    "id": 5,
+    "name": "Advanced Thyroid Surgery",
+    "phonescreenname": "Thyroid Surgery",
+    "cardimage": "/Advanced_Thyroid_Surgery.jpg",
+    "bannerimage": "/Advanced_Thyroid_Surgery_Banner.jpg",
+    "galleryimages": [
+      "/Advanced_Thyroid_Surgery.jpg"
+    ],
+    "slug": "advanced-thyroid-surgery",
+    "overview": "Thyroid disorders such as goitre, nodules, or thyroid cancer may require surgical removal of part or all of the thyroid gland. With modern techniques, thyroid surgery is now safer and more precise than ever before.",
+    "whenToConsult": [
+      "Visible swelling in the front of the neck",
+      "Difficulty swallowing or breathing",
+      "Hoarseness of voice or thyroid test abnormalities"
+    ],
+    "treatmentOptions": "We perform Minimally Invasive Thyroidectomy and Endoscopic/Robotic Thyroid Surgery, which use small incisions and cameras for high precision. The procedure is performed under general anaesthesia.",
+    "whyChooseUs": "Our advanced approach ensures minimal scarring, reduced pain, and preservation of voice and calcium levels — ensuring both safety and confidence after surgery.",
+    "journeySteps": [
       {
-        "question": "Is hydrocele surgery painful?",
-        "answer": "The surgery is done under anesthesia. Post-operative pain is typically mild and can be easily controlled with oral pain medication for a few days."
+        "step": "01",
+        "title": "Consultation & Diagnosis",
+        "description": "Ultrasound and tests confirm thyroid disorder."
       },
       {
-        "question": "How long until I can go back to work?",
-        "answer": "Most patients with desk jobs can return to work within 2-3 days. Strenuous physical activity and heavy lifting should be avoided for about two weeks."
+        "step": "02",
+        "title": "Personalized Treatment Plan",
+        "description": "Decision on partial or total removal depending on condition."
+      },
+      {
+        "step": "03",
+        "title": "Advanced Procedure",
+        "description": "Precision surgery protects vital nerves and voice."
+      },
+      {
+        "step": "04",
+        "title": "Post-Procedure Observation",
+        "description": "Careful monitoring of calcium and thyroid levels."
+      },
+      {
+        "step": "05",
+        "title": "Quick Return to Normal Life",
+        "description": "Early recovery and return to normal routine."
+      },
+      {
+        "step": "06",
+        "title": "Follow-Up & Complete Care",
+        "description": "Regular follow-ups for hormone balance and wellness."
       }
     ]
   },
   {
-    "id": "pilonidal-sinus-care",
-    "title": "Pilonidal Sinus Care",
-    "introduction": {
-      "heading": "Advanced Pilonidal Sinus Treatment in K-Care, Pune",
-      "text": "Pilonidal sinus can be a painful and recurrent problem. We offer advanced laser treatment (PiLaC) that closes the sinus tract without the need for large, painful incisions, leading to faster healing and a quicker return to normal activities."
-    },
-    "doctor_expertise": {
-      "heading": "Dr. Pramod Kadam's Expertise in Pilonidal Sinus Care",
-      "text": "Dr. Pramod Kadam specializes in Pilonidal Sinus Laser-Assisted Closure (PiLaC), a minimally invasive technique that avoids large wounds and complex dressings. This approach significantly reduces pain and allows patients to get back to work sooner.",
-      "quote": "The traditional surgery for pilonidal sinus often involves a long and painful recovery. With PiLaC, we can offer a much more comfortable experience with excellent long-term results and no stitches."
-    },
-    "diagnostic_process": {
-      "heading": "Diagnosing Pilonidal Sinus",
-      "steps": [
-        "Visual examination of the affected area at the top of the buttocks crease.",
-        "Assessment for signs of infection, such as redness, swelling, or drainage.",
-        "Ultrasound or MRI in complex or recurrent cases to map the sinus tracts."
-      ]
-    },
-    "ideal_candidates": {
-      "heading": "Who Is a Good Candidate for PiLaC?",
-      "points": [
-        "Patients with uncomplicated or recurrent pilonidal sinus.",
-        "Individuals looking for a minimally invasive option with less post-operative pain.",
-        "People who want to avoid a long recovery period and complex wound care."
-      ]
-    },
-    "treatment_options": {
-      "heading": "Modern Treatments for Pilonidal Sinus",
-      "options": [
-        {
-          "name": "Pilonidal Sinus Laser-Assisted Closure (PiLaC)",
-          "description": "A laser fiber is used to ablate and seal the sinus tract from the inside, promoting healing without the need for a large excision."
-        },
-        {
-          "name": "Excision and Primary Closure or Flap Surgery",
-          "description": "Traditional surgical methods involving removal of the sinus and either stitching the wound closed or using a skin flap, reserved for very extensive cases."
-        }
-      ]
-    },
-    "why_choose_us": {
-      "heading": "Why Choose Dr. Pramod Kadam for Pilonidal Sinus?",
-      "points": [
-        "Expert in advanced laser treatment (PiLaC).",
-        "Focus on 'no stitches' and faster healing.",
-        "Reduced pain and quicker return to work.",
-        "High success rate for a definitive cure."
-      ]
-    },
-    "faqs": [
+    "id": 6,
+    "name": "Breast Surgery",
+    "phonescreenname": "Breast Surgery",
+    "cardimage": "/breast_surgery.jpg",
+    "bannerimage": "/breast_surgery_banner.webp",
+    "galleryimages": [
+      "/Breast_Surgery.jpg"
+    ],
+    "slug": "breast-surgery",
+    "overview": "Breast conditions can range from harmless cysts and lumps to infections or even cancer. Early diagnosis and the right treatment can ensure the best possible outcome. We provide comprehensive breast care — from evaluation to surgery — in a safe and supportive environment.",
+    "whenToConsult": [
+      "Lump or swelling in the breast or underarm",
+      "Pain, nipple discharge, or redness",
+      "Change in shape or skin of the breast"
+    ],
+    "treatmentOptions": "Depending on the condition, procedures may include: Lumpectomy (removal of a small lump or cyst), Mastectomy (removal of the whole breast, if needed), Breast abscess drainage, Reconstructive surgery to restore natural shape after cancer surgery. Most breast surgeries are done under general anaesthesia.",
+    "whyChooseUs": "Our focus is on early diagnosis, precision surgery, and emotional comfort — using advanced techniques to minimize scars and promote faster healing.",
+    "journeySteps": [
       {
-        "question": "Is PiLaC a painful procedure?",
-        "answer": "The procedure is done under anesthesia. Post-operative pain is significantly less than traditional excision surgery. Most patients manage with simple oral painkillers for a day or two."
+        "step": "01",
+        "title": "Consultation & Diagnosis",
+        "description": "Clinical exam and imaging to assess lumps or concerns."
       },
       {
-        "question": "How long does it take to recover?",
-        "answer": "Recovery is very quick. Most patients can sit comfortably the next day and return to work within a few days. There are no stitches to be removed and wound care is very simple."
+        "step": "02",
+        "title": "Personalized Treatment Plan",
+        "description": "Tailored plan for removal, reconstruction, or correction."
+      },
+      {
+        "step": "03",
+        "title": "Advanced Procedure",
+        "description": "Safe and precise surgery with cosmetic focus."
+      },
+      {
+        "step": "04",
+        "title": "Post-Procedure Observation",
+        "description": "Brief stay for pain control and monitoring."
+      },
+      {
+        "step": "05",
+        "title": "Quick Return to Normal Life",
+        "description": "Smooth recovery with minimal scarring."
+      },
+      {
+        "step": "06",
+        "title": "Follow-Up & Complete Care",
+        "description": "Follow-up ensures healing and confidence restoration."
       }
     ]
   },
   {
-    "id": "rectal-prolapse-surgery",
-    "title": "Rectal Prolapse Surgery",
-    "introduction": {
-      "heading": "Expert Rectal Prolapse Surgery in K-Care, Pune",
-      "text": "Rectal prolapse can be a distressing condition that significantly impacts quality of life. We offer advanced robotic and laparoscopic surgical techniques to correct the prolapse, restoring normal anatomy and function effectively."
-    },
-    "doctor_expertise": {
-      "heading": "Dr. Pramod Kadam's Expertise in Rectal Prolapse Surgery",
-      "text": "Dr. Pramod Kadam is skilled in performing Robotic-Assisted Ventral Mesh Rectopexy, a state-of-the-art procedure to fix rectal prolapse. This minimally invasive approach results in less pain, a shorter hospital stay, and excellent functional outcomes.",
-      "quote": "Correcting rectal prolapse is about more than just fixing the anatomy; it's about restoring a patient's confidence and quality of life. Our robotic approach allows us to do this with maximum precision and minimal impact."
-    },
-    "diagnostic_process": {
-      "heading": "Diagnosing Rectal Prolapse",
-      "steps": [
-        "Physical examination, often asking the patient to strain to demonstrate the prolapse.",
-        "Colonoscopy to rule out other associated conditions.",
-        "Defecography, a special type of X-ray, to evaluate pelvic floor function in complex cases."
-      ]
-    },
-    "ideal_candidates": {
-      "heading": "Who Needs Rectal Prolapse Surgery?",
-      "points": [
-        "Patients with full-thickness rectal prolapse.",
-        "Individuals experiencing symptoms like fecal incontinence, constipation, or a feeling of incomplete evacuation.",
-        "Those for whom non-surgical management has failed."
-      ]
-    },
-    "treatment_options": {
-      "heading": "Surgical Options for Rectal Prolapse",
-      "options": [
-        {
-          "name": "Robotic-Assisted Ventral Mesh Rectopexy",
-          "description": "A mesh is used to lift the rectum and secure it to the sacrum (tailbone) using the da Vinci robotic system for enhanced precision."
-        },
-        {
-          "name": "Laparoscopic Rectopexy",
-          "description": "A similar keyhole procedure to fix the prolapse without the use of a robot."
-        },
-        {
-          "name": "Perineal Procedures",
-          "description": "Surgical approaches performed through the anus, typically reserved for older, frail patients who may not be candidates for abdominal surgery."
-        }
-      ]
-    },
-    "why_choose_us": {
-      "heading": "Why Choose Dr. Pramod Kadam for Rectal Prolapse Surgery?",
-      "points": [
-        "Expertise in advanced robotic and laparoscopic rectopexy.",
-        "Focus on restoring both anatomy and bowel function.",
-        "Minimally invasive approach for faster recovery.",
-        "Comprehensive evaluation and personalized surgical planning."
-      ]
-    },
-    "faqs": [
+    "id": 7,
+    "name": "Diabetic Foot",
+    "phonescreenname": "Diabetic Foot",
+    "cardimage": "/Diabetic_Foot.jpg",
+    "bannerimage": "/Diabetic_Foot_Banner.jpg",
+    "galleryimages": [
+      "/Diabetic_Foot.jpg"
+    ],
+    "slug": "diabetic-foot-care",
+    "overview": "People with diabetes often experience poor blood circulation and reduced sensation in their feet. This can lead to slow-healing wounds, ulcers, or infections that, if ignored, can become serious. Early and expert care can prevent complications and even save the limb.",
+    "whenToConsult": [
+      "Persistent wounds or ulcers on the foot",
+      "Numbness, tingling, or burning sensation",
+      "Swelling, redness, or foul-smelling discharge",
+      "Change in skin colour or temperature"
+    ],
+    "treatmentOptions": "At our clinic, diabetic foot care begins with a thorough assessment of blood flow, nerve function, and wound condition. Depending on the severity, treatment may include: Advanced wound dressings and offloading techniques, Laser-assisted wound healing, Minor debridement or surgical cleaning of infected tissue, Reconstructive procedures for deeper infections or ulcers.",
+    "whyChooseUs": "We combine surgical expertise with diabetic wound management, ensuring faster healing, infection control, and prevention of recurrence. Our approach is comprehensive — treating both the wound and its root cause.",
+    "journeySteps": [
       {
-        "question": "What is the success rate of rectopexy?",
-        "answer": "Ventral mesh rectopexy, especially when performed robotically, has a very high success rate with low rates of recurrence and significant improvement in functional symptoms like incontinence."
+        "step": "01",
+        "title": "Consultation & Diagnosis",
+        "description": "Foot wounds or ulcers evaluated with tests for blood flow and infection."
       },
       {
-        "question": "How long is the hospital stay?",
-        "answer": "After a robotic or laparoscopic rectopexy, the typical hospital stay is only 2-3 days. Recovery to normal activities takes a few weeks."
+        "step": "02",
+        "title": "Personalized Treatment Plan",
+        "description": "Includes cleaning, antibiotics, dressings, and sugar control."
+      },
+      {
+        "step": "03",
+        "title": "Advanced Procedure",
+        "description": "Surgical or minor repair if needed for faster healing."
+      },
+      {
+        "step": "04",
+        "title": "Post-Procedure Observation",
+        "description": "Monitoring wound healing and foot protection."
+      },
+      {
+        "step": "05",
+        "title": "Quick Return to Normal Life",
+        "description": "Gradual return to mobility with special footwear advice."
+      },
+      {
+        "step": "06",
+        "title": "Follow-Up & Complete Care",
+        "description": "Regular wound checks to prevent recurrence."
       }
     ]
   },
   {
-    "id": "phimosis-treatment",
-    "title": "Phimosis Treatment",
-    "introduction": {
-      "heading": "Gentle and Effective Phimosis Treatment in K-Care, Pune",
-      "text": "Phimosis, the inability to retract the foreskin, can cause discomfort and hygiene issues. We offer gentle and effective procedures, including Z-plasty and advanced laser treatments, to resolve phimosis with expert care, preserving sensation and function."
-    },
-    "doctor_expertise": {
-      "heading": "Dr. Pramod Kadam's Approach to Phimosis",
-      "text": "Dr. Pramod Kadam provides personalized treatment for phimosis, favoring non-circumcision techniques like Z-plasty and laser frenuloplasty whenever possible. This approach resolves the tightness while preserving the foreskin and ensuring excellent cosmetic and functional outcomes.",
-      "quote": "Our goal is to resolve the functional problem of phimosis while respecting the patient's preference. Modern plastic surgery and laser techniques allow us to provide effective solutions beyond traditional circumcision."
-    },
-    "diagnostic_process": {
-      "heading": "Diagnosing Phimosis",
-      "steps": [
-        "Physical examination to determine the degree of foreskin tightness.",
-        "Assessment for any associated inflammation (balanitis) or scarring.",
-        "Discussion with the patient to understand their symptoms and preferences."
-      ]
-    },
-    "ideal_candidates": {
-      "heading": "Who Should Consider Phimosis Treatment?",
-      "points": [
-        "Adults experiencing pain, tearing, or discomfort during erections.",
-        "Individuals with recurrent infections of the foreskin (balanitis).",
-        "Those who have difficulty with urination or maintaining hygiene."
-      ]
-    },
-    "treatment_options": {
-      "heading": "Treatment Options for Phimosis",
-      "options": [
-        {
-          "name": "Z-Plasty (Foreskin-Preserving)",
-          "description": "A plastic surgery technique that lengthens and widens the foreskin opening without removing it."
-        },
-        {
-          "name": "Laser Frenuloplasty",
-          "description": "A laser is used to release a tight frenulum, which can contribute to phimosis."
-        },
-        {
-          "name": "Stapler Circumcision",
-          "description": "A modern, quick, and less painful method of circumcision with faster healing."
-        }
-      ]
-    },
-    "why_choose_us": {
-      "heading": "Why Choose Dr. Pramod Kadam for Phimosis Treatment?",
-      "points": [
-        "Expertise in foreskin-preserving plastic surgery techniques.",
-        "Utilizes advanced laser and stapler technologies.",
-        "Focus on preserving sensation and function.",
-        "Personalized and discreet patient care."
-      ]
-    },
-    "faqs": [
+    "id": 8,
+    "name": "Intestinal Surgeries (Bowel Obstruction / Colostomy / Laparotomy)",
+    "phonescreenname": "Intestinal Surgeries",
+    "cardimage": "/Intestine_surgeries.jpg",
+    "bannerimage": "/intestine_banner.jpg",
+    "galleryimages": [
+      "/Intestinal_surgeries.jpg",
+      "/Intestinal_surgeries_Banner.jpg"
+    ],
+    "slug": "intestinal-surgeries",
+    "overview": "Serious intestinal conditions such as bowel obstruction, perforation, or complicated infections require timely surgical intervention. These conditions can cause severe abdominal pain, vomiting, bloating, and even life-threatening complications if left untreated. Modern laparoscopic or open surgeries allow safe correction of the problem, restoring bowel function while minimizing pain, scarring, and hospital stay.",
+    "whenToConsult": [
+      "Severe abdominal pain",
+      "Vomiting, bloating, inability to pass stool",
+      "Signs of infection or distress"
+    ],
+    "treatmentOptions": "Laparoscopic lysis, colostomy, or open laparotomy; surgery lasts 1–3 hours under general anaesthesia.",
+    "whyChooseUs": "Minimally invasive options reduce pain, hospital stay, and recovery time.",
+    "journeySteps": [
       {
-        "question": "Is circumcision the only option for phimosis?",
-        "answer": "No. For many patients, foreskin-preserving procedures like Z-plasty are an excellent alternative that can resolve the tightness without removing the foreskin."
+        "step": "01",
+        "title": "Consultation & Diagnosis",
+        "description": "Imaging and lab tests."
       },
       {
-        "question": "What is the recovery time?",
-        "answer": "Recovery depends on the procedure. For laser treatments and Z-plasty, recovery is very quick, with a return to normal activities in a few days. Recovery after circumcision takes a bit longer, typically 1-2 weeks."
+        "step": "02",
+        "title": "Personalized Treatment Plan",
+        "description": "Laparoscopic or open surgery planned."
+      },
+      {
+        "step": "03",
+        "title": "Advanced Procedure",
+        "description": "Correct intestinal issue safely."
+      },
+      {
+        "step": "04",
+        "title": "Post-Procedure Care",
+        "description": "Diet and wound care guidance."
+      },
+      {
+        "step": "05",
+        "title": "Quick Return to Normal Life",
+        "description": "Resume normal diet and light activities under guidance."
+      },
+      {
+        "step": "06",
+        "title": "Follow-Up & Support",
+        "description": "Monitor bowel function and prevent complications."
       }
     ]
   },
   {
-    "id": "abscess-drainage",
-    "title": "Abscess Drainage",
-    "introduction": {
-      "heading": "Prompt Abscess Drainage in K-Care, Pune",
-      "text": "An abscess is a painful collection of pus that requires prompt medical attention. We provide sterile drainage of abscesses to relieve pain immediately, prevent the spread of infection, and support rapid healing."
-    },
-    "doctor_expertise": {
-      "heading": "Dr. Pramod Kadam's Expertise in Abscess Management",
-      "text": "Dr. Pramod Kadam ensures that abscess drainage is performed under sterile conditions with appropriate anesthesia for patient comfort. For deeper abscesses, he utilizes ultrasound guidance to ensure complete and accurate drainage, minimizing the risk of recurrence.",
-      "quote": "Treating an abscess quickly and effectively is crucial. Our goal is to provide immediate relief from pain and ensure the infection is fully cleared to prevent further complications."
-    },
-    "diagnostic_process": {
-      "heading": "Diagnosing an Abscess",
-      "steps": [
-        "Physical examination to identify the red, swollen, and tender area.",
-        "Ultrasound imaging for deeper abscesses to determine their exact size and location.",
-        "Pus culture in some cases to identify the specific bacteria and guide antibiotic therapy."
-      ]
-    },
-    "ideal_candidates": {
-      "heading": "Who Needs Abscess Drainage?",
-      "points": [
-        "Anyone with a localized, painful, pus-filled swelling.",
-        "Patients with fever or other signs of systemic infection associated with an abscess.",
-        "Individuals with conditions like perianal abscesses that require expert surgical care."
-      ]
-    },
-    "treatment_options": {
-      "heading": "Abscess Treatment",
-      "options": [
-        {
-          "name": "Incision and Drainage (I&D)",
-          "description": "The standard treatment where a small incision is made over the abscess to allow the pus to drain completely. The cavity may be packed with gauze to allow it to heal from the inside out."
-        },
-        {
-          "name": "Ultrasound-Guided Drainage",
-          "description": "For deeper abscesses, a needle or catheter is guided by ultrasound to drain the pus without a large incision."
-        }
-      ]
-    },
-    "why_choose_us": {
-      "heading": "Why Choose Dr. Pramod Kadam for Abscess Drainage?",
-      "points": [
-        "Prompt and effective treatment for immediate pain relief.",
-        "Use of ultrasound guidance for precision in deep abscesses.",
-        "Sterile procedure to prevent further infection.",
-        "Comprehensive care including wound packing and follow-up."
-      ]
-    },
-    "faqs": [
+    "id": 9,
+    "name": "Burn Injuries",
+    "phonescreenname": "Burn Injuries", 
+
+    "cardimage": "/Burn_Injuries.jpg",
+    "bannerimage": "/Burn_Injuries_Banner.jpg",
+    "galleryimages": [
+      "/Burn_Injuries.jpg",
+      "/Burn_Injuries_Banner.jpg"
+    ],
+    "slug": "burn-injuries",
+    "overview": "Burns damage skin and underlying tissue, causing pain, swelling, and risk of infection. Superficial burns heal with proper wound care, while deep burns may require skin grafting. Early intervention reduces scarring and prevents complications. burn care includes wound cleaning, dressings, debridement and other concerned surgeries and reconstructive procedures",
+    "whenToConsult": [
+      "Large or blistering burns",
+      "Burns on sensitive areas (face, hands, feet, genitals)",
+      "Pain, redness, or oozing"
+    ],
+    "treatmentOptions": "Wound cleaning, dressings, laser-assisted healing, and skin grafting if needed",
+    "whyChooseUs": "Advanced burn care ensures infection control, faster healing, and minimized scarring.",
+    "journeySteps": [
       {
-        "question": "Will I need antibiotics?",
-        "answer": "Yes, antibiotics are often prescribed after drainage to ensure the infection is completely cleared, especially if you have surrounding skin infection (cellulitis) or fever."
+        "step": "01",
+        "title": "Consultation & Diagnosis",
+        "description": "Assess burn depth and area."
       },
       {
-        "question": "Does the procedure hurt?",
-        "answer": "The area is numbed with local anesthesia before the procedure, so you should feel minimal pain during the drainage. You will experience significant relief from the pressure-related pain once the pus is drained."
+        "step": "02",
+        "title": "Personalized Treatment Plan",
+        "description": "Dressings, grafting, or laser therapy."
+      },
+      {
+        "step": "03",
+        "title": "Advanced Procedure",
+        "description": "Wound cleaning and healing support."
+      },
+      {
+        "step": "04",
+        "title": "Post-Procedure Care",
+        "description": "Dressings, hydration, and scar management."
+      },
+      {
+        "step": "05",
+        "title": "Quick Return to Normal Life",
+        "description": "Gradually resume daily activities as pain and dressings allow."
+      },
+      {
+        "step": "06",
+        "title": "Follow-Up & Support",
+        "description": "Monitor healing and cosmetic restoration."
       }
     ]
   },
   {
-    "id": "cyst-removal",
-    "title": "Cyst Removal",
-    "introduction": {
-      "heading": "Minimally Invasive Cyst Removal in K-Care, Pune",
-      "text": "Skin cysts can be uncomfortable and cosmetically bothersome. We offer minimally invasive removal of cysts for both medical and cosmetic reasons, with a strong emphasis on achieving the best possible aesthetic outcome with minimal scarring."
-    },
-    "doctor_expertise": {
-      "heading": "Dr. Pramod Kadam's Approach to Cyst Removal",
-      "text": "Dr. Pramod Kadam uses the Minimal Excision Technique for cyst removal. This involves making a tiny incision, removing the entire cyst sac to prevent recurrence, and closing the wound meticulously to ensure a barely visible scar.",
-      "quote": "When removing a cyst, our focus is twofold: complete removal to prevent it from coming back, and an excellent cosmetic result. Patients should feel confident in their skin after the procedure."
-    },
-    "diagnostic_process": {
-      "heading": "Diagnosing a Skin Cyst",
-      "steps": [
-        "Physical examination to assess the size, location, and mobility of the cyst.",
-        "Differentiating it from other skin lesions like lipomas or abscesses.",
-        "Ultrasound in some cases if the nature of the lump is unclear."
-      ]
-    },
-    "ideal_candidates": {
-      "heading": "When Should a Cyst Be Removed?",
-      "points": [
-        "If the cyst has become inflamed, painful, or infected.",
-        "If it is in a location where it causes irritation or interferes with daily activities.",
-        "For cosmetic reasons, if the patient is bothered by its appearance."
-      ]
-    },
-    "treatment_options": {
-      "heading": "Cyst Removal Techniques",
-      "options": [
-        {
-          "name": "Minimal Excision Technique",
-          "description": "A small incision is made, and the entire cyst wall and its contents are removed to ensure it does not grow back. The wound is then closed with fine stitches."
-        },
-        {
-          "name": "Incision and Drainage",
-          "description": "This is done only for infected, inflamed cysts (abscesses) to relieve pressure. The cyst wall is not removed, so it may recur later."
-        }
-      ]
-    },
-    "why_choose_us": {
-      "heading": "Why Choose Dr. Pramod Kadam for Cyst Removal?",
-      "points": [
-        "Expertise in the Minimal Excision Technique for minimal scarring.",
-        "Focus on complete removal of the cyst sac to prevent recurrence.",
-        "Quick, in-office procedure under local anesthesia.",
-        "Excellent cosmetic outcomes."
-      ]
-    },
-    "faqs": [
+    "id": 10,
+    "name": "Fissure (Laser Treatment)",
+    "phonescreenname": "Fissure (Laser Treatment)",
+    "cardimage": "/fissure.png",
+    "bannerimage": "/fissure_banner.jpeg",
+    "galleryimages": [
+      "/Fissure.jpg",
+      "/Fissure_Banner.jpg"
+    ],
+    "slug": "laser-fissure-treatment",
+    "overview": "An anal fissure is a small tear in the lining of the anus, usually caused by constipation or hard stool. It can cause severe pain and a burning sensation while passing stool.",
+    "whenToConsult": [
+      "Sharp pain and burning during bowel movements",
+      "Bleeding on toilet paper",
+      "Fear of passing stool due to pain"
+    ],
+    "treatmentOptions": "Initial management includes stool softeners, pain-relief creams, and warm water sitz baths. If it becomes chronic, Laser Sphincterotomy is a simple and effective solution. Laser is used to relax the tight muscle and promote healing of the tear — without cuts, stitches, or much bleeding.",
+    "whyChooseUs": "We focus on quick relief and lasting cure with minimal pain using the latest laser technology.",
+    "journeySteps": [
       {
-        "question": "Will the cyst come back?",
-        "answer": "When the entire cyst sac is removed, the chance of recurrence is very low. This is why complete excision is the preferred method for non-inflamed cysts."
+        "step": "01",
+        "title": "Consultation & Diagnosis",
+        "description": "A careful rectal examination to confirm the fissure and rule out infection."
       },
       {
-        "question": "Will I have a scar?",
-        "answer": "Any incision will leave a small scar, but Dr. Kadam uses plastic surgery techniques and fine sutures to ensure the scar is as minimal and inconspicuous as possible."
+        "step": "02",
+        "title": "Personalized Treatment Plan",
+        "description": "Treatment options like medicines or laser are discussed for lasting relief."
+      },
+      {
+        "step": "03",
+        "title": "Advanced Procedure",
+        "description": "Laser procedure helps the fissure heal without cuts or stitches."
+      },
+      {
+        "step": "04",
+        "title": "Post-Procedure Observation",
+        "description": "Brief monitoring before discharge with diet and care instructions."
+      },
+      {
+        "step": "05",
+        "title": "Quick Return to Normal Life",
+        "description": "Minimal pain and early return to daily routine."
+      },
+      {
+        "step": "06",
+        "title": "Follow-Up & Complete Care",
+        "description": "Follow-up ensures smooth healing and lifestyle tips to prevent recurrence."
+      }
+    ]
+  },
+  {
+    "id": 11,
+    "name": "Fistula Treatment",
+    "phonescreenname": "Fistula",
+    "cardimage": "/fistula.webp",
+    "bannerimage": "/fistula_banner.jpg",
+    "galleryimages": [
+      "/Fistula_Treatment.jpg",
+      "/Fistula_Treatment_Banner.jpg"
+    ],
+    "slug": "fistula-treatment",
+    "overview": "An anal fistula is a small tunnel that forms between the anal canal and the skin near the anus, often after an infection or abscess. It can cause pain, discharge, or swelling around the anal area.",
+    "whenToConsult": [
+      "Recurrent pus discharge near the anus",
+      "Pain or swelling that worsens on sitting",
+      "History of an untreated abscess"
+    ],
+    "treatmentOptions": "The best solution is Laser Fistula Treatment (FiLaC technique) or Video-Assisted Anal Fistula Treatment (VAAFT). These minimally invasive procedures remove the infected tract without cutting the sphincter muscle, reducing the risk of incontinence. The surgery is performed under anaesthesia.",
+    "whyChooseUs": "Our advanced laser techniques ensure minimal pain, faster healing, and a low recurrence rate, all while preserving normal bowel control.",
+    "journeySteps": [
+      {
+        "step": "01",
+        "title": "Consultation & Diagnosis",
+        "description": "A clinical exam and imaging confirm the fistula tract."
+      },
+      {
+        "step": "02",
+        "title": "Personalized Treatment Plan",
+        "description": "Plan includes laser, VAAFT, or other advanced techniques for your case."
+      },
+      {
+        "step": "03",
+        "title": "Advanced Procedure",
+        "description": "Laser sealing or minimal-access surgery clears infection while preserving control."
+      },
+      {
+        "step": "04",
+        "title": "Post-Procedure Observation",
+        "description": "Observation for comfort and dressing instructions."
+      },
+      {
+        "step": "05",
+        "title": "Quick Return to Normal Life",
+        "description": "Resume routine activities within a short period."
+      },
+      {
+        "step": "06",
+        "title": "Follow-Up & Complete Care",
+        "description": "Regular check-ups to ensure full healing and prevent recurrence."
+      }
+    ]
+  },
+  {
+    "id": 12,
+    "name": "Pilonidal Sinus",
+    "phonescreenname": "Pilonidal Sinus",
+    "cardimage": "/pilonidal.jpg",
+    "bannerimage": "/pilonidal_banner.jpg",
+    "galleryimages": [
+      "/Pilonidal_Sinus.jpg",
+      "/Pilonidal_Sinus_Banner.png"
+    ],
+    "slug": "pilonidal-sinus-care",
+    "overview": "A pilonidal sinus is a small cyst or tunnel under the skin near the tailbone, often caused by ingrown hair and infection. It can cause swelling, pain, or pus discharge. If not treated properly, it may keep recurring.",
+    "whenToConsult": [
+      "Swelling or pain near the tailbone",
+      "Recurrent pus or bloody discharge",
+      "Difficulty sitting or walking comfortably"
+    ],
+    "treatmentOptions": "We use Laser Pilonidal Sinus Treatment or Minimally Invasive Excision, depending on the case. The infected tract is gently removed or sealed using a laser, with minimal tissue damage and no stitches. The surgery is done under anaesthesia.",
+    "whyChooseUs": "Our laser-assisted care ensures faster healing, minimal pain, and a clean, scar-free result — helping you return to normal life quickly and comfortably.",
+    "journeySteps": [
+      {
+        "step": "01",
+        "title": "Consultation & Diagnosis",
+        "description": "Inspection and tests confirm sinus tract."
+      },
+      {
+        "step": "02",
+        "title": "Personalized Treatment Plan",
+        "description": "Laser or minimal-access method chosen for you."
+      },
+      {
+        "step": "03",
+        "title": "Advanced Procedure",
+        "description": "Laser seals the tract with minimal incision."
+      },
+      {
+        "step": "04",
+        "title": "Post-Procedure Observation",
+        "description": "Short rest and dressing advice given."
+      },
+      {
+        "step": "05",
+        "title": "Quick Return to Normal Life",
+        "description": "Resume activities within days."
+      },
+      {
+        "step": "06",
+        "title": "Follow-Up & Complete Care",
+        "description": "Check-up ensures complete healing and prevents recurrence."
+      }
+    ]
+  },
+  {
+    "id": 13,
+    "name": "Rectal Prolapse",
+    "phonescreenname": "Rectal Prolapse",
+    "cardimage": "/rectal.jpg",
+    "bannerimage": "/rectal_prolapse_banner.jpg",
+    "galleryimages": [
+      "/Rectal_prolapse.jpg", 
+      "/Rectal_prolapse.jpg"
+    ],
+    "slug": "rectal-prolapse-surgery",
+    "overview": "Rectal prolapse occurs when a part of the rectum slips out of its normal position, often protruding through the anus. It can cause discomfort, bleeding, mucus discharge, or difficulty controlling bowel movements. Though not life-threatening, it can affect daily comfort and confidence.",
+    "whenToConsult": [
+      "A feeling or visible bulge coming out during bowel movements",
+      "Mucus or blood discharge",
+      "Discomfort or pain while sitting or walking",
+      "Difficulty controlling stool (incontinence)"
+    ],
+    "treatmentOptions": "Rectal prolapse is best treated with Laparoscopic or Robotic Rectopexy, a minimally invasive surgery that repositions and secures the rectum in its place. The surgery is performed under general anaesthesia. Depending on the patient's age and health, either a perineal (lower) or abdominal approach may be used.",
+    "whyChooseUs": "We specialize in minimally invasive and robotic techniques that offer less pain, faster recovery, and a much lower chance of recurrence — restoring comfort and normal bowel function.",
+    "journeySteps": [
+      {
+        "step": "01",
+        "title": "Consultation & Diagnosis",
+        "description": "Physical and imaging tests confirm prolapse severity."
+      },
+      {
+        "step": "02",
+        "title": "Personalized Treatment Plan",
+        "description": "Laparoscopic or perineal repair discussed."
+      },
+      {
+        "step": "03",
+        "title": "Advanced Procedure",
+        "description": "Repair done safely under anesthesia to restore anatomy."
+      },
+      {
+        "step": "04",
+        "title": "Post-Procedure Observation",
+        "description": "Careful monitoring of bowel movements."
+      },
+      {
+        "step": "05",
+        "title": "Quick Return to Normal Life",
+        "description": "Resume regular diet and movement soon."
+      },
+      {
+        "step": "06",
+        "title": "Follow-Up & Complete Care",
+        "description": "Follow-up ensures lasting results and comfort."
+      }
+    ]
+  },
+  {
+    "id": 14,
+    "name": "Phimosis",
+    "phonescreenname": "Phimosis",
+    "cardimage": "/Phimosis.jpeg",
+    "bannerimage": "/phimosis_banner.jpg",
+    "galleryimages": [
+      "/Phimosis.jpeg",
+      "/Phimosis_Banner.jpeg"
+    ],
+    "slug": "phimosis-treatment",
+    "overview": "Phimosis is a condition where the foreskin of the penis cannot be fully retracted, which may lead to pain, hygiene issues, or infection. It's common in both children and adults and can be easily treated with modern surgical techniques.",
+    "whenToConsult": [
+      "Difficulty or pain while retracting the foreskin",
+      "Swelling, redness, or recurrent infections",
+      "Pain during urination or sexual activity"
+    ],
+    "treatmentOptions": "Depending on severity, options include: Topical medications (for mild cases), Circumcision — surgical removal of the foreskin, done using conventional, laser, or stapler techniques. The procedure is done under local or general anaesthesia and is completely safe.",
+    "whyChooseUs": "Our clinic offers painless, quick, and precise circumcision using the latest laser and stapler techniques, ensuring hygiene, comfort, and minimal scarring.",
+    "journeySteps": [
+      {
+        "step": "01",
+        "title": "Consultation & Diagnosis",
+        "description": "Examination confirms tight foreskin and symptoms."
+      },
+      {
+        "step": "02",
+        "title": "Personalized Treatment Plan",
+        "description": "Circumcision or preputioplasty discussed."
+      },
+      {
+        "step": "03",
+        "title": "Advanced Procedure",
+        "description": "Gentle Surgical correction / Stapler circumcision"
+      },
+      {
+        "step": "04",
+        "title": "Post-Procedure Observation",
+        "description": "Short observation before discharge."
+      },
+      {
+        "step": "05",
+        "title": "Quick Return to Normal Life",
+        "description": "Minimal discomfort and easy healing."
+      },
+      {
+        "step": "06",
+        "title": "Follow-Up & Complete Care",
+        "description": "Follow-up ensures smooth recovery and hygiene."
+      }
+    ]
+  },
+  {
+    "id": 15,
+    "name": "Hydrocele",
+    "phonescreenname": "Hydrocele",
+    "cardimage": "/Hydrocele.jpg",
+    "bannerimage": "/Hydrocele_Banner.png",
+    "galleryimages": [
+      "/Hydrocele.jpg",
+      "/Hydrocele_Banner.png"
+    ],
+    "slug": "hydrocele-surgery",
+    "overview": "A hydrocele is a painless swelling around the testicle caused by fluid buildup. It's common in adult men and can cause heaviness or discomfort. While harmless in most cases, a large hydrocele may require surgical correction.",
+    "whenToConsult": [
+      "Swelling or heaviness in the scrotum",
+      "Discomfort while walking or sitting",
+      "Increase in scrotal size over time"
+    ],
+    "treatmentOptions": "Hydrocelectomy is a simple surgical procedure performed under anaesthesia to drain the fluid and remove the sac that causes the swelling.",
+    "whyChooseUs": "We use modern, minimally invasive Robotic and Laparoscopic techniques to ensure quick recovery, minimal scarring, and lasting comfort.",
+    "journeySteps": [
+      {
+        "step": "01",
+        "title": "Consultation & Diagnosis",
+        "description": "Ultrasound confirms fluid collection around the testicle."
+      },
+      {
+        "step": "02",
+        "title": "Personalized Treatment Plan",
+        "description": "Surgical correction planned for permanent relief."
+      },
+      {
+        "step": "03",
+        "title": "Advanced Procedure",
+        "description": "Small incision used to drain and remove the sac."
+      },
+      {
+        "step": "04",
+        "title": "Post-Procedure Observation",
+        "description": "Short recovery monitoring before discharge."
+      },
+      {
+        "step": "05",
+        "title": "Quick Return to Normal Life",
+        "description": "Minimal discomfort and fast return to work."
+      },
+      {
+        "step": "06",
+        "title": "Follow-Up & Complete Care",
+        "description": "Review for proper healing and comfort."
+      }
+    ]
+  },
+  {
+    "id": 16,
+    "name": "Cyst & Lipoma Removal",
+    "phonescreenname": "Cyst & Lipoma Removal",
+    "cardimage": "/Cyst_Removal.jpg",
+    "bannerimage": "/Cyst_Removal_Banner.jpg",
+    "galleryimages": [
+      "/Cyst_Removal.jpg",
+      "/Cyst_Removal_Banner.jpg"  
+    ],
+    "slug": "cyst-removal",
+    "overview": "Cysts are non-cancerous lumps that can form anywhere on the body — commonly on the scalp, face, or back. While usually harmless, they may grow, get infected, or cause cosmetic concern. Surgical removal provides a permanent cure.",
+    "whenToConsult": [
+      "Visible or growing lump under the skin",
+      "Pain, redness, or discharge",
+      "Cosmetic concern or repeated infection"
+    ],
+    "treatmentOptions": "Under local anaesthesia, the cyst and its sac are completely removed through a small incision. For deeper cysts or cosmetic areas, laser or minimally invasive removal is used to avoid scarring.",
+    "whyChooseUs": "We offer precise, scar-minimizing cyst removal using modern surgical and laser techniques — ensuring safety, hygiene, and great cosmetic results.",
+    "journeySteps": [
+      {
+        "step": "01",
+        "title": "Consultation & Diagnosis",
+        "description": "Clinical exam and imaging confirm cyst type and location."
+      },
+      {
+        "step": "02",
+        "title": "Personalized Treatment Plan",
+        "description": "Planned removal for smooth and scar-free result."
+      },
+      {
+        "step": "03",
+        "title": "Advanced Procedure",
+        "description": "Minor surgery to remove cyst under local anesthesia."
+      },
+      {
+        "step": "04",
+        "title": "Post-Procedure Observation",
+        "description": "Short rest and dressing care advice given."
+      },
+      {
+        "step": "05",
+        "title": "Quick Return to Normal Life",
+        "description": "Resume normal activities the next day."
+      },
+      {
+        "step": "06",
+        "title": "Follow-Up & Complete Care",
+        "description": "Check-up ensures neat healing and no recurrence."
+      }
+    ]
+  },
+  {
+    "id": 17,
+    "name": "Abscess Drainage",
+    "phonescreenname": "Abscess Drainage",
+    "cardimage": "/Abscess_Drainage.jpg",
+    "bannerimage": "/Abscess_Drainage_Banner.jpg",
+    "galleryimages": [
+      "/Abscess_Drainage.jpg",
+      "/Abscess_Drainage_Banner.jpg"
+    ],
+    "slug": "abscess-drainage",
+    "overview": "An abscess is a painful, pus-filled swelling that develops due to infection under the skin. If not treated early, it can spread to nearby tissues or cause fever. Prompt drainage helps relieve pain and prevents complications.",
+    "whenToConsult": [
+      "Painful lump with redness, warmth, or swelling",
+      "Fever or fatigue",
+      "Pus or foul-smelling discharge"
+    ],
+    "treatmentOptions": "Abscess drainage is a simple surgical procedure done under local or general anaesthesia. The infected area is opened, pus is drained, and the cavity is cleaned. A small dressing or drain may be placed to allow further discharge to escape.",
+    "whyChooseUs": "We ensure safe, sterile, and gentle abscess management with minimal scarring and complete infection control.",
+    "journeySteps": [
+      {
+        "step": "01",
+        "title": "Consultation & Diagnosis",
+        "description": "Examination confirms pus collection or infection."
+      },
+      {
+        "step": "02",
+        "title": "Personalized Treatment Plan",
+        "description": "Drainage planned under local or short anesthesia."
+      },
+      {
+        "step": "03",
+        "title": "Advanced Procedure",
+        "description": "Incision and drainage done safely to clear infection."
+      },
+      {
+        "step": "04",
+        "title": "Post-Procedure Observation",
+        "description": "Wound care and dressing instructions provided."
+      },
+      {
+        "step": "05",
+        "title": "Quick Return to Normal Life",
+        "description": "Pain relief and comfort restored within days."
+      },
+      {
+        "step": "06",
+        "title": "Follow-Up & Complete Care",
+        "description": "Regular dressing checks for complete healing."
+      }
+    ]
+  },
+  {
+    "id": 18,
+    "name": "Wart Treatment",
+    "phonescreenname": "Wart Treatment",
+    "cardimage": "/Wart_Treatment.jpg",
+    "bannerimage": "/Wart_Treatment_Banner.jpg",
+    "galleryimages": [
+      "/Wart_Treatment.jpg",
+      "/Wart_Treatment_Banner.png"
+    ],
+    "slug": "wart-treatment",
+    "overview": "Warts are skin growths caused by human papillomavirus (HPV). They can appear on hands, feet, or other areas, causing discomfort or cosmetic concerns. Early treatment prevents spread and persistent growth. Laser removal, cryotherapy, or minor surgery ensures precise, effective, and minimally invasive treatment.",
+    "whenToConsult": [
+      "Painful or recurring warts",
+      "Rapidly growing or spreading",
+      "Cosmetic concern"
+    ],
+    "treatmentOptions": "Laser removal, cryotherapy, or minor surgery. Procedure takes 10–20 minutes under local anaesthesia.",
+    "whyChooseUs": "Safe, precise, and quick removal with minimal scarring.",
+    "journeySteps": [
+      {
+        "step": "01",
+        "title": "Consultation & Diagnosis",
+        "description": "Identify wart type and cause."
+      },
+      {
+        "step": "02",
+        "title": "Personalized Treatment Plan",
+        "description": "Laser or cryo removal planned."
+      },
+      {
+        "step": "03",
+        "title": "Advanced Procedure",
+        "description": "Quick removal with almost no blood loss"
+      },
+      {
+        "step": "04",
+        "title": "Post-Procedure Care",
+        "description": "Dressing and skin care guidance."
+      },
+      {
+        "step": "05",
+        "title": "Quick Return to Normal Life",
+        "description": "Resume daily activities almost immediately."
+      },
+      {
+        "step": "06",
+        "title": "Follow-Up & Support",
+        "description": "Ensure healing and prevent recurrence."
+      }
+    ]
+  },
+  {
+    "id": 19,
+    "name": "Ingrown Toenail Infection & Removal",
+    "phonescreenname": "Ingrown Toenail",
+    "cardimage": "/Ingrown_Toe_Nail_Infection.jpg",
+    "bannerimage": "/ingrown_toe_nail_banner.jpg",
+    "galleryimages": [
+      "/Ingrown_Toe_Nail_Infection.jpg",
+      "/Ingrown_Toe_Nail_Infection_Banner.jpg"
+    ],
+    "slug": "ingrown-toenail",
+    "overview": "Ingrown toenails occur when the nail grows into the surrounding skin, causing pain, swelling, and infection. Recurrent ingrown nails can limit mobility and affect daily activities. Partial nail avulsion or nail bed correction relieves pain and prevents recurrence.",
+    "whenToConsult": [
+      "Redness, pain, or pus near the nail",
+      "Difficulty walking",
+      "Recurrent nail problems"
+    ],
+    "treatmentOptions": "Partial nail avulsion or nail bed correction under local anaesthesia; lasts 20–30 minutes.",
+    "whyChooseUs": "Minimally invasive removal ensures quick healing and prevents recurrence.",
+    "journeySteps": [
+      {
+        "step": "01",
+        "title": "Consultation & Diagnosis",
+        "description": "Examine nail and infection severity."
+      },
+      {
+        "step": "02",
+        "title": "Personalized Treatment Plan",
+        "description": "Partial nail removal planned."
+      },
+      {
+        "step": "03",
+        "title": "Advanced Procedure",
+        "description": "Safe removal and correction."
+      },
+      {
+        "step": "04",
+        "title": "Post-Procedure Care",
+        "description": "Dressing and foot care guidance."
+      },
+      {
+        "step": "05",
+        "title": "Quick Return to Normal Life",
+        "description": "Walk comfortably and resume daily activities soon after procedure."
+      },
+      {
+        "step": "06",
+        "title": "Follow-Up & Support",
+        "description": "Monitor healing and regrowth."
+      }
+    ]
+  },
+  {
+    "id": 20,
+    "name": "Testicle or Ovarian Torsion",
+    "phonescreenname": "Testicle/Ovarian Torsion",
+    "cardimage": "/testicular.jpg",
+    "bannerimage": "/testicular_banner.webp",
+    "galleryimages": [
+      "/Testicle_or_Ovarian_Torsion.jpeg",
+      "/Testicle_or_Ovarian_Torsion_Banner.jpeg"
+    ],
+    "slug": "testicle-ovarian-torsion",
+    "overview": "Torsion occurs when the testicle or ovary twists, cutting off blood supply. It is a medical emergency that causes severe pain, swelling, and can lead to loss of the organ if untreated. Immediate surgical intervention restores blood flow and preserves organ function, often saving fertility and reducing long-term complications.",
+    "whenToConsult": [
+      "Sudden, severe lower abdominal or groin pain",
+      "Swelling or tenderness",
+      "Nausea or vomiting"
+    ],
+    "treatmentOptions": "Emergency detorsion surgery; procedure lasts 45–60 minutes under general anaesthesia.",
+    "whyChooseUs": "Immediate intervention preserves organ function and reduces complications.",
+    "journeySteps": [
+      {
+        "step": "01",
+        "title": "Consultation & Diagnosis",
+        "description": "Emergency ultrasound and assessment."
+      },
+      {
+        "step": "02",
+        "title": "Personalized Treatment Plan",
+        "description": "Immediate surgical intervention."
+      },
+      {
+        "step": "03",
+        "title": "Advanced Procedure",
+        "description": "Untwist and fix organ."
+      },
+      {
+        "step": "04",
+        "title": "Post-Procedure Care",
+        "description": "Pain management and rest."
+      },
+      {
+        "step": "05",
+        "title": "Quick Return to Normal Life",
+        "description": "Return to daily routines safely after recovery."
+      },
+      {
+        "step": "06",
+        "title": "Follow-Up & Support",
+        "description": "Monitor organ health and function."
+      }
+    ]
+  },
+  {
+    "id": 21,
+    "name": "Trauma Surgery (Abdomen Trauma)",
+    "phonescreenname": "Trauma surgery",
+    "cardimage": "/trauma.jpg",
+    "bannerimage": "/Trauma_Surgery_Banner.jpg",
+    "galleryimages": [
+      "/Trauma_Surgery.jpg",    
+      "/Trauma_Surgery_Banner.jpg"
+    ],
+    "slug": "trauma-surgery",
+    "overview": "Abdominal trauma from accidents or injuries can cause internal bleeding or organ damage. Prompt surgical evaluation is essential to prevent life-threatening complications. Modern laparoscopic or open exploratory surgeries allow accurate assessment and repair of damaged tissues, minimizing pain and promoting faster recovery.",
+    "whenToConsult": [
+      "Severe abdominal pain",
+      "Swelling, bruising, or vomiting blood",
+      "Signs of shock"
+    ],
+    "treatmentOptions": "Laparoscopic or open exploratory surgery; 1–3 hours under general anaesthesia..",
+    "whyChooseUs": "Rapid, precise trauma care minimizes complications and preserves organ function.",
+    "journeySteps": [
+      {
+        "step": "01",
+        "title": "Consultation & Diagnosis",
+        "description": "Emergency evaluation and imaging."
+      },
+      {
+        "step": "02",
+        "title": "Personalized Treatment Plan",
+        "description": "Surgical approach based on injury."
+      },
+      {
+        "step": "03",
+        "title": "Advanced Procedure",
+        "description": "Repair organs or stop bleeding."
+      },
+      {
+        "step": "04",
+        "title": "Post-Procedure Care",
+        "description": "ICU monitoring and wound care."
+      },
+      {
+        "step": "05",
+        "title": "Quick Return to Normal Life",
+        "description": "Resume routine activities gradually as advised."
+      },
+      {
+        "step": "06",
+        "title": "Follow-Up & Support",
+        "description": "Ensure full recovery and rehabilitation."
+      }
+    ]
+  },
+  {
+    "id": 22,
+    "name": "Lymph Node Excision",
+    "phonescreenname": "Lymph Node",
+    "cardimage": "/Lymph_node_swelling.jpeg",
+    "bannerimage": "/lymph_banner.jpg",
+    "galleryimages": [
+      "/Lymph_node_swelling.jpeg",
+      "/Lymph_node_swelling.jpeg"
+    ],
+    "slug": "lymph-node-excision",
+    "overview": "Enlarged or suspicious lymph nodes may indicate infection, inflammation, or malignancy. Excision of the lymph node allows accurate diagnosis and treatment, preventing complications and guiding further care. Minimally invasive techniques ensure precise removal with minimal scarring.",
+    "whenToConsult": [
+      "Painless swelling in neck, armpit, or groin",
+      "Persistent or enlarging lumps",
+      "Fever, night sweats, or weight loss"
+    ],
+    "treatmentOptions": "Excision under local or general anaesthesia",
+    "whyChooseUs": "Safe, precise removal with accurate diagnostic results.",
+    "journeySteps": [
+      {
+        "step": "01",
+        "title": "Consultation & Diagnosis",
+        "description": "Examine and image lymph node."
+      },
+      {
+        "step": "02",
+        "title": "Personalized Treatment Plan",
+        "description": "Excision planned."
+      },
+      {
+        "step": "03",
+        "title": "Advanced Procedure",
+        "description": "Minimally invasive removal."
+      },
+      {
+        "step": "04",
+        "title": "Post-Procedure Care",
+        "description": "Dressing care and infection prevention."
+      },
+      {
+        "step": "05",
+        "title": "Quick Return to Normal Life",
+        "description": "Resume daily activities soon after procedure."
+      },
+      {
+        "step": "06",
+        "title": "Follow-Up & Support",
+        "description": "Review biopsy and plan further care."
+      }
+    ]
+  },
+  {
+    "id": 23,
+    "name": "Cellulitis",
+    "phonescreenname": "Cellulitis",
+    "cardimage": "/Cellulitis.jpg",
+    "bannerimage": "/cellulitis.webp",
+    "galleryimages": [
+      "/Cellulitis.jpg",
+      "/Cellulitis_Banner.png"
+    ],
+    "slug": "cellulitis",
+    "overview": "Cellulitis is a bacterial skin infection that causes redness, swelling, warmth, and pain. Without prompt treatment, it can spread rapidly and cause serious complications. Early diagnosis and treatment with antibiotics or minor surgical interventions ensure safe recovery and prevent recurrence.",
+    "whenToConsult": [
+      "Red, tender, or swollen skin",
+      "Fever or chills",
+      "Rapidly spreading infection"
+    ],
+    "treatmentOptions": "Antibiotics or minor drainage; severe cases may require IV therapy or surgical cleaning.",
+    "recoveryTime": "Most patients recover in 7–10 days with timely treatment.",
+    "whyChooseUs": "Expert infection management ensures quick healing and prevents complications.",
+    "journeySteps": [
+      {
+        "step": "01",
+        "title": "Consultation & Diagnosis",
+        "description": "Examine infection severity."
+      },
+      {
+        "step": "02",
+        "title": "Personalized Treatment Plan",
+        "description": "Oral, IV, or minor drainage."
+      },
+      {
+        "step": "03",
+        "title": "Advanced Procedure",
+        "description": "Treat infection promptly and effectively."
+      },
+      {
+        "step": "04",
+        "title": "Post-Procedure Care",
+        "description": "Rest, hygiene, and limb elevation."
+      },
+      {
+        "step": "05",
+        "title": "Quick Return to Normal Life",
+        "description": "Return to normal activities once infection subsides."
+      },
+      {
+        "step": "06",
+        "title": "Follow-Up & Support",
+        "description": "Ensure infection resolves completely."
+      }
+    ]
+  },
+  {
+    "id": 24,
+    "name": "Varicose Vein Treatment",
+    "phonescreenname": "Varicose Vein",
+    "cardimage": "/varicose_vein.webp",
+    "bannerimage": "/varicose_vein_banner.webp",
+    "galleryimages": [
+      "/varicose_vein.webp"
+    ],
+    "slug": "varicose-vein-treatment",
+    "overview": "Varicose veins are enlarged, twisted veins that commonly appear on the legs due to weakened valves and poor blood circulation. They may cause heaviness, swelling, aching, or visible bulging veins. If left untreated, they can progress to skin discoloration, ulcers, and clot formation. Modern minimally invasive treatments like laser ablation and sclerotherapy offer safe, effective, and cosmetically pleasing results with minimal pain and downtime.",
+    "whenToConsult": [
+      "Visible bulging or twisted veins",
+      "Leg pain, heaviness, or burning",
+      "Swelling around ankles",
+      "Skin discoloration or non-healing wounds"
+    ],
+    "treatmentOptions": "Laser ablation, sclerotherapy, or minimally invasive vein closure; takes 30–60 minutes, done under local anaesthesia.",
+    "whyChooseUs": "Advanced techniques ensure painless treatment, excellent cosmetic results, and long-term relief.",
+    "journeySteps": [
+      {
+        "step": "01",
+        "title": "Consultation & Diagnosis",
+        "description": "Doppler scan to assess vein health."
+      },
+      {
+        "step": "02",
+        "title": "Personalized Treatment Plan",
+        "description": "Select laser or sclerotherapy based on severity."
+      },
+      {
+        "step": "03",
+        "title": "Procedure",
+        "description": "Targeted closure of faulty veins."
+      },
+      {
+        "step": "04",
+        "title": "Post-Procedure Care",
+        "description": "Compression stockings and walking guidance."
+      },
+      {
+        "step": "05",
+        "title": "Follow-Up & Support",
+        "description": "Monitor healing and prevent recurrence."
+      },
+      {
+        "step": "06",
+        "title": "Quick Return to Normal Life",
+        "description": "Resume regular activities almost immediately."
+      }
+    ]
+  },
+  {
+    "id": 25,
+    "name": "Video Proctoscopy (VAAFT / Diagnostic Proctoscopy)",
+    "phonescreenname": "Video Proctoscopy",
+    "cardimage": "/video.jpg",
+    "bannerimage": "/video_banner.jpg",
+    "galleryimages": [
+      "/video_proctoscopy.jpg"
+    ],
+    "slug": "video-proctoscopy",
+    "overview": "Video proctoscopy is an advanced, high-definition examination of the anal canal and rectum used to diagnose conditions like piles, fissures, fistulas, rectal bleeding, and infections. Unlike regular proctoscopy, the video-based system provides a clearer, magnified view that helps diagnose issues early and plan precise treatments. It is a quick, painless, outpatient procedure.",
+    "whenToConsult": [
+      "Rectal bleeding",
+      "Itching, discomfort, or pain",
+      "Suspected piles or fissures",
+      "Persistent discharge or recurrent infections"
+    ],
+    "treatmentOptions": "A high-resolution camera is inserted gently to examine the anal canal; procedure takes 5–10 minutes with no anaesthesia needed.",
+    "whyChooseUs": "Accurate diagnosis using advanced video equipment ensures targeted, effective treatment plans.",
+    "journeySteps": [
+      {
+        "step": "01",
+        "title": "Consultation & Diagnosis",
+        "description": "Review symptoms and medical history."
+      },
+      {
+        "step": "02",
+        "title": "Personalized Treatment Plan",
+        "description": "Procedure explained clearly."
+      },
+      {
+        "step": "03",
+        "title": "Procedure",
+        "description": "Gentle, high-definition internal examination."
+      },
+      {
+        "step": "04",
+        "title": "Post-Procedure Care",
+        "description": "Immediate results and treatment suggestions."
+      },
+      {
+        "step": "05",
+        "title": "Follow-Up & Support",
+        "description": "Tailored treatment for diagnosed conditions."
+      },
+      {
+        "step": "06",
+        "title": "Quick Return to Normal Life",
+        "description": "Resume activities instantly."
+      }
+    ]
+  },
+  {
+    "id": 26,
+    "name": "Corn Removal",
+    "phonescreenname": "Corn Removal",
+    "cardimage": "/corn.jpg",
+    "bannerimage": "/corn_banner.webp",
+    "galleryimages": [
+      "/corn_removal.jpg"
+    ],
+    "slug": "corn-removal",
+    "overview": "Corns are thick, hardened areas of skin that develop due to repeated pressure or friction, usually on the feet or toes. They can cause sharp pain while walking or wearing shoes. If not managed, they may become infected or lead to deeper tissue irritation. Surgical corn removal is a quick and effective procedure, ensuring long-lasting relief and preventing recurrence.",
+    "whenToConsult": [
+      "Painful hard bump on foot or toe",
+      "Difficulty walking",
+      "Recurrent corns despite home care",
+      "Foot discomfort in shoes"
+    ],
+    "treatmentOptions": "Minimally invasive surgical shaving or excision under local anaesthesia; takes 10–20 minutes.",
+    "whyChooseUs": "Precise removal ensures minimal discomfort, fast healing, and long-term relief.",
+    "journeySteps": [
+      {
+        "step": "01",
+        "title": "Consultation & Diagnosis",
+        "description": "Assess foot pressure points and corn depth."
+      },
+      {
+        "step": "02",
+        "title": "Personalized Treatment Plan",
+        "description": "Safe, simple excision planned."
+      },
+      {
+        "step": "03",
+        "title": "Procedure",
+        "description": "Quick removal under local anaesthesia."
+      },
+      {
+        "step": "04",
+        "title": "Post-Procedure Care",
+        "description": "Foot care and footwear guidance."
+      },
+      {
+        "step": "05",
+        "title": "Follow-Up & Support",
+        "description": "Ensure complete healing and prevent recurrence."
+      },
+      {
+        "step": "06",
+        "title": "Quick Return to Normal Life",
+        "description": "Walk normally and resume work the same day."
+      }
+    ]
+  },
+  {
+    "id": 27,
+    "name": "Female Piles Doctor",
+    "phonescreenname": "Female Piles Doctor",
+    "cardimage": "/piles.jpg",
+    "bannerimage": "/piles_banner.webp",
+    "galleryimages": [
+      "/Piles.jpg"
+    ],
+    "slug": "piles-treatment",
+    "overview": "Specialized care for women experiencing piles (hemorrhoids) with a focus on comfort, privacy, and effective treatment.",
+    "whenToConsult": [
+      "Bleeding during or after passing stool",
+      "Pain, swelling, or itching in the anal region",
+      "A lump or feeling of something \"coming out\""
+    ],
+    "treatmentOptions": "Advanced laser and minimally invasive treatments tailored for female patients.",
+    "whyChooseUs": "Compassionate care with advanced techniques for faster, safer recovery.",
+    "journeySteps": [
+      {
+        "step": "01",
+        "title": "Consultation & Diagnosis",
+        "description": "Detailed check-up in a comfortable environment."
+      },
+      {
+        "step": "02",
+        "title": "Personalized Treatment Plan",
+        "description": "Treatment options discussed with focus on your comfort."
+      },
+      {
+        "step": "03",
+        "title": "Advanced Procedure",
+        "description": "Gentle and effective treatment performed."
+      },
+      {
+        "step": "04",
+        "title": "Post-Procedure Observation",
+        "description": "Careful monitoring and recovery guidance."
+      },
+      {
+        "step": "05",
+        "title": "Quick Return to Normal Life",
+        "description": "Resume regular activities with minimal discomfort."
+      },
+      {
+        "step": "06",
+        "title": "Follow-Up & Complete Care",
+        "description": "Regular follow-ups to ensure complete healing."
+      }
+    ]
+  },
+  {
+    "id": 28,
+    "name": "General Physician",
+    "phonescreenname": "General Physician",
+    "cardimage": "/general_physician_banner.jpg",
+    "bannerimage": "/general_physician_banner.jpg",
+    "galleryimages": [
+      "/General_Physician.jpg"
+    ],
+    "slug": "general-physician",
+    "overview": "Our General Physician services provide comprehensive primary medical care for patients of all ages. We focus on accurate diagnosis through detailed history-taking, thorough examination, and evidence-based decision-making. From common illnesses to chronic disease management, we ensure seamless care and guide you through every step of your treatment.",
+    "whenToConsult": [
+      "Stomach pain, vomiting, diarrhea, acidity",
+      "Female doctor for piles",
+      "Fever, infections, cough, cold, sore throat",
+      "Urinary tract infection, Fungal Infection",
+      "Headache, dizziness, weakness, fatigue",
+      "Blood pressure or sugar fluctuations",
+      "Joint or body pain",
+      "Allergies, skin rashes, minor injuries",
+      "Regular health check-ups and preventive care",
+      "Any health concern where you are unsure which specialist to consult"
+    ],
+    "treatmentOptions": "1. Detailed Assessment – Complete medical history and physical examination. 2. Accurate Diagnosis – Required blood tests, imaging, or specialist referral when needed. 3. Personalized Treatment – Medicines, lifestyle guidance, counseling, and preventive care. 4. Monitoring & Adjustment – Treatment updated based on your progress and test results.",
+    "whyChooseUs": "10+ years of clinical experience with strong diagnostic skills. Thorough examination & attentive listening to every patient. One-point contact from first consultation to recovery. Evidence-based treatment with clear explanations. Compassionate, patient-friendly approach. Seamless hospital coordination for tests, referrals, and procedures.",
+    "journeySteps": [
+      {
+        "step": "01",
+        "title": "Detailed Assessment",
+        "description": "Complete medical history and physical examination."
+      },
+      {
+        "step": "02",
+        "title": "Accurate Diagnosis",
+        "description": "Required blood tests, imaging, or specialist referral when needed."
+      },
+      {
+        "step": "03",
+        "title": "Personalized Treatment",
+        "description": "Medicines, lifestyle guidance, counseling, and preventive care."
+      },
+      {
+        "step": "04",
+        "title": "Monitoring & Adjustment",
+        "description": "Treatment updated based on your progress and test results."
+      },
+      {
+        "step": "05",
+        "title": "Follow-Up Schedule",
+        "description": "Follow-up within 2–5 days for acute illnesses. Routine review every 1–3 months for chronic diseases."
+      },
+      {
+        "step": "06",
+        "title": "Ongoing Care Coordination",
+        "description": "We coordinate your care, guide you to the right specialist if needed, and ensure smooth communication throughout your treatment journey."
       }
     ]
   }

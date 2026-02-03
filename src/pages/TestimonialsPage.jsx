@@ -1,24 +1,7 @@
 import { motion, AnimatePresence } from "framer-motion";
-import { Star, Quote, X, ChevronDown } from "lucide-react";
-import { useState } from "react";
-import testimonialsData from "../data/Testimonials.json";
-
-// Map all testimonials from JSON to component format
-const ALL_TESTIMONIALS = testimonialsData.map((testimonial, index) => {
-  const tones = ["lightBlue", "white", "mint"];
-  const avatar = "/user.png";
-  
-  return {
-    id: testimonial.id,
-    name: testimonial.name,
-    role: "Patient",
-    avatar: avatar,
-    quote: testimonial.text,
-    rating: testimonial.rating,
-    procedure: "Surgical Care",
-    tone: tones[index % tones.length],
-  };
-});
+import { Star, Quote, X, ChevronDown, ArrowRight } from "lucide-react";
+import { useState, useEffect } from "react";
+import api from "../utils/api";
 
 const cardVariants = {
   hidden: { opacity: 0, y: 30 },
@@ -177,8 +160,37 @@ function TestimonialModal({ testimonial, onClose }) {
 }
 
 export default function TestimonialsPage() {
+  const [testimonials, setTestimonials] = useState([]);
+  const [loading, setLoading] = useState(true);
   const [visibleCount, setVisibleCount] = useState(9); // Show 9 initially (3 rows of 3)
   const [selectedTestimonial, setSelectedTestimonial] = useState(null);
+
+  useEffect(() => {
+    fetchTestimonials();
+  }, []);
+
+  const fetchTestimonials = async () => {
+    try {
+      const response = await api.get('/api/testimonials/active');
+      // Map testimonials to component format
+      const tones = ["lightBlue", "white", "mint"];
+      const mappedTestimonials = response.data.map((testimonial, index) => ({
+        id: testimonial._id,
+        name: testimonial.name,
+        role: testimonial.designation || "Patient",
+        avatar: testimonial.image || "/user.png",
+        quote: testimonial.content,
+        rating: testimonial.rating || 5,
+        procedure: testimonial.designation || "Surgical Care",
+        tone: tones[index % tones.length],
+      }));
+      setTestimonials(mappedTestimonials);
+    } catch (err) {
+      console.error('Error fetching testimonials:', err);
+    } finally {
+      setLoading(false);
+    }
+  };
 
   const handleReadMore = (testimonial) => {
     setSelectedTestimonial(testimonial);
@@ -192,8 +204,16 @@ export default function TestimonialsPage() {
     setVisibleCount((prev) => prev + 6); // Add 2 more rows (6 cards)
   };
 
-  const visibleTestimonials = ALL_TESTIMONIALS.slice(0, visibleCount);
-  const hasMore = visibleCount < ALL_TESTIMONIALS.length;
+  const visibleTestimonials = testimonials.slice(0, visibleCount);
+  const hasMore = visibleCount < testimonials.length;
+
+  if (loading) {
+    return (
+      <div className="relative isolate min-h-screen bg-gradient-to-b from-white to-slate-50/30 overflow-hidden flex items-center justify-center">
+        <div className="text-stone-600">Loading testimonials...</div>
+      </div>
+    );
+  }
 
   return (
     <div className="relative isolate min-h-screen bg-gradient-to-b from-white to-slate-50/30 overflow-hidden">
@@ -228,16 +248,17 @@ export default function TestimonialsPage() {
             <h1 className="text-4xl md:text-5xl lg:text-6xl font-light tracking-tight text-stone-900 mb-6">
               What Our <span className="font-medium">Patients Say</span>
             </h1>
-            <p className="text-lg text-stone-600/90 max-w-3xl mx-auto leading-relaxed font-light">
-              Read real experiences from our patients who have trusted us with their surgical care
-            </p>
+            <p className="text-sm sm:text-base md:text-md text-stone-600/90 max-w-3xl mx-auto leading-relaxed font-light">
+            Hear directly from our patients about their experiences and
+            successful recoveries with our advanced surgical care
+          </p>
             <div className="mt-6 flex items-center justify-center gap-4 text-sm text-stone-600">
               <div className="flex items-center gap-2">
                 <Star className="w-5 h-5 text-yellow-400 fill-yellow-400" />
                 <span className="font-medium">5.0 Average Rating</span>
               </div>
               <span className="text-stone-400">•</span>
-              <span>{ALL_TESTIMONIALS.length}+ Happy Patients</span>
+             
             </div>
           </motion.div>
         </div>

@@ -2,27 +2,36 @@ import React, { useState, useEffect, useRef } from "react";
 import { motion, AnimatePresence } from "framer-motion";
 import { gsap } from "gsap";
 import { useAppointmentModal } from "../contexts/AppointmentModalContext";
+import { useEnquiryModal } from "../contexts/EnquiryModalContext";
 import { Link } from "react-router-dom";
+import api from "../utils/api";
 
-// Background slides & feature labels that will appear at the head of the extending line
-const slides = [
+// Default/fallback slides in case backend fails
+const defaultSlides = [
   {
-    image:
-      "https://images.unsplash.com/photo-1631815589968-fdb09a223b1e?q=80&w=2071&auto=format&fit=crop",
+    image: "/p1.jpg",
     feature: "PRECISION-DRIVEN ROBOTIC SURGERY",
     color: "#7dd3c0",
   },
   {
-    image:
-      "https://images.unsplash.com/photo-1551076805-e1869033e561?q=80&w=2080&auto=format&fit=crop",
+    image: "/p2.jpg",
     feature: "MINIMALLY INVASIVE • MAXIMUM CARE",
     color: "#ffd97d",
   },
   {
-    image:
-      "https://images.unsplash.com/photo-1516549655169-df83a0774514?q=80&w=2070&auto=format&fit=crop",
+    image: "/p3.jpg",
     feature: "FASTER RECOVERY THROUGH MODERN LAPAROSCOPY",
     color: "#c5b3ff",
+  },
+  {
+    image: "/p4.JPG",
+    feature: "ADVANCED CARE • HUMAN TOUCH",
+    color: "#7ce4a9",
+  },
+  {
+    image: "/p5.jpg",
+    feature: "ADVANCED CARE • HUMAN TOUCH",
+    color: "#7ce4a9",
   },
 ];
 
@@ -42,25 +51,20 @@ const INITIAL_PROGRESS = 0.29; // just left of center
 const VIEWBOX_WIDTH = 1090; // must match the SVG viewBox width
 const VIEWBOX_HEIGHT = 200; // must match the SVG viewBox height
 // Desired fixed end progress for each wave (will be clamped to visible bounds)
+// Mobile gets shorter extensions to prevent overflow
 const TARGET_PROGRESS = [0.78, 0.7, 0.65, 0.65];
+const TARGET_PROGRESS_MOBILE = [0.55, 0.5, 0.48, 0.48];
 
-// Per-wave card content
-const WAVE_DATA = [
-  { image: slides[0].image, feature: slides[0].feature, color: COLORS[0] },
-  { image: slides[1].image, feature: slides[1].feature, color: COLORS[1] },
-  { image: slides[2].image, feature: slides[2].feature, color: COLORS[2] },
-  {
-    image:
-      "https://images.unsplash.com/photo-1582750433449-648ed127bb54?q=80&w=2087&auto=format&fit=crop",
-    feature: "ADVANCED CARE • HUMAN TOUCH",
-    color: COLORS[3],
-  },
-];
+// Per-wave card content - will be updated from backend data
+let WAVE_DATA = [];
 
 // We'll progressively extend one line per slide; once a line finishes extending we reveal the pill at its head.
 const Hero = () => {
   const { openModal } = useAppointmentModal();
+  const { openModal: openEnquiryModal } = useEnquiryModal();
   const [index, setIndex] = useState(0);
+  const [slides, setSlides] = useState(defaultSlides);
+  const [loading, setLoading] = useState(true);
   const containerRef = useRef(null);
   const pathRefs = useRef([]); // path elements
   const headRefs = useRef([]); // interactive heads (g)
@@ -77,14 +81,70 @@ const Hero = () => {
   const [isHeadHovered, setIsHeadHovered] = useState(false);
   const switchingRef = useRef(false); // prevents multiple simultaneous activations
   const [flipLeft, setFlipLeft] = useState(false); // flip card horizontally if overflowing to the right
+  const [waveData, setWaveData] = useState([]);
+
+  // Fetch hero sections from backend
+  useEffect(() => {
+    const fetchHeroSections = async () => {
+      try {
+        const response = await api.get('/api/hero-section/active');
+        if (response.data && response.data.length > 0) {
+          // Map backend data to slides format
+          const colors = ["#7dd3c0", "#ffd97d", "#c5b3ff", "#7ce4a9", "#7ce4a9"];
+          const mappedSlides = response.data.map((hero, idx) => ({
+            image: hero.image,
+            feature: hero.description || hero.subtitle || hero.title,
+            color: colors[idx % colors.length],
+            title: hero.title,
+            subtitle: hero.subtitle,
+            ctaText: hero.ctaText,
+            ctaLink: hero.ctaLink
+          }));
+          setSlides(mappedSlides);
+          
+          // Update waveData for interactive cards
+          const newWaveData = mappedSlides.slice(0, 4).map((slide, idx) => ({
+            image: slide.image,
+            feature: slide.feature,
+            color: colors[idx % colors.length]
+          }));
+          setWaveData(newWaveData);
+        } else {
+          // Use default slides if no data
+          setSlides(defaultSlides);
+          const newWaveData = defaultSlides.slice(0, 4).map((slide, idx) => ({
+            image: slide.image,
+            feature: slide.feature,
+            color: COLORS[idx % COLORS.length]
+          }));
+          setWaveData(newWaveData);
+        }
+      } catch (error) {
+        console.error('Error fetching hero sections:', error);
+        // Use default slides if fetch fails
+        setSlides(defaultSlides);
+        const newWaveData = defaultSlides.slice(0, 4).map((slide, idx) => ({
+          image: slide.image,
+          feature: slide.feature,
+          color: COLORS[idx % COLORS.length]
+        }));
+        setWaveData(newWaveData);
+      } finally {
+        setLoading(false);
+      }
+    };
+
+    fetchHeroSections();
+  }, []);
 
   // Auto-advance slides
   useEffect(() => {
+    if (slides.length === 0) return;
     const interval = setInterval(() => {
       setIndex((prev) => (prev + 1) % slides.length);
     }, 6000); // 6s cycle
     return () => clearInterval(interval);
-  }, []);
+  }, [slides.length]);
 
   // Initialize lines at a fixed progress and place heads
   useEffect(() => {
@@ -247,9 +307,11 @@ const Hero = () => {
 
   const handleActivate = (i) => {
     // Clamp a fixed target per wave to ensure it stays within the right bound
-    const maxP = maxProgressWithinRightBound(i, 28);
+    const isMobile = window.innerWidth < 768;
+    const maxP = maxProgressWithinRightBound(i, isMobile ? 40 : 28);
     const minP = Math.max(0.56, INITIAL_PROGRESS + 0.08);
-    const desired = TARGET_PROGRESS[i % TARGET_PROGRESS.length] ?? 0.8;
+    const progressArray = isMobile ? TARGET_PROGRESS_MOBILE : TARGET_PROGRESS;
+    const desired = progressArray[i % progressArray.length] ?? (isMobile ? 0.5 : 0.8);
     const target = Math.max(minP, Math.min(maxP, desired));
     moveWaveTo(i, target, {
       duration: 1.8,
@@ -297,10 +359,20 @@ const Hero = () => {
     if (activeWave === i) scheduleRevert(i, 1500);
   };
 
+  if (loading || slides.length === 0) {
+    return (
+      <div className="relative h-screen min-h-[600px] bg-gray-900 text-white overflow-hidden flex items-center justify-center">
+        <div className="text-white/70">Loading...</div>
+      </div>
+    );
+  }
+
+  const currentSlide = slides[index] || slides[0];
+
   return (
     <div
       ref={containerRef}
-      className="relative h-screen bg-gray-900 text-white overflow-hidden select-none"
+      className="relative h-screen min-h-[600px] bg-gray-900 text-white overflow-hidden select-none"
     >
       {/* Background image crossfade */}
       <AnimatePresence>
@@ -312,7 +384,7 @@ const Hero = () => {
           exit={{ opacity: 0 }}
           transition={{ duration: 1.2 }}
           style={{
-            backgroundImage: `url(${slides[index].image})`,
+            backgroundImage: `url(${currentSlide.image})`,
             backgroundSize: "cover",
             backgroundPosition: "center",
           }}
@@ -321,45 +393,91 @@ const Hero = () => {
       <div className="absolute inset-0 bg-[#041f1c]/30 pointer-events-none z-0" />
 
       {/* Content */}
-      <div className="relative z-30 flex flex-col justify-center h-full px-8 md:px-24 pointer-events-none">
+      <div className="relative z-30 flex flex-col justify-center h-full px-4 sm:px-6 md:px-12 lg:px-24 pointer-events-none">
+        {/* Clinic Name */}
+        <motion.h2
+          key={index + "clinic"}
+          initial={{ opacity: 0, y: 30 }}
+          animate={{ opacity: 1, y: 0 }}
+          transition={{ duration: 0.9, ease: "easeOut" }}
+          className="text-4xl sm:text-5xl md:text-6xl lg:text-7xl xl:text-8xl font-bold mb-3 sm:mb-4 md:mb-5"
+        >
+          <span className="bg-gradient-to-r from-turquoise-300 via-turquoise-400 to-turquoise-500 bg-clip-text text-transparent drop-shadow-[0_2px_8px_rgba(125,211,192,0.5)]">
+            {currentSlide.title || "K Care Clinic"}
+          </span>
+        </motion.h2>
+        {/* Tagline */}
+        <motion.p
+          key={index + "tagline"}
+          initial={{ opacity: 0, y: 20 }}
+          animate={{ opacity: 1, y: 0 }}
+          transition={{ duration: 0.8, delay: 0.1 }}
+          className="text-lg sm:text-xl md:text-2xl lg:text-3xl text-white/95 font-light tracking-wide mb-6 sm:mb-8 md:mb-10"
+        >
+          {currentSlide.subtitle || "Precision Care, Trusted Hands"}
+        </motion.p>
         <motion.h1
           key={index + "title"}
           initial={{ opacity: 0, y: 30 }}
           animate={{ opacity: 1, y: 0 }}
-          transition={{ duration: 0.9, ease: "easeOut" }}
-          className="text-4xl md:text-[64px] font-light leading-[1.05] tracking-tight max-w-3xl"
+          transition={{ duration: 0.9, delay: 0.2, ease: "easeOut" }}
+          className="text-2xl sm:text-3xl md:text-4xl lg:text-5xl font-light leading-[1.2] md:leading-[1.15] tracking-wide max-w-3xl text-white/95"
         >
-          <span className="font-medium">Redefining</span> surgery with
-          technology and <span className="italic font-serif">trust</span>
+          <span className="font-normal">Redefining</span> surgery with
+          technology and <span className="italic font-serif font-light">trust</span>
         </motion.h1>
         <motion.p
           key={index + "sub"}
           initial={{ opacity: 0, y: 20 }}
           animate={{ opacity: 1, y: 0 }}
           transition={{ duration: 0.8, delay: 0.2 }}
-          className="mt-6 text-lg md:text-2xl text-white/90 max-w-xl"
+          className="mt-5 sm:mt-6 md:mt-8 text-base sm:text-lg md:text-xl text-white/90 max-w-xl font-light tracking-wide"
         >
-          Delivering precision-driven care with compassion and excellence.
+          Robotic and Laparoscopic Surgery
         </motion.p>
-        <div className="mt-10 flex gap-4 pointer-events-auto">
+        {/* CTA Buttons Row with Call Now */}
+        <div className="mt-4 sm:mt-4 lg:mt-4 flex flex-col sm:flex-row gap-3 sm:gap-4 pointer-events-auto max-w-4xl">
           <button 
             onClick={openModal}
-            className="cursor-pointer bg-turquoise-400 hover:bg-turquoise-300 text-stone-900 font-semibold px-8 py-3 rounded-full transition-colors"
+            className="cursor-pointer bg-turquoise-400 hover:bg-turquoise-300 text-stone-900 font-semibold px-6 sm:px-8 py-3 sm:py-3.5 rounded-full transition-colors text-sm sm:text-base shadow-lg"
           >
             Book appointment
           </button>
-          <Link to="/contact">
-            <button className="cursor-pointer border bg-turquoise-400/30 border-turquoise-400/90 text-turquoise-300 hover:bg-white hover:text-stone-900 font-semibold px-8 py-3 rounded-full transition-colors backdrop-blur-sm">
-              Enquiry
-            </button>
-          </Link>
+          <button 
+            onClick={openEnquiryModal}
+            className="w-full sm:w-auto cursor-pointer border bg-turquoise-400/30 border-turquoise-400/90 text-turquoise-300 hover:bg-white hover:text-stone-900 font-semibold px-6 sm:px-8 py-3 sm:py-3.5 rounded-full transition-colors backdrop-blur-sm text-sm sm:text-base"
+          >
+            Enquiry
+          </button>
+          
+          {/* Call Now - Prominent Contact Number */}
+          <motion.a
+            href="tel:+919373619006"
+            initial={{ opacity: 0, scale: 0.95 }}
+            animate={{ opacity: 1, scale: 1 }}
+            transition={{ duration: 0.6, delay: 0.4 }}
+            className="w-full sm:w-auto cursor-pointer flex items-center justify-center gap-2 sm:gap-3 px-4 sm:px-6 py-3 sm:py-3.5 rounded-full bg-white hover:bg-turquoise-50 text-stone-900 font-bold transition-all duration-300 shadow-lg hover:shadow-xl group active:scale-95"
+          >
+            <svg 
+              className="w-5 h-5 sm:w-6 sm:h-6 text-turquoise-500 group-hover:text-turquoise-600 transition-colors" 
+              fill="none" 
+              stroke="currentColor" 
+              viewBox="0 0 24 24"
+            >
+              <path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2.5" d="M3 5a2 2 0 012-2h3.28a1 1 0 01.948.684l1.498 4.493a1 1 0 01-.502 1.21l-2.257 1.13a11.042 11.042 0 005.516 5.516l1.13-2.257a1 1 0 011.21-.502l4.493 1.498a1 1 0 01.684.949V19a2 2 0 01-2 2h-1C9.716 21 3 14.284 3 6V5z" />
+            </svg>
+            <div className="flex flex-col items-start">
+             
+              <span className="text-sm sm:text-base md:text-lg font-bold text-stone-900 tracking-wide leading-tight mt-0.5">9373619006</span>
+            </div>
+          </motion.a>
         </div>
       </div>
 
       {/* Progressive Wavy Lines Layer (interactive) */}
       <div
         ref={wavesRef}
-        className="pointer-events-auto absolute bottom-0 left-0 right-0 h-56 md:h-64 z-20"
+        className="pointer-events-auto absolute bottom-[-20px] sm:bottom-[-24px] md:bottom-[-28px] lg:bottom-[-32px] left-0 right-0 h-40 sm:h-48 md:h-56 lg:h-64 z-20"
       >
         <svg
           ref={svgRef}
@@ -433,7 +551,7 @@ const Hero = () => {
             </filter>
           </defs>
         </svg>
-        {/* Image-Text Card tied to active wave head */}
+        {/* Image-Text Card tied to active wave head
         <AnimatePresence>
           {isCardVisible && activeWave !== null && (
             <div
@@ -469,21 +587,21 @@ const Hero = () => {
                   if (activeWave !== null) scheduleRevert(activeWave, 1500);
                 }}
               >
-                <div className="flex flex-col w-56">
+                <div className="flex flex-col w-32 sm:w-40 md:w-48 lg:w-56">
                   <div
-                    className="w-full h-[300px] overflow-hidden ring-1 ring-white/20"
+                    className="w-full h-[140px] sm:h-[180px] md:h-[220px] lg:h-[280px] overflow-hidden ring-1 ring-white/20"
                     style={{ backgroundColor: "#000" }}
                   >
                     <img
-                      src={(WAVE_DATA[activeWave] || WAVE_DATA[0]).image}
+                      src={(waveData[activeWave] || waveData[0] || {}).image}
                       alt="feature"
                       className="w-full h-full object-cover opacity-90"
                     />
                   </div>
-                  <div className="p-3 pb-4">
-                    <div className="text-xs md:text-sm tracking-wide">
+                  <div className="p-1.5 sm:p-2 md:p-3 pb-2 sm:pb-3 md:pb-4">
+                    <div className="text-[9px] sm:text-[10px] md:text-xs lg:text-sm tracking-wide">
                       <span className="font-medium leading-relaxed">
-                        {(WAVE_DATA[activeWave] || WAVE_DATA[0]).feature}
+                        {(waveData[activeWave] || waveData[0] || {}).feature}
                       </span>
                     </div>
                   </div>
@@ -491,13 +609,13 @@ const Hero = () => {
                 <div
                   className="h-1"
                   style={{
-                    background: (WAVE_DATA[activeWave] || WAVE_DATA[0]).color,
+                    background: (waveData[activeWave] || waveData[0] || {}).color || COLORS[0],
                   }}
                 />
               </motion.div>
             </div>
           )}
-        </AnimatePresence>
+        </AnimatePresence> */}
       </div>
     </div>
   );
