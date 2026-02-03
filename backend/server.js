@@ -71,6 +71,11 @@ app.use('/api/blogs', blogRoutes);
 app.use('/api/hero-section', heroSectionRoutes);
 app.use('/api/testimonials', testimonialRoutes);
 
+// Uptime robot / ping – lightweight, no DB (for monitoring)
+app.get('/ping', (req, res) => {
+  res.status(200).json({ pong: true, timestamp: new Date().toISOString() });
+});
+
 // Health check endpoint
 app.get('/health', (req, res) => {
   res.json({ 

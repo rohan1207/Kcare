@@ -35,25 +35,22 @@ const defaultSlides = [
   },
 ];
 
-// SVG path definitions (wavy lines)
-// We reveal each path to a given progress via stroke-dashoffset
+// SVG path definitions – full-width waves (edge to edge), smooth, stay inside viewBox
+// Paths run from x=0 to x=1080 so they span the whole hero bottom without overflow
 const PATHS = [
-  // Refined to be smoother and closer in feel to paths 2 and 3
-  "M0 150 C 300 145, 300 55, 460 120 C 640 170, 760 55, 900 90 C 1040 140, 1200 70, 1000 110",
-  "M0 90 C 140 140, 300 40, 460 110 C 640 180, 760 40, 900 90 C 1040 140, 1180 60, 1190 110",
-  "M0 120 C 200 40, 360 180, 540 80 C 720 0, 880 160, 950 100 C 1100 40, 1260 180, 1200 120",
-  // Refined bottom wave: still lower, but with similar oscillation pattern
-  "M0 135 C 180 80, 340 190, 520 105 C 700 50, 860 190, 1020 125 C 1140 90, 1300 190, 1180 140",
+  "M0 95 C 270 55, 270 135, 540 95 C 810 135, 810 55, 1080 95",
+  "M0 110 C 270 150, 270 70, 540 110 C 810 70, 810 150, 1080 110",
+  "M0 85 C 360 45, 540 125, 720 85 C 900 125, 1080 65, 1080 85",
+  "M0 120 C 360 160, 540 80, 720 120 C 900 80, 1080 120, 1080 120",
 ];
 
 const COLORS = ["#45d6c3", "#ffc857", "#b59bff", "#7ce4a9"];
-const INITIAL_PROGRESS = 0.29; // just left of center
-const VIEWBOX_WIDTH = 1090; // must match the SVG viewBox width
-const VIEWBOX_HEIGHT = 200; // must match the SVG viewBox height
-// Desired fixed end progress for each wave (will be clamped to visible bounds)
-// Mobile gets shorter extensions to prevent overflow
-const TARGET_PROGRESS = [0.78, 0.7, 0.65, 0.65];
-const TARGET_PROGRESS_MOBILE = [0.55, 0.5, 0.48, 0.48];
+const INITIAL_PROGRESS = 0.28;
+const VIEWBOX_WIDTH = 1080;
+const VIEWBOX_HEIGHT = 200;
+// Reveal up to ~70% width so waves feel full-width but head stays on-screen
+const TARGET_PROGRESS = [0.72, 0.7, 0.68, 0.68];
+const TARGET_PROGRESS_MOBILE = [0.58, 0.55, 0.52, 0.52];
 
 // Per-wave card content - will be updated from backend data
 let WAVE_DATA = [];
@@ -474,14 +471,14 @@ const Hero = () => {
         </div>
       </div>
 
-      {/* Progressive Wavy Lines Layer (interactive) */}
+      {/* Wave section – commented out for now
       <div
         ref={wavesRef}
-        className="pointer-events-auto absolute bottom-[-20px] sm:bottom-[-24px] md:bottom-[-28px] lg:bottom-[-32px] left-0 right-0 h-40 sm:h-48 md:h-56 lg:h-64 z-20"
+        className="pointer-events-auto absolute bottom-[-20px] sm:bottom-[-24px] md:bottom-[-28px] lg:bottom-[-32px] left-0 right-0 h-40 sm:h-48 md:h-56 lg:h-64 z-20 overflow-hidden"
       >
         <svg
           ref={svgRef}
-          className="w-full h-full"
+          className="w-full h-full block"
           viewBox="0 0 1080 200"
           preserveAspectRatio="none"
         >
@@ -497,7 +494,6 @@ const Hero = () => {
                 filter="url(#wave-shadow)"
                 style={{ opacity: 1, pointerEvents: "none" }}
               />
-              {/* glowing, pulsing interactive head */}
               <g
                 ref={(el) => (headRefs.current[i] = el)}
                 onMouseEnter={() => handleHeadEnter(i)}
@@ -551,72 +547,8 @@ const Hero = () => {
             </filter>
           </defs>
         </svg>
-        {/* Image-Text Card tied to active wave head
-        <AnimatePresence>
-          {isCardVisible && activeWave !== null && (
-            <div
-              className="absolute"
-              style={{
-                left: cardPos.x,
-                bottom: cardPos.y,
-                // Position wrapper exactly at the head; card inside will translate to bottom-left origin
-                pointerEvents: "none",
-              }}
-            >
-              <motion.div
-                ref={cardRef}
-                key="wave-card"
-                className="pointer-events-auto rounded-xl overflow-hidden bg-white/10 backdrop-blur-lg border border-white/20 text-white shadow-xl"
-                style={{
-                  transformOrigin: flipLeft ? "right bottom" : "left bottom",
-                  transform: flipLeft
-                    ? "translate(-100%, -100%)"
-                    : "translate(0, -100%)",
-                }}
-                initial={{ opacity: 0, y: 0, scaleY: 0.92, scaleX: 0.98 }}
-                animate={{ opacity: 1, y: 0, scaleY: 1, scaleX: 1 }}
-                exit={{ opacity: 0, y: 0, scaleY: 0.96, scaleX: 0.99 }}
-                transition={{ duration: 0.25 }}
-                onMouseEnter={() => {
-                  setIsCardHovered(true);
-                  if (revertTimerRef.current)
-                    clearTimeout(revertTimerRef.current);
-                }}
-                onMouseLeave={() => {
-                  setIsCardHovered(false);
-                  if (activeWave !== null) scheduleRevert(activeWave, 1500);
-                }}
-              >
-                <div className="flex flex-col w-32 sm:w-40 md:w-48 lg:w-56">
-                  <div
-                    className="w-full h-[140px] sm:h-[180px] md:h-[220px] lg:h-[280px] overflow-hidden ring-1 ring-white/20"
-                    style={{ backgroundColor: "#000" }}
-                  >
-                    <img
-                      src={(waveData[activeWave] || waveData[0] || {}).image}
-                      alt="feature"
-                      className="w-full h-full object-cover opacity-90"
-                    />
-                  </div>
-                  <div className="p-1.5 sm:p-2 md:p-3 pb-2 sm:pb-3 md:pb-4">
-                    <div className="text-[9px] sm:text-[10px] md:text-xs lg:text-sm tracking-wide">
-                      <span className="font-medium leading-relaxed">
-                        {(waveData[activeWave] || waveData[0] || {}).feature}
-                      </span>
-                    </div>
-                  </div>
-                </div>
-                <div
-                  className="h-1"
-                  style={{
-                    background: (waveData[activeWave] || waveData[0] || {}).color || COLORS[0],
-                  }}
-                />
-              </motion.div>
-            </div>
-          )}
-        </AnimatePresence> */}
       </div>
+      */}
     </div>
   );
 };
