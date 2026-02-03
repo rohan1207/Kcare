@@ -12,13 +12,18 @@ const PORT = process.env.PORT || 3001;
 
 // Middleware - CORS configuration
 const getCorsOrigins = () => {
-  const defaultOrigins = ['http://localhost:5173', 'http://localhost:5174', 'http://localhost:3000'];
+  const defaultOrigins = [
+    'http://localhost:5173',
+    'http://localhost:5174',
+    'http://localhost:3000',
+    'https://kcare.onrender.com',
+    'https://kcare-admin.onrender.com' // Production frontend on Render
+  ];
   
   if (process.env.FRONTEND_URL) {
     // If FRONTEND_URL is set, check if it's comma-separated
     const envOrigins = process.env.FRONTEND_URL.split(',').map(url => url.trim()).filter(url => url);
-    // Combine with default origins to support both
-    return [...new Set([...envOrigins, ...defaultOrigins])]; // Remove duplicates
+    return [...new Set([...envOrigins, ...defaultOrigins])];
   }
   
   return defaultOrigins;
