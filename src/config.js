@@ -1,1 +1,2 @@
-export const API_BASE_URL = import.meta.env.VITE_API_BASE_URL || 'http://localhost:3001';
+// Re-export from api.js so all app code uses the same base URL (including production fallback)
+export { API_BASE_URL } from './utils/api';

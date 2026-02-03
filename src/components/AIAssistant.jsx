@@ -2,6 +2,7 @@ import React, { useState, useRef, useEffect } from "react";
 import { motion, AnimatePresence } from "framer-motion";
 import { useAppointmentModal } from "../contexts/AppointmentModalContext";
 import { useEnquiryModal } from "../contexts/EnquiryModalContext";
+import { API_BASE_URL } from "../config";
 import axios from "axios";
 
 const AIAssistant = () => {
@@ -297,8 +298,8 @@ Remember: Always be helpful and guide users toward booking appointments or enqui
     }
   };
 
-  // Backend proxy URL - Update this to match your backend server
-  const BACKEND_PROXY_URL = import.meta.env.VITE_BACKEND_URL || 'http://localhost:3001';
+  // Same backend URL as rest of app (uses production URL when on kcare.onrender.com)
+  const BACKEND_PROXY_URL = import.meta.env.VITE_BACKEND_URL || API_BASE_URL;
 
   // Function to get AI response using backend proxy or intelligent fallback
   const getAIResponse = async (userMessage) => {
